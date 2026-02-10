@@ -1,0 +1,151 @@
+/* ===== RTL ADJUSTMENTS FOR SERVICES PAGE ===== */
+
+/* Service Navigation */
+html[dir="rtl"] .nav-scroll {
+    direction: rtl;
+}
+
+html[dir="rtl"] .service-nav-btn {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .service-nav-btn .nav-icon {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+/* Service Details Layout */
+html[dir="rtl"] .service-detail.vertical-gallery {
+    direction: rtl;
+}
+
+@media (min-width: 992px) {
+    html[dir="rtl"] .service-detail.vertical-gallery .service-content {
+        
+        padding-left: 60px;
+    }
+}
+
+/* Service Features */
+html[dir="rtl"] .service-features .feature i {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* Pricing */
+html[dir="rtl"] .price-range {
+    direction: ltr; /* Keep prices LTR */
+}
+
+html[dir="rtl"] .price-range .price-amount {
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+/* Service Actions */
+html[dir="rtl"] .service-actions {
+    direction: rtl;
+}
+
+
+
+
+/* Vertical Gallery */
+html[dir="rtl"] .vertical-thumbs {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+/* FAQ Section */
+html[dir="rtl"] .faq-question {
+    text-align: right;
+    padding: 20px 0 20px 30px;
+}
+
+html[dir="rtl"] .faq-question i {
+    right: auto;
+    left: 0;
+    
+}
+
+
+
+/* Process Timeline */
+html[dir="rtl"] .process-step {
+    direction: rtl;
+    padding-left: 30px;
+}
+
+@media (min-width: 768px) {
+    html[dir="rtl"] .process-step:nth-child(odd) .step-content {
+        
+        padding-right: 30px;
+        text-align: left;
+    }
+    
+    html[dir="rtl"] .process-step:nth-child(even) .step-content {
+        
+        padding-left: 30px;
+        text-align: right;
+    }
+}
+
+/* Testimonial Cards */
+html[dir="rtl"] .client-details {
+    text-align: right;
+}
+
+/* CTA Section */
+html[dir="rtl"] .cta-buttons {
+    direction: rtl;
+    
+}
+
+
+html[dir="rtl"] .faq-cta .cta-btn i.fa-envelope {
+    transform: scaleX(-1) !important;
+    transform-origin: center !important;
+    display: inline-block !important;
+}
+
+/* Form elements in Arabic services */
+html[dir="rtl"] ::placeholder {
+    text-align: right;
+    direction: rtl;
+}
+
+/* Fix for mobile navigation in services */
+html[dir="rtl"] .mobile-menu-nav {
+    align-items: flex-end;
+    text-align: right;
+}
+
+html[dir="rtl"] .mobile-nav-link .link-text::after {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+/* Arabic numbers in services */
+html[dir="rtl"] .service-number,
+html[dir="rtl"] .step-number,
+html[dir="rtl"] .section-number {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Price display */
+html[dir="rtl"] .price-amount {
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
+
+/* Testimonial service badges */
+html[dir="rtl"] .service-badge {
+    direction: rtl;
+}
+
+/* Service navigation active state */
+html[dir="rtl"] .service-nav-btn.active::after {
+    left: auto;
+    right: 0;
+}

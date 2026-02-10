@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="sv" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMIRA | Österländsk Couture Sminkkonst</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../en/css/style.css">
+    
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* Quick CSS for preloader */
+        .no-js .hero-title span { opacity: 1 !important; }
+        body.loaded .loading-screen {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== PRELOADER ===== -->
+    <div class="loading-screen">
+        <!-- Animated Background -->
+        <div class="loading-bg">
+            <div class="bg-glow"></div>
+            <div class="bg-pattern"></div>
+        </div>
+        
+        <!-- Logo Animation -->
+        <div class="loading-logo">
+            <div class="logo-circle">
+                <div class="circle-border">
+                    <div class="circle-spin"></div>
+                </div>
+                <div class="logo-letter">A</div>
+                <div class="logo-glow"></div>
+            </div>
+        </div>
+        
+        <!-- Progress -->
+        <div class="loading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill">
+                    <div class="progress-shine"></div>
+                </div>
+            </div>
+            <div class="progress-text">
+                <span class="percentage">0%</span>
+                <span class="loading-message">Laddar lyxupplevelse</span>
+            </div>
+        </div>
+        
+        <!-- Quote -->
+        <div class="loading-quote">
+            <div class="quote-line"></div>
+            <div class="quote-content">
+                <p>"Skönhet börjar i det ögonblick du bestämmer dig för att vara dig själv"</p>
+                <span class="quote-author">— Coco Chanel</span>
+            </div>
+            <div class="quote-line"></div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="loading-decor">
+            <div class="decor-element de1"></div>
+            <div class="decor-element de2"></div>
+            <div class="decor-element de3"></div>
+            <div class="decor-element de4"></div>
+            <div class="decor-element de5"></div>
+            <div class="decor-line dl1"></div>
+            <div class="decor-line dl2"></div>
+        </div>
+    </div>
+
+    <!-- ===== ANIMATED BACKGROUND ===== -->
+    <div class="animated-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div class="cursor">
+        <div class="cursor-inner"></div>
+        <div class="cursor-outer"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="luxury-nav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-brand">
+                <a href="#hero" class="brand-link">
+                    <div class="brand-symbol">A</div>
+                    <div class="brand-name">MIRA</div>
+                </a>
+            </div>
+            
+            <!-- Menu -->
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link active">
+                    <span class="link-number">01</span>
+                    <span class="link-text">Hem</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <span class="link-number">02</span>
+                    <span class="link-text">Filosofi</span>
+                </a>
+                <a href="#services" class="nav-link">
+                    <span class="link-number">03</span>
+                    <span class="link-text">Tjänster</span>
+                </a>
+                <a href="#portfolio" class="nav-link">
+                    <span class="link-number">04</span>
+                    <span class="link-text">Portfölj</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="link-number">05</span>
+                    <span class="link-text">Kontakt</span>
+                </a>
+            </div>
+            
+            <!-- Right Side: Language Selector + CTA -->
+            <div class="nav-right">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="lang-btn" id="langToggle">
+                        <span class="lang-code">SV</span>
+                        <i class="fas fa-chevron-down lang-arrow"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="sv">Svenska</button>
+                        <button class="lang-option" data-lang="ar">العربية</button>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="nav-actions">
+                    <a href="#contact" class="cta-btn">
+                        <span class="btn-text">Boka Nu</span>
+                        <div class="btn-icon">
+                            <i class="fas fa-sparkle"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="mobileToggle">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION (Text left, image right) ===== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <!-- Text part left -->
+            <div class="hero-content">
+                <div class="hero-main">
+                    <div class="hero-tagline">
+                        <span class="tagline-text">Österländsk Couture Sminkkonst</span>
+                        <div class="tagline-line"></div>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-line">Där Arv &</span>
+                        <span class="title-line">Innovation Skapar</span>
+                        <span class="title-line accent">Tidlös Skönhet</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Förbinder århundraden gamla österländska tekniker med modern lyxa för en oöverträffad skönhetsupplevelse.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#contact" class="hero-btn btn-primary">
+                            <span>Börja Din Resa</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#portfolio" class="hero-btn btn-secondary">
+                            <span>Se Portfölj</span>
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator">
+                    <div class="indicator-dot"></div>
+                    <span>Scrolla för att upptäcka</span>
+                </div>
+            </div>
+            
+            <!-- Image with animation right -->
+            <div class="hero-image">
+                <div class="image-container">
+                    <!-- Main image -->
+                    <div class="main-image" style="background-image: url('../images/hero-1.jpg');">
+                        <div class="image-overlay"></div>
+                    </div>
+                    
+                    <!-- Decorative elements on image -->
+                    <div class="image-decoration deco-1"></div>
+                    <div class="image-decoration deco-2"></div>
+                    <div class="image-decoration deco-3"></div>
+                    
+                    <!-- Floating elements -->
+                    <div class="floating-element fe-1">
+                        <i class="fas fa-sparkle"></i>
+                    </div>
+                    <div class="floating-element fe-2">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="floating-element fe-3">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PHILOSOPHY SECTION ===== -->
+    <section id="about" class="philosophy-section">
+        <div class="section-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h2 class="section-title">Min Filosofi</h2>
+                <div class="section-subtitle">Konsten Av Tidlös Skönhet</div>
+            </div>
+            
+            <!-- Philosophy Content -->
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <div class="philosophy-quote">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="quote-text">
+                            "Sann skönhet ligger inte i perfektion, utan i harmonin mellan tradition och innovation."
+                        </p>
+                        <div class="quote-author">— Amira</div>
+                    </div>
+                    
+                    <div class="philosophy-description">
+                        <p>
+                            Som sminkartist tror jag att smink är mer än bara förbättring – det är en konstform som firar arv samtidigt som den omfamnar modernitet.
+                            Min filosofi är rotad i de rika traditionerna av österländska skönhetsritualer, omtänkta genom ett modernt perspektiv.
+                        </p>
+                        
+                        <p>
+                            Varje skapelse är en balansgång mellan århundraden gamla tekniker och modern lyxa, skapad för att avslöja din unika essens snarare än att dölja den.
+                            Jag applicerar inte bara smink – jag skapar upplevelser som får dig att känna dig sedd, förstådd och firad.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Philosophy Grid -->
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <div class="card-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-hand-sparkles"></i>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Artisantillverkning</h3>
+                        <p class="card-text">Varje penseldrag är avsiktligt, varje detalj noggrant handgjord med den precision och omsorg som kommer från år av dedikerad praktik.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="card-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Personlig Anslutning</h3>
+                        <p class="card-text">Jag lyssnar, förstår och skapar looks som firar din individualitet och berättelse. Din skönhetsresa är personlig, och så är mitt tillvägagångssätt.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="card-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Arv Omtänkt</h3>
+                        <p class="card-text">Traditionella österländska tekniker möter modern lyxa – skapar looks som äran det förflutna samtidigt som de omfamnar framtiden för skönhet.</p>
+                    </div>
+                </div>
+                
+                <!-- Decorative Elements -->
+                <div class="philosophy-decoration">
+                    <div class="deco-line dl-1"></div>
+                    <div class="deco-dot dd-1"></div>
+                    <div class="deco-dot dd-2"></div>
+                    <div class="deco-dot dd-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES PREVIEW SECTION ===== -->
+    <section class="services-preview">
+        <div class="section-container">
+            <div class="preview-header">
+                <div class="section-number">03</div>
+                <h2 class="section-title">Signaturtjänster</h2>
+                <div class="section-subtitle">Förhöjda Skönhetsupplevelser</div>
+            </div>
+            
+            <div class="services-slider">
+                <!-- Service 1 -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <div class="image-wrapper" style="background-image: url('../images/bridal.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="service-number">01</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Brud Couture</h3>
+                        <p class="service-description">Komplett brudtransformation med traditionella henna-inspirerade design och modern elegans.</p>
+                        <a href="#services" class="service-link">
+                            <span>Utforska Tjänst</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <div class="image-wrapper" style="background-image: url('../images/editorial-artistry.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="service-number">02</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Redaktionell Konst</h3>
+                        <p class="service-description">Högmodesmink för fotograferingar, runway-shower och röda mattor med konstnärlig flair.</p>
+                        <a href="services_sv.html#" class="service-link">
+                            <span>Utforska Tjänst</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <div class="image-wrapper" style="background-image: url('../images/master-class.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="service-number">03</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Masterklasser</h3>
+                        <p class="service-description">Lär dig traditionella österländska tekniker blandade med moderna applikationsmetoder.</p>
+                        <a href="#services" class="service-link">
+                            <span>Utforska Tjänst</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview-footer">
+                <a href="services_sv.html" class="view-all-btn">
+                    <span>Se Alla Tjänster</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO SECTION ===== -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="section-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h2 class="section-title">Portfölj</h2>
+                <div class="section-subtitle">En Glimt Av Min Konstnärskap</div>
+            </div>
+            
+            <!-- Portfolio Filter -->
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Alla Arbeten</button>
+                <button class="filter-btn" data-filter="bridal">Bröllop</button>
+                <button class="filter-btn" data-filter="editorial">Redaktionellt</button>
+                <button class="filter-btn" data-filter="events">Evenemang</button>
+                <button class="filter-btn" data-filter="traditional">Traditionellt</button>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item" data-category="bridal" data-description="Utmärkt bröllopsmakeup med guldackcenter och lätta arabiska mönster. Skapad för en traditionell österländsk bröllopsceremoni, denna look inkluderar handmålade motiv och 24k guldblad detaljer som fångar essensen av lyx och tradition. Bruden ville ha en look som hedrade hennes arv samtidigt som den kändes modern och elegant.">
+                    <div class="portfolio-image">
+                        <img src="../images/bridal-1.jpg" alt="Förtrollad Brud Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Förtrollad Brud</h3>
+                                <p class="portfolio-category">Brud Couture</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item" data-category="editorial" data-description="Redaktionell fotografering för Vogue Arabia med förgyllda ackcenter och djärva geometriska mönster. Denna look inspirerades av traditionell islamisk konst och arkitektur, omtänkt för modern högsmode. De metalliska elementen fångar ljuset vackert och skapar en förtrollande effekt som fotograferar exceptionellt bra.">
+                    <div class="portfolio-image">
+                        <img src="../images/editorial-1.jpg" alt="Förgylld Redaktionell Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Förgylld Redaktionell</h3>
+                                <p class="portfolio-category">Mode Magasin</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item" data-category="traditional" data-description="Traditionell henna-festmakeup som kombinerar naturliga jordtoner med symboliska mönster. Skapad för en förbröllop henna-ceremoni, denna look hedrar Bedouin-skönhetstraditioner samtidigt som den behåller en mjuk, romantisk känsla. Den jordiga färgpaletten kompletterar henna-design perfekt.">
+                    <div class="portfolio-image">
+                        <img src="../images/traditional-1.jpg" alt="Henna Fest Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Henna Celebration</h3>
+                                <p class="portfolio-category">Traditionell Ceremoni</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item" data-category="events" data-description="Röda mattan glamour för Dubai International Film Festival. Denna sofistikerade kvällslook inkluderar smoky eyes med metalliska ackcenter och perfekt konturerade drag som står sig mot kamerablixtar och starka ljus. Looken designades för att vara tidlös men ändå göra ett statement.">
+                    <div class="portfolio-image">
+                        <img src="../images/event-1.jpg" alt="Röda Mattan Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Röda Mattan Glamour</h3>
+                                <p class="portfolio-category">Utmärkelsesceremoni</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item" data-category="bridal" data-description="Modern kunglig bröllopslook med en samtida tolkning av traditionella element. De rena linjerna och subtila glittret skapar en kunglig men ändå tillgänglig estetik. Denna look var perfekt för en brud som ville känna sig kunglig utan att vara för traditionell.">
+                    <div class="portfolio-image">
+                        <img src="../images/bridal-2.jpg" alt="Modern Royalty Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Modern Royalty</h3>
+                                <p class="portfolio-category">Brud Couture</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item" data-category="editorial" data-description="Modekampanj inspirerad av ökenblommor och oas skönhet. Denna eteriska look inkluderar mjuka pastellfärger blandade med metalliska ackcenter, vilket skapar en drömlik, annorlunda effekt. Sminket designades för att komplettera intrikata smycken och flytande tyger.">
+                    <div class="portfolio-image">
+                        <img src="../images/editorial-2.jpg" alt="Desert Bloom Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Ökenblomning</h3>
+                                <p class="portfolio-category">Modekampanj</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio CTA -->
+            <div class="portfolio-cta">
+                <p class="cta-text">Se min kompletta galleri av transformationer</p>
+                <a href="gallery_sv.html" class="cta-btn">
+                    <span>Utforska Full Portfölj</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section class="testimonials-section">
+        <div class="section-container">
+            <div class="testimonials-header">
+                <div class="section-number">04.1</div>
+                <h2 class="section-title">Kundberättelser</h2>
+                <div class="section-subtitle">Ord Som Inspirerar Mig</div>
+            </div>
+            
+            <div class="testimonials-slider">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote-mark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Amira transformerade min bröllopsdaglook till något bortom mina vildaste drömmar.
+                            Hennes uppmärksamhet på detaljer och förståelse för traditionella tekniker blandade med modern elegans var extraordinär."
+                        </p>
+                        <div class="client-info">
+                            <h4 class="client-name">Sarah Al-Mansoori</h4>
+                            <p class="client-details">Dubai | Internationell Brud</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote-mark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Att arbeta med Amira på vår redaktionella fotografering var en mästerklass i konstnärskap.
+                            Hennes förmåga att skapa looks som berättar historier genom smink är verkligen anmärkningsvärd."
+                        </p>
+                        <div class="client-info">
+                            <h4 class="client-name">Marcus Chen</h4>
+                            <p class="client-details">Vogue Arabia | Creative Director</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote-mark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Som någon som värderar arv och tradition var jag förvånad över hur Amira hedrade
+                            kulturella element samtidigt som hon skapade en samtida look som kändes autentiskt mig."
+                        </p>
+                        <div class="client-info">
+                            <h4 class="client-name">Leila Hassan</h4>
+                            <p class="client-details">London | Kultur Ambassadör</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial Navigation -->
+            <div class="testimonial-nav">
+                <button class="nav-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="nav-dots">
+                    <span class="nav-dot active"></span>
+                    <span class="nav-dot"></span>
+                    <span class="nav-dot"></span>
+                </div>
+                <button class="nav-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h2 class="section-title">Börja Din Resa</h2>
+                <div class="section-subtitle">Boka Din Konsultation</div>
+            </div>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">E-post</h3>
+                            <a href="mailto:amira@couture.com" class="info-link">amira@couture.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Telefon</h3>
+                            <a href="tel:+971123456789" class="info-link">+971 123 456 789</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Studio</h3>
+                            <p class="info-text">
+                                Dubai Design District<br>
+                                Building 7, Studio 302<br>
+                                Dubai, UAE
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Öppettider</h3>
+                            <p class="info-text">
+                                Endast Efter Bokning<br>
+                                Måndag - Lördag: 9:00 - 19:00<br>
+                                Söndag: Stängt
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required placeholder="Ditt Namn *">
+                                <label for="name">Fullständigt Namn</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required placeholder="E-postadress *">
+                                <label for="email">E-postadress</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Telefonnummer">
+                            <label for="phone">Telefonnummer</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Välj Tjänst *</option>
+                                <option value="bridal">Brud Couture</option>
+                                <option value="editorial">Redaktionell Konst</option>
+                                <option value="events">Specialevenemang</option>
+                                <option value="masterclass">Masterklasser</option>
+                                <option value="consultation">Personlig Konsultation</option>
+                            </select>
+                            <label for="service">Tjänstintresse</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Berätta om din vision..."></textarea>
+                            <label for="message">Ditt Meddelande</label>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="submit" class="submit-btn">
+                                <span>Skicka Förfrågan</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                            <p class="form-note">Jag svarar inom 24 timmar för att boka din konsultation</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
+            <!-- Footer Logo -->
+            <div class="footer-logo">
+                <div class="footer-symbol">A</div>
+                <div class="footer-brand">
+                    <div class="footer-name">AMIRA</div>
+                    <div class="footer-tagline">Österländsk Couture Sminkkonst</div>
+                </div>
+            </div>
+            
+            <!-- Footer Navigation -->
+            <div class="footer-nav">
+                <div class="nav-column">
+                    <h4 class="nav-title">Navigation</h4>
+                    <a href="#hero" class="footer-link">Hem</a>
+                    <a href="#about" class="footer-link">Min Filosofi</a>
+                    <a href="#services" class="footer-link">Tjänster</a>
+                    <a href="#portfolio" class="footer-link">Portfölj</a>
+                    <a href="#contact" class="footer-link">Kontakt</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Tjänster</h4>
+                    <a href="#" class="footer-link">Brud Couture</a>
+                    <a href="#" class="footer-link">Redaktionell Konst</a>
+                    <a href="#" class="footer-link">Specialevenemang</a>
+                    <a href="#" class="footer-link">Masterklasser</a>
+                    <a href="#" class="footer-link">Konsultationer</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Anslut</h4>
+                    <a href="#" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">Pinterest</a>
+                    <a href="#" class="footer-link">Behance</a>
+                    <a href="#" class="footer-link">Vogue Arabia</a>
+                </div>
+            </div>
+            
+            <!-- Footer Newsletter -->
+            <div class="footer-newsletter">
+                <h4 class="newsletter-title">Gå Med I Min Värld</h4>
+                <p class="newsletter-text">Få exklusiva skönhetsinsikter och tidig tillgång till masterklasser.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Din e-postadress" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2026 Oleksandra Zdoronok. Alla rättigheter förbehållna.
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-bottom-link">Integritetspolicy</a>
+                    <a href="#" class="footer-bottom-link">Användarvillkor</a>
+                    <a href="#" class="footer-bottom-link">Cookiepolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Main JS -->
+    <script src="../sv/js/main.js"></script>
+</body>
+</html>

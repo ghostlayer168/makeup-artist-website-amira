@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخدمات | أميرة - فن مكياج الكوتور الشرقي</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../en/css/style.css">
+    
+    <!-- Services CSS -->
+    <link rel="stylesheet" href="../en/css/services.css">
+    
+    <!-- RTL Adjustments -->
+    <link rel="stylesheet" href="css/rtl.css">
+    <link rel="stylesheet" href="css/services-rtl.css">
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    
+    <style>
+        /* Quick CSS for preloader */
+        .no-js .hero-title span { opacity: 1 !important; }
+        body.loaded .loading-screen {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        
+        /* Arabic typography */
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .font-serif-ar {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .font-display-ar {
+            font-family: 'El Messiri', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== PRELOADER ===== -->
+    <div class="loading-screen">
+        <!-- Animated Background -->
+        <div class="loading-bg">
+            <div class="bg-glow"></div>
+            <div class="bg-pattern"></div>
+        </div>
+        
+        <!-- Logo Animation -->
+        <div class="loading-logo">
+            <div class="logo-circle">
+                <div class="circle-border">
+                    <div class="circle-spin"></div>
+                </div>
+                <div class="logo-letter">أ</div>
+                <div class="logo-glow"></div>
+            </div>
+        </div>
+        
+        <!-- Progress -->
+        <div class="loading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill">
+                    <div class="progress-shine"></div>
+                </div>
+            </div>
+            <div class="progress-text">
+                <span class="percentage">٠٪</span>
+                <span class="loading-message">جاري تحميل الخدمات</span>
+            </div>
+        </div>
+        
+        <!-- Quote -->
+        <div class="loading-quote">
+            <div class="quote-line"></div>
+            <div class="quote-content">
+                <p class="font-serif-ar">"أفضل مكياج هو الذي يجعلك تشعرين بأجمل نسخة من نفسك"</p>
+                <span class="quote-author">— أميرة</span>
+            </div>
+            <div class="quote-line"></div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="loading-decor">
+            <div class="decor-element de1"></div>
+            <div class="decor-element de2"></div>
+            <div class="decor-element de3"></div>
+            <div class="decor-element de4"></div>
+            <div class="decor-element de5"></div>
+            <div class="decor-line dl1"></div>
+            <div class="decor-line dl2"></div>
+        </div>
+    </div>
+
+    <!-- ===== ANIMATED BACKGROUND ===== -->
+    <div class="animated-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div class="cursor-inner"></div>
+<div class="cursor-outer"></div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="luxury-nav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-brand">
+                <a href="index_ar.html" class="brand-link">
+                    <div class="brand-symbol">أ</div>
+                    <div class="brand-name">ميرة</div>
+                </a>
+            </div>
+            
+            <!-- Menu -->
+            <div class="nav-menu">
+                <a href="index_ar.html" class="nav-link">
+                    <span class="link-number">٠١</span>
+                    <span class="link-text">الرئيسية</span>
+                </a>
+                <a href="index_ar.html#about" class="nav-link">
+                    <span class="link-number">٠٢</span>
+                    <span class="link-text">فلسفتي</span>
+                </a>
+                <a href="#hero" class="nav-link active">
+                    <span class="link-number">٠٣</span>
+                    <span class="link-text">الخدمات</span>
+                </a>
+                <a href="index_ar.html#portfolio" class="nav-link">
+                    <span class="link-number">٠٤</span>
+                    <span class="link-text">الأعمال</span>
+                </a>
+                <a href="index_ar.html#contact" class="nav-link">
+                    <span class="link-number">٠٥</span>
+                    <span class="link-text">اتصل بي</span>
+                </a>
+            </div>
+            
+            <!-- Right Side: Language Selector + CTA -->
+            <div class="nav-right">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="lang-btn" id="langToggle">
+                        <span class="lang-code">AR</span>
+                        <i class="fas fa-chevron-down lang-arrow"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="ar">العربية</button>
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="sv">Svenska</button>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="nav-actions">
+                    <a href="index_ar.html#contact" class="cta-btn" >
+                        <span class="btn-text">احجز الآن</span>
+                        <div class="btn-icon">
+                            <i class="fas fa-sparkle"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="mobileToggle">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="services-hero">
+        <div class="section-container">
+            <div class="services-header">
+                <div class="section-number">٠٣</div>
+                <h1 class="section-title font-display-ar">الخدمات المميزة</h1>
+                <div class="section-subtitle font-display-ar">تجارب جمالية راقية</div>
+                
+                <div class="services-intro">
+                    <p class="font-display-ar">كل خدمة مصممة بعناية للاحتفال بجمالك الفريد مع تكريم التقاليد الغنية للفن الشرقي. من تحولات العرائس إلى تحف التحرير، اكتشفي التجربة المثالية لرحلتك.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Background -->
+        <div class="services-hero-bg">
+            <div class="bg-gradient"></div>
+            <div class="bg-pattern"></div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES GRID ===== -->
+    <section class="services-grid-section">
+        <div class="section-container">
+            <!-- Service Navigation -->
+            <div class="services-navigation">
+                <div class="nav-scroll">
+                    <a href="#bridal" class="service-nav-btn active">
+                        <span class="nav-icon"><i class="fas fa-heart"></i></span>
+                        <span class="nav-text font-display-ar">عرائس</span>
+                    </a>
+                    <a href="#editorial" class="service-nav-btn">
+                        <span class="nav-icon"><i class="fas fa-camera"></i></span>
+                        <span class="nav-text font-display-ar">تحريرية</span>
+                    </a>
+                    <a href="#events" class="service-nav-btn">
+                        <span class="nav-icon"><i class="fas fa-star"></i></span>
+                        <span class="nav-text font-display-ar">مناسبات</span>
+                    </a>
+                    <a href="#masterclass" class="service-nav-btn">
+                        <span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>
+                        <span class="nav-text font-display-ar">دروس</span>
+                    </a>
+                    <a href="#consultation" class="service-nav-btn">
+                        <span class="nav-icon"><i class="fas fa-comments"></i></span>
+                        <span class="nav-text font-display-ar">استشارات</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Bridal Couture -->
+            <div class="service-detail vertical-gallery" id="bridal">
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-number">٠١</div>
+                        <div class="service-category font-display-ar">خدمة مميزة</div>
+                    </div>
+                    
+                    <h2 class="service-title font-display-ar">كوتور العروس</h2>
+                    <div class="service-tagline font-display-ar">فن الأناقة الخالدة</div>
+                    
+                    <div class="service-description">
+                        <p class="font-display-ar">تجربة تحول كاملة للعروس تدمج بين التقنيات الشرقية التقليدية والرفاهية المعاصرة. كل تفصيل مصمم بعناية لخلق مظهر يكرم التراث مع احتضان التطور الحديث.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">تصاميم مستوحاة من الحنة التقليدية</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">تفاصيل أوراق ذهب 24 قيراط</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">تطابق ألوان مخصص</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">مكياج يدوم طوال المراسم</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">استشارة ما قبل الزفاف</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-range">
+                            <span class="price-label font-display-ar">تبدأ من</span>
+                             <span class="price-amount">٤,٤٠٠ د.إ</span>
+                        </div>
+                        <div class="price-note font-display-ar">باقات مخصصة متاحة</div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <a href="index_ar.html#contact" class="service-book-btn">
+                            <span class="font-display-ar">احجز استشارة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <a href="index_ar.html#portfolio" class="service-view-btn">
+                            <span class="font-display-ar">عرض المعرض</span>
+                            <i class="fas fa-images"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-gallery-vertical">
+                    <div class="vertical-main">
+                        <div class="vertical-image" style="background-image: url('../images/bridal-1.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="image-label font-display-ar">مظهر عروس</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vertical-thumbs">
+                        <div class="vertical-thumb" style="background-image: url('../images/bridal-1.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('../images/bridal-2.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('../images/bridal-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Editorial Artistry -->
+            <div class="service-detail vertical-gallery" id="editorial">
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-number">٠٢</div>
+                        <div class="service-category font-display-ar">خدمة إبداعية</div>
+                    </div>
+                    
+                    <h2 class="service-title font-display-ar">فن التحرير</h2>
+                    <div class="service-tagline font-display-ar">حيث تلتقي الأزياء بالخيال</div>
+                    
+                    <div class="service-description">
+                        <p class="font-display-ar">مكياج أزياء راقٍ لجلسات التصوير، عروض الأزياء، والفعاليات الحمراء. مظاهر تحويلية تروي قصصًا وتخلق شعرًا مرئيًا من خلال فن المكياج.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">تطوير المفاهيم</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">تطبيقات جاهزة للمنصة</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">مكياج مثالي للكاميرا</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">مؤثرات خاصة</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">خدمات في الموقع</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-range">
+                            <span class="price-label font-display-ar">تبدأ من</span>
+                            <span class="price-amount">٢,٩٥٠ د.إ</span>
+                        </div>
+                        <div class="price-note font-display-ar">حسب كل مشروع</div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <a href="index_ar.html#contact" class="service-book-btn">
+                            <span class="font-display-ar">ناقش المشروع</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <a href="index_ar.html#portfolio" class="service-view-btn">
+                            <span class="font-display-ar">عرض المعرض</span>
+                            <i class="fas fa-images"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-gallery-vertical">
+                    <div class="vertical-main">
+                        <div class="vertical-image" style="background-image: url('../images/editorial-1.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="image-label font-display-ar">تحفة تحريرية</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vertical-thumbs">
+                        <div class="vertical-thumb" style="background-image: url('../images/editorial-1.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('../images/editorial-2.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('../images/editorial-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Events -->
+            <div class="service-detail vertical-gallery" id="events">
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-number">٠٣</div>
+                        <div class="service-category font-display-ar">خدمة فاخرة</div>
+                    </div>
+                    
+                    <h2 class="service-title font-display-ar">مناسبات خاصة</h2>
+                    <div class="service-tagline font-display-ar">أناقة السجادة الحمراء</div>
+                    
+                    <div class="service-description">
+                        <p class="font-display-ar">مكياج متطور للحفلات، حفلات توزيع الجوائز، والفعاليات الحصرية. أناقة خالدة تتحمل فلاشات الكاميرا وتخلق انطباعات لا تنسى.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">جاهز للسجادة الحمراء</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">مقاوم لفلاش الكاميرا</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">تركيبات طويلة الأمد</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">مجموعة تلميع مرفقة</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">تطبيق في الموقع</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-range">
+                            <span class="price-label font-display-ar">تبدأ من</span>
+                            <span class="price-amount">٢,٢٠٠ د.إ</span>
+                        </div>
+                        <div class="price-note font-display-ar">لكل شخص</div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <a href="index_ar.html#contact" class="service-book-btn">
+                            <span class="font-display-ar">احجز موعد</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <a href="index_ar.html#portfolio" class="service-view-btn">
+                            <span class="font-display-ar">عرض المعرض</span>
+                            <i class="fas fa-images"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-gallery-vertical">
+                    <div class="vertical-main">
+                        <div class="vertical-image" style="background-image: url('../images/event-1.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="image-label font-display-ar">أناقة المناسبة</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vertical-thumbs">
+                        <div class="vertical-thumb" style="background-image: url('../images/event-1.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('../images/event-2.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('../images/event-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Master Classes -->
+            <div class="service-detail vertical-gallery" id="masterclass">
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-number">٠٤</div>
+                        <div class="service-category font-display-ar">خدمة تعليمية</div>
+                    </div>
+                    
+                    <h2 class="service-title font-display-ar">دروس رئيسية</h2>
+                    <div class="service-tagline font-display-ar">تعلم فن الجمال الشرقي</div>
+                    
+                    <div class="service-description">
+                        <p class="font-display-ar">تجارب تعليمية غامرة حيث تكتشفين التقنيات الشرقية التقليدية المدمجة مع طرق التطبيق المعاصرة. من المهارات الأساسية إلى الفن المتقدم.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">جلسات جماعية صغيرة</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">تقنيات تقليدية</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">معرفة منتجات فاخرة</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">ممارسة عملية</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">شهادة إتمام</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-range">
+                            <span class="price-label font-display-ar">تبدأ من</span>
+                            <span class="price-amount">١,٤٧٠ د.إ</span>
+                        </div>
+                        <div class="price-note font-display-ar">لكل جلسة</div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <a href="index_ar.html#contact" class="service-book-btn">
+                            <span class="font-display-ar">سجل الآن</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <a href="#" class="service-view-btn">
+                            <span class="font-display-ar">عرض الجدول</span>
+                            <i class="fas fa-calendar"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-gallery-vertical">
+                    <div class="vertical-main">
+                        <div class="vertical-image" style="background-image: url('../images/master-class-1.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="image-label font-display-ar">جلسة تعلم</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vertical-thumbs">
+                        <div class="vertical-thumb" style="background-image: url('../images/master-class-1.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('../images/master-class-2.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('../images/master-class-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Personal Consultation -->
+            <div class="service-detail vertical-gallery" id="consultation">
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-number">٠٥</div>
+                        <div class="service-category font-display-ar">خدمة أساسية</div>
+                    </div>
+                    
+                    <h2 class="service-title font-display-ar">استشارة شخصية</h2>
+                    <div class="service-tagline font-display-ar">رحلتك الجمالية تبدأ هنا</div>
+                    
+                    <div class="service-description">
+                        <p class="font-display-ar">جلسة فردية شخصية لفهم احتياجات جمالك الفريدة، تفضيلاتك، وأهدافك. سننشئ خطة جمال مخصصة تحتفل بفرديتك.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">تحليل البشرة</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">تطابق الألوان</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">توصيات المنتجات</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">إنشاء روتين مخصص</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="font-display-ar">دعم متابعة</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-range">
+                            <span class="price-label font-display-ar">تبدأ من</span>
+                            <span class="price-amount">٩٢٠ د.إ</span>
+                        </div>
+                        <div class="price-note font-display-ar">يشمل دليل العناية بالبشرة</div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <a href="index_ar.html#contact" class="service-book-btn">
+                            <span class="font-display-ar">احجز استشارة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <a href="#" class="service-view-btn">
+                            <span class="font-display-ar">اعرف المزيد</span>
+                            <i class="fas fa-info-circle"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-gallery-vertical">
+                    <div class="vertical-main">
+                        <div class="vertical-image" style="background-image: url('../images/consultation-1.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="image-label font-display-ar">جلسة شخصية</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vertical-thumbs">
+                        <div class="vertical-thumb" style="background-image: url('../images/consultation-1.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('../images/consultation-2.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('../images/consultation-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="process-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-number">٠٣.١</div>
+                <h2 class="section-title font-display-ar">تجربة أميرة</h2>
+                <div class="section-subtitle font-display-ar">رحلة التحول</div>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">٠١</div>
+                    <div class="step-content">
+                        <h3 class="step-title font-display-ar">الاستشارة الأولية</h3>
+                        <p class="step-description font-display-ar">نبدأ بمحادثة متعمقة لفهم رؤيتك، تفضيلاتك، وجوهر ما تريدين تحقيقه.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">٠٢</div>
+                    <div class="step-content">
+                        <h3 class="step-title font-display-ar">التصميم والتخطيط</h3>
+                        <p class="step-description font-display-ar">تطوير مظهر مخصص مع رسومات، لوحات ألوان، واختيار منتجات مصممة خصيصًا لك.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">٠٣</div>
+                    <div class="step-content">
+                        <h3 class="step-title font-display-ar">جلسة التحضير</h3>
+                        <p class="step-description font-display-ar">تحضير البشرة وجلسة تجريبية لضمان الكمال. ننقي كل تفصيل قبل الحدث الرئيسي.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">٠٤</div>
+                    <div class="step-content">
+                        <h3 class="step-title font-display-ar">التطبيق الفني</h3>
+                        <p class="step-description font-display-ar">يبدأ التحول. تطبيق دقيق باستخدام التقنيات التقليدية والمنتجات الفاخرة.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">٠٥</div>
+                    <div class="step-content">
+                        <h3 class="step-title font-display-ar">الكشف النهائي والرعاية</h3>
+                        <p class="step-description font-display-ar">الكشف السحري متبوعًا بتوجيهات رعاية لاحقة شخصية للحفاظ على مظهرك طوال حدثك.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-number">٠٣.٢</div>
+                <h2 class="section-title font-display-ar">الأسئلة الشائعة</h2>
+                <div class="section-subtitle font-display-ar">إجابات على أسئلتك</div>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text font-display-ar">كم مقدماً يجب أن أحجز؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="font-display-ar">لخدمات العرائس، نوصي بالحجز قبل ٦-١٢ شهرًا. يجب إجراء حجوزات التحرير والفعاليات قبل ٤-٨ أسابيع على الأقل. للدروس الرئيسية مقاعد محدودة، لذا يُنصح بالحجز قبل ١-٢ شهرًا.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text font-display-ar">هل تسافرين للمناسبات؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="font-display-ar">نعم، أسافر عالميًا للأعراس، جلسات التصوير التحريرية، والفعاليات الخاصة. تُحسب نفقات السفر حسب الموقع وتُدرج في عرض الأسعار المخصص لك.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text font-display-ar">ما هي المنتجات التي تستخدمينها؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="font-display-ar">أستخدم حصريًا منتجات فاخرة عالية الأداء من علامات تجارية مثل شانتيكاي، شارلوت تيلبري، توم فورد، وبات ماكغراث لابس، إلى جانب منتجات تقليدية متخصصة مصدرها من الشرق الأوسط وجنوب آسيا.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text font-display-ar">هل يمكنك العمل مع البشرة الحساسة؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="font-display-ar">بالتأكيد. خلال استشارتنا، نناقش أي مخاوف بشأن البشرة أو حساسيات. أستخدم منتجات مضادة للحساسية وأجري اختبارات التصحيح عند الضرورة لضمان الراحة والسلامة.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text font-display-ar">ما المدرج في باقات العرائس؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="font-display-ar">تتضمن باقات العرائس: استشارة ما قبل الزفاف، جلسة تجريبية، مكياب يوم الزفاف للعروس، مجموعة تلميع، وإضافات اختيارية مثل مكياب فرقة العروس، استشارة تصميم حنة تقليدية، وجلسات تحضير البشرة.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text font-display-ar">هل تقدمين أسعارًا للجماعات؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="font-display-ar">نعم، تتوفر أسعار جماعية لفرق العرائس، الفعاليات المؤسسية، والمناسبات الخاصة. اتصل بي مع حجم مجموعتك ومتطلباتك للحصول على عرض أسعار مخصص.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-cta">
+                <p class="font-display-ar">لديك المزيد من الأسئلة؟ أنا هنا لمساعدتك.</p>
+                <a href="index_ar.html#contact" class="cta-btn" >
+                    <span class="font-display-ar">اتصل بي</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS PREVIEW ===== -->
+    <section class="services-testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-number">٠٣.٣</div>
+                <h2 class="section-title font-display-ar">تجارب العملاء</h2>
+                <div class="section-subtitle font-display-ar">قصص التحول</div>
+            </div>
+            
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('../images/client-1.jpg');"></div>
+                        <div class="client-details">
+                            <h4 class="font-display-ar">سارة المنصوري</h4>
+                            <p class="font-display-ar">عميلة عروس</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        <p class="font-display-ar">"حولت أميرة مظهري في يوم زفافي إلى شيء يفوق أحلامي البريئة. اهتمامها بالتفاصيل وفهمها للتقنيات التقليدية المدمجة مع الأناقة الحديثة كان استثنائيًا."</p>
+                    </div>
+                    <div class="service-badge">
+                        <i class="fas fa-heart"></i>
+                        <span class="font-display-ar">كوتور العروس</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('../images/client-2.jpg');"></div>
+                        <div class="client-details">
+                            <h4 class="font-display-ar">ماركوس تشن</h4>
+                            <p class="font-display-ar">فوغ العربية</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        <p class="font-display-ar">"العمل مع أميرة في جلسة التصوير التحريرية كان درسًا رئيسيًا في الفن. قدرتها على خلق مظاهر تروي قصصًا من خلال المكياب رائعة حقًا."</p>
+                    </div>
+                    <div class="service-badge">
+                        <i class="fas fa-camera"></i>
+                        <span class="font-display-ar">فن التحرير</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('../images/client-3.jpg');"></div>
+                        <div class="client-details">
+                            <h4 class="font-display-ar">ليلى حسن</h4>
+                            <p class="font-display-ar">سفيرة ثقافية</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        <p class="font-display-ar">"كشخص يقدر التراث والتقاليد، كنت مندهشة من كيف كرّمت أميرة العناصر الثقافية أثناء إنشاء مظهر معاصر يشعر بأنه أنا الحقيقية."</p>
+                    </div>
+                    <div class="service-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span class="font-display-ar">درس رئيسي</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="services-cta">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title font-display-ar">مستعدة لبدء رحلتك الجمالية؟</h2>
+                <p class="cta-description font-display-ar">كل خدمة هي أكثر من مجرد مكياج - إنها تجربة مصممة للاحتفال بجمالك الفريد مع تكريم قرون من التقاليد الفنية.</p>
+                
+                <div class="cta-buttons">
+                    <a href="index_ar.html#contact" class="cta-btn-primary">
+                        <span class="font-display-ar">احجز استشارتك</span>
+                        <i class="fas fa-calendar-check"></i>
+                    </a>
+                    <a href="index_ar.html" class="cta-btn-secondary">
+                        <span class="font-display-ar">العودة للرئيسية</span>
+                        <i class="fas fa-home"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="cta-decoration">
+                <div class="decor-element de1"></div>
+                <div class="decor-element de2"></div>
+                <div class="decor-element de3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
+            <!-- Footer Logo -->
+            <div class="footer-logo">
+                <div class="footer-symbol">أ</div>
+                <div class="footer-brand">
+                    <div class="footer-name">أميرة</div>
+                    <div class="footer-tagline font-display-ar">فن مكياج الكوتور الشرقي</div>
+                </div>
+            </div>
+            
+            <!-- Footer Navigation -->
+            <div class="footer-nav">
+                <div class="nav-column">
+                    <h4 class="nav-title font-display-ar">التنقل</h4>
+                    <a href="index_ar.html" class="footer-link font-display-ar">الرئيسية</a>
+                    <a href="index_ar.html#about" class="footer-link font-display-ar">فلسفتي</a>
+                    <a href="services_ar.html" class="footer-link font-display-ar">الخدمات</a>
+                    <a href="index_ar.html#portfolio" class="footer-link font-display-ar">الأعمال</a>
+                    <a href="index_ar.html#contact" class="footer-link font-display-ar">اتصل بي</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title font-display-ar">الخدمات</h4>
+                    <a href="services_ar.html#bridal" class="footer-link font-display-ar">كوتور العروس</a>
+                    <a href="services_ar.html#editorial" class="footer-link font-display-ar">فن التحرير</a>
+                    <a href="services_ar.html#events" class="footer-link font-display-ar">مناسبات خاصة</a>
+                    <a href="services_ar.html#masterclass" class="footer-link font-display-ar">دروس رئيسية</a>
+                    <a href="services_ar.html#consultation" class="footer-link font-display-ar">استشارات</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title font-display-ar">تواصل معي</h4>
+                    <a href="#" class="footer-link font-display-ar">إنستغرام</a>
+                    <a href="#" class="footer-link font-display-ar">بينتيريست</a>
+                    <a href="#" class="footer-link font-display-ar">بيهانس</a>
+                    <a href="#" class="footer-link font-display-ar">فوغ العربية</a>
+                </div>
+            </div>
+            
+            <!-- Footer Newsletter -->
+            <div class="footer-newsletter">
+                <h4 class="newsletter-title font-display-ar">انضم إلى عالمي</h4>
+                <p class="newsletter-text font-display-ar">احصل على رؤى جمالية حصرية ووصول مبكر إلى الدروس الرئيسية.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="عنوان بريدك الإلكتروني" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © ٢٠٢٦ أوليكساندرا زدورونوك. جميع الحقوق محفوظة.
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-bottom-link font-display-ar">سياسة الخصوصية</a>
+                    <a href="#" class="footer-bottom-link font-display-ar">شروط الخدمة</a>
+                    <a href="#" class="footer-bottom-link font-display-ar">سياسة الكوكيز</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    
+    
+    <!-- Services JS adapted for Arabic -->
+    <script src="js/services-ar.js"></script>
+    
+</body>
+</html>

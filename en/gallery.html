@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | AMIRA - Eastern Couture Makeup Artistry</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Gallery CSS -->
+    <link rel="stylesheet" href="css/gallery.css">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    
+    
+    <style>
+        /* Quick CSS for preloader */
+        .no-js .hero-title span { opacity: 1 !important; }
+        body.loaded .loading-screen {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== PRELOADER ===== -->
+    <div class="loading-screen">
+        <!-- Animated Background -->
+        <div class="loading-bg">
+            <div class="bg-glow"></div>
+            <div class="bg-pattern"></div>
+        </div>
+        
+        <!-- Logo Animation -->
+        <div class="loading-logo">
+            <div class="logo-circle">
+                <div class="circle-border">
+                    <div class="circle-spin"></div>
+                </div>
+                <div class="logo-letter">A</div>
+                <div class="logo-glow"></div>
+            </div>
+        </div>
+        
+        <!-- Progress -->
+        <div class="loading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill">
+                    <div class="progress-shine"></div>
+                </div>
+            </div>
+            <div class="progress-text">
+                <span class="percentage">0%</span>
+                <span class="loading-message">Loading Portfolio Gallery</span>
+            </div>
+        </div>
+        
+        <!-- Quote -->
+        <div class="loading-quote">
+            <div class="quote-line"></div>
+            <div class="quote-content">
+                <p>"Beauty is not in the face; beauty is a light in the heart"</p>
+                <span class="quote-author">— Kahlil Gibran</span>
+            </div>
+            <div class="quote-line"></div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="loading-decor">
+            <div class="decor-element de1"></div>
+            <div class="decor-element de2"></div>
+            <div class="decor-element de3"></div>
+            <div class="decor-element de4"></div>
+            <div class="decor-element de5"></div>
+            <div class="decor-line dl1"></div>
+            <div class="decor-line dl2"></div>
+        </div>
+    </div>
+
+    <!-- ===== ANIMATED BACKGROUND ===== -->
+    <div class="animated-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div class="cursor">
+        <div class="cursor-inner"></div>
+        <div class="cursor-outer"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="luxury-nav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <div class="brand-symbol">A</div>
+                    <div class="brand-name">MIRA</div>
+                </a>
+            </div>
+            
+            <!-- Menu -->
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">
+                    <span class="link-number">01</span>
+                    <span class="link-text">Home</span>
+                </a>
+                <a href="index.html#about" class="nav-link">
+                    <span class="link-number">02</span>
+                    <span class="link-text">Philosophy</span>
+                </a>
+                <a href="services.html" class="nav-link">
+                    <span class="link-number">03</span>
+                    <span class="link-text">Services</span>
+                </a>
+                <a href="#hero" class="nav-link active">
+                    <span class="link-number">04</span>
+                    <span class="link-text">Portfolio</span>
+                </a>
+                <a href="index.html#contact" class="nav-link">
+                    <span class="link-number">05</span>
+                    <span class="link-text">Contact</span>
+                </a>
+            </div>
+            
+            <!-- Right Side: Language Selector + CTA -->
+            <div class="nav-right">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="lang-btn" id="langToggle">
+                        <span class="lang-code">EN</span>
+                        <i class="fas fa-chevron-down lang-arrow"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="sv">Svenska</button>
+                        <button class="lang-option" data-lang="ar">العربية</button>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="nav-actions">
+                    <a href="index.html#contact" class="cta-btn">
+                        <span class="btn-text">Book Now</span>
+                        <div class="btn-icon">
+                            <i class="fas fa-sparkle"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="mobileToggle">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="gallery-hero">
+        <div class="section-container">
+            <div class="gallery-header">
+                <div class="section-number">04</div>
+                <h1 class="section-title">Portfolio Gallery</h1>
+                <div class="section-subtitle">A Visual Journey Through Artistry</div>
+                
+                <div class="gallery-intro">
+                    <p>Explore the complete collection of transformative makeup artistry. Each image tells a story of beauty, tradition, and innovation—capturing moments where Eastern heritage meets contemporary elegance.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Background -->
+        <div class="gallery-hero-bg">
+            <div class="bg-gradient"></div>
+            <div class="bg-pattern"></div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY FILTER ===== -->
+    <section class="gallery-filter-section">
+        <div class="section-container">
+            <div class="filter-nav">
+                <button class="filter-nav-btn active" data-filter="all">
+                    <span class="filter-icon"><i class="fas fa-star"></i></span>
+                    <span class="filter-text">All Works</span>
+                </button>
+                
+                <button class="filter-nav-btn" data-filter="bridal">
+                    <span class="filter-icon"><i class="fas fa-heart"></i></span>
+                    <span class="filter-text">Bridal</span>
+                </button>
+                
+                <button class="filter-nav-btn" data-filter="editorial">
+                    <span class="filter-icon"><i class="fas fa-camera"></i></span>
+                    <span class="filter-text">Editorial</span>
+                </button>
+                
+                <button class="filter-nav-btn" data-filter="traditional">
+                    <span class="filter-icon"><i class="fas fa-hands-praying"></i></span>
+                    <span class="filter-text">Traditional</span>
+                </button>
+                
+                <button class="filter-nav-btn" data-filter="events">
+                    <span class="filter-icon"><i class="fas fa-glass-cheers"></i></span>
+                    <span class="filter-text">Events</span>
+                </button>
+                
+                <button class="filter-nav-btn" data-filter="special">
+                    <span class="filter-icon"><i class="fas fa-gem"></i></span>
+                    <span class="filter-text">Special Effects</span>
+                </button>
+            </div>
+            
+            <!-- Sort Options -->
+            <div class="sort-options">
+                <div class="sort-label">Sort by:</div>
+                <select class="sort-select" id="sortSelect">
+                    <option value="date-desc">Most Recent</option>
+                    <option value="date-asc">Oldest First</option>
+                    <option value="category">Category</option>
+                    <option value="featured">Featured</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAIN GALLERY GRID ===== -->
+    <section class="gallery-grid-section">
+        <div class="section-container">
+            <!-- Gallery Counter -->
+            <div class="gallery-counter">
+                <div class="counter-item">
+                    <span class="counter-number" id="totalImages">24</span>
+                    <span class="counter-label">Total Works</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="filteredImages">24</span>
+                    <span class="counter-label">Displaying</span>
+                </div>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery Item 1 - Bridal -->
+                <div class="gallery-item" data-category="bridal" data-date="2024-03-15" data-featured="true">
+                    <div class="gallery-image">
+                        <img src="../images/bridal-1.jpg" alt="Enchanted Bride - Traditional Arabic Wedding" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Enchanted Bride</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Bridal</span>
+                                    <span class="image-date">March 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="0">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 - Editorial -->
+                <div class="gallery-item" data-category="editorial" data-date="2024-02-28" data-featured="true">
+                    <div class="gallery-image">
+                        <img src="../images/editorial-1.jpg" alt="Gilded Editorial - Vogue Arabia" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Gilded Editorial</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Editorial</span>
+                                    <span class="image-date">February 2024</span>
+                                </div>
+                                <button class="view-btn" data-index="1">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 - Traditional -->
+                <div class="gallery-item" data-category="traditional" data-date="2024-01-20">
+                    <div class="gallery-image">
+                        <img src="../images/traditional-1.jpg" alt="Henna Celebration - Pre-Wedding Ceremony" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Henna Celebration</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Traditional</span>
+                                    <span class="image-date">January 2024</span>
+                                </div>
+                                <button class="view-btn" data-index="2">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 - Events -->
+                <div class="gallery-item" data-category="events" data-date="2023-12-10">
+                    <div class="gallery-image">
+                        <img src="../images/event-1.jpg" alt="Red Carpet Glam - Dubai Film Festival" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Red Carpet Glam</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Events</span>
+                                    <span class="image-date">December 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="3">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 - Bridal -->
+                <div class="gallery-item" data-category="bridal" data-date="2023-11-05" data-featured="true">
+                    <div class="gallery-image">
+                        <img src="../images/bridal-2.jpg" alt="Modern Royalty - Contemporary Bridal Look" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Modern Royalty</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Bridal</span>
+                                    <span class="image-date">November 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="4">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 - Editorial -->
+                <div class="gallery-item" data-category="editorial" data-date="2023-10-18">
+                    <div class="gallery-image">
+                        <img src="../images/editorial-2.jpg" alt="Desert Bloom - Fashion Campaign" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Desert Bloom</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Editorial</span>
+                                    <span class="image-date">October 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="5">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 7 - Special -->
+                <div class="gallery-item" data-category="special" data-date="2023-09-22">
+                    <div class="gallery-image">
+                        <img src="../images/special-1.jpg" alt="Metallic Fantasy - Creative Makeup Art" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Metallic Fantasy</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Special Effects</span>
+                                    <span class="image-date">September 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="6">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 8 - Traditional -->
+                <div class="gallery-item" data-category="traditional" data-date="2023-08-14">
+                    <div class="gallery-image">
+                        <img src="../images/traditional-2.jpg" alt="Oasis Beauty - Desert Inspired Look" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Oasis Beauty</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Traditional</span>
+                                    <span class="image-date">August 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="7">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 9 - Events -->
+                <div class="gallery-item" data-category="events" data-date="2023-07-30">
+                    <div class="gallery-image">
+                        <img src="../images/event-2.jpg" alt="Gala Night - Luxury Event Makeup" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Gala Night</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Events</span>
+                                    <span class="image-date">July 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="8">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 10 - Bridal -->
+                <div class="gallery-item" data-category="bridal" data-date="2023-06-12">
+                    <div class="gallery-image">
+                        <img src="../images/bridal-3.jpg" alt="Golden Bride - Royal Wedding Makeup" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Golden Bride</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Bridal</span>
+                                    <span class="image-date">June 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="9">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 11 - Editorial -->
+                <div class="gallery-item" data-category="editorial" data-date="2023-05-05">
+                    <div class="gallery-image">
+                        <img src="../images/editorial-3.jpg" alt="Urban Oasis - City Inspired Editorial" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Urban Oasis</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Editorial</span>
+                                    <span class="image-date">May 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="10">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 12 - Special -->
+                <div class="gallery-item" data-category="special" data-date="2023-04-18">
+                    <div class="gallery-image">
+                        <img src="../images/special-2.jpg" alt="Crystal Dreams - Fantasy Makeup" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Crystal Dreams</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Special Effects</span>
+                                    <span class="image-date">April 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="11">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 13 - Traditional -->
+                <div class="gallery-item" data-category="traditional" data-date="2023-03-22">
+                    <div class="gallery-image">
+                        <img src="../images/traditional-3.jpg" alt="Bedouin Queen - Desert Beauty" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Bedouin Queen</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Traditional</span>
+                                    <span class="image-date">March 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="12">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 14 - Events -->
+                <div class="gallery-item" data-category="events" data-date="2023-02-14">
+                    <div class="gallery-image">
+                        <img src="../images/event-3.jpg" alt="Valentine's Elegance - Special Event" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Valentine's Elegance</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Events</span>
+                                    <span class="image-date">February 2024</span>
+                                </div>
+                                <button class="view-btn" data-index="13">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 15 - Bridal -->
+                <div class="gallery-item" data-category="bridal" data-date="2023-01-08">
+                    <div class="gallery-image">
+                        <img src="../images/bridal-4.jpg" alt="Winter Bride - Seasonal Bridal Look" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Winter Bride</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Bridal</span>
+                                    <span class="image-date">January 2026</span>
+                                </div>
+                                <button class="view-btn" data-index="14">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 16 - Editorial -->
+                <div class="gallery-item" data-category="editorial" data-date="2022-12-01">
+                    <div class="gallery-image">
+                        <img src="../images/editorial-4.jpg" alt="Frosted Elegance - Winter Editorial" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Frosted Elegance</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Editorial</span>
+                                    <span class="image-date">December 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="15">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 17 - Special -->
+                <div class="gallery-item" data-category="special" data-date="2022-11-15">
+                    <div class="gallery-image">
+                        <img src="../images/special-3.jpg" alt="Galactic Queen - Cosmic Makeup" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Galactic Queen</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Special Effects</span>
+                                    <span class="image-date">November 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="16">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 18 - Traditional -->
+                <div class="gallery-item" data-category="traditional" data-date="2022-10-20">
+                    <div class="gallery-image">
+                        <img src="../images/traditional-4.jpg" alt="Arabian Nights - Classic Look" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Arabian Nights</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Traditional</span>
+                                    <span class="image-date">October 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="17">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 19 - Events -->
+                <div class="gallery-item" data-category="events" data-date="2022-09-05">
+                    <div class="gallery-image">
+                        <img src="../images/event-4.jpg" alt="Sunset Soiree - Evening Event" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Sunset Soiree</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Events</span>
+                                    <span class="image-date">September 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="18">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 20 - Bridal -->
+                <div class="gallery-item" data-category="bridal" data-date="2022-08-18">
+                    <div class="gallery-image">
+                        <img src="../images/bridal-5.jpg" alt="Desert Rose - Outdoor Wedding" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Desert Rose</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Bridal</span>
+                                    <span class="image-date">August 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="19">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 21 - Editorial -->
+                <div class="gallery-item" data-category="editorial" data-date="2022-07-12">
+                    <div class="gallery-image">
+                        <img src="../images/editorial-5.jpg" alt="Golden Hour - Summer Editorial" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Golden Hour</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Editorial</span>
+                                    <span class="image-date">July 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="20">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 22 - Special -->
+                <div class="gallery-item" data-category="special" data-date="2022-06-25">
+                    <div class="gallery-image">
+                        <img src="../images/special-4.jpg" alt="Ocean Goddess - Water Inspired" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Ocean Goddess</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Special Effects</span>
+                                    <span class="image-date">June 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="21">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 23 - Traditional -->
+                <div class="gallery-item" data-category="traditional" data-date="2022-05-30">
+                    <div class="gallery-image">
+                        <img src="../images/traditional-5.jpg" alt="Moroccan Queen - Cultural Look" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Moroccan Queen</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Traditional</span>
+                                    <span class="image-date">May 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="22">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 24 - Events -->
+                <div class="gallery-item" data-category="events" data-date="2022-04-15">
+                    <div class="gallery-image">
+                        <img src="../images/event-5.jpg" alt="Spring Gala - Seasonal Event" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Spring Gala</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Events</span>
+                                    <span class="image-date">April 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="23">
+                                    <i class="fas fa-expand"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="load-more-container" id="loadMoreContainer">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    <span>Load More Works</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORY SHOWCASE ===== -->
+    <section class="category-showcase">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-number">04.1</div>
+                <h2 class="section-title">Explore by Category</h2>
+                <div class="section-subtitle">Specialized Artistry Collections</div>
+            </div>
+            
+            <div class="category-grid">
+                <!-- Bridal Category -->
+                <div class="category-card" data-category="bridal">
+                    <div class="category-image">
+                        <div class="image-wrapper" style="background-image: url('../images/bridal-showcase.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="category-label">
+                                <span class="label-text">Bridal Couture</span>
+                                <span class="label-count">5 Collections</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Bridal Transformations</h3>
+                        <p class="category-description">Complete bridal journeys from traditional ceremonies to modern celebrations.</p>
+                        <a href="#bridal-gallery" class="category-link">
+                            <span>View Bridal Gallery</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Editorial Category -->
+                <div class="category-card" data-category="editorial">
+                    <div class="category-image">
+                        <div class="image-wrapper" style="background-image: url('../images/editorial-showcase.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="category-label">
+                                <span class="label-text">Editorial</span>
+                                <span class="label-count">5 Collections</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Fashion & Editorial</h3>
+                        <p class="category-description">High-fashion makeup for magazines, runway shows, and creative projects.</p>
+                        <a href="#editorial-gallery" class="category-link">
+                            <span>View Editorial Gallery</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Traditional Category -->
+                <div class="category-card" data-category="traditional">
+                    <div class="category-image">
+                        <div class="image-wrapper" style="background-image: url('../images/traditional-showcase.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="category-label">
+                                <span class="label-text">Traditional</span>
+                                <span class="label-count">5 Collections</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Cultural Heritage</h3>
+                        <p class="category-description">Traditional Eastern techniques and cultural celebration makeup.</p>
+                        <a href="#traditional-gallery" class="category-link">
+                            <span>View Traditional Gallery</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATISTICS SECTION ===== -->
+    <section class="gallery-stats">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Transformations</div>
+                    <div class="stat-description">Beautiful clients transformed</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                    <div class="stat-description">Mastering Eastern techniques</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Featured Works</div>
+                    <div class="stat-description">In this gallery collection</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Categories</div>
+                    <div class="stat-description">Specialized makeup artistry</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="gallery-cta">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Inspired by What You See?</h2>
+                <p class="cta-description">Let's create your own masterpiece. Book a consultation to discuss your vision and begin your transformation journey.</p>
+                
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="cta-btn-primary">
+                        <span>Book Your Consultation</span>
+                        <i class="fas fa-calendar-check"></i>
+                    </a>
+                    <a href="services.html" class="cta-btn-secondary">
+                        <span>Explore Services</span>
+                        <i class="fas fa-sparkles"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="cta-decoration">
+                <div class="decor-element de1"></div>
+                <div class="decor-element de2"></div>
+                <div class="decor-element de3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
+            <!-- Footer Logo -->
+            <div class="footer-logo">
+                <div class="footer-symbol">A</div>
+                <div class="footer-brand">
+                    <div class="footer-name">AMIRA</div>
+                    <div class="footer-tagline">Eastern Couture Makeup Artistry</div>
+                </div>
+            </div>
+            
+            <!-- Footer Navigation -->
+            <div class="footer-nav">
+                <div class="nav-column">
+                    <h4 class="nav-title">Navigation</h4>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="index.html#about" class="footer-link">My Philosophy</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="gallery.html" class="footer-link">Gallery</a>
+                    <a href="index.html#contact" class="footer-link">Contact</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Gallery</h4>
+                    <a href="#bridal" class="footer-link">Bridal Collections</a>
+                    <a href="#editorial" class="footer-link">Editorial Artistry</a>
+                    <a href="#traditional" class="footer-link">Traditional Looks</a>
+                    <a href="#events" class="footer-link">Event Makeup</a>
+                    <a href="#special" class="footer-link">Special Effects</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Connect</h4>
+                    <a href="#" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">Pinterest</a>
+                    <a href="#" class="footer-link">Behance</a>
+                    <a href="#" class="footer-link">Vogue Arabia</a>
+                </div>
+            </div>
+            
+            <!-- Footer Newsletter -->
+            <div class="footer-newsletter">
+                <h4 class="newsletter-title">Behind the Scenes</h4>
+                <p class="newsletter-text">Receive exclusive access to studio sessions and new portfolio additions.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2026 Oleksandra Zdoronok. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Service</a>
+                    <a href="#" class="footer-bottom-link">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL OVERLAY ===== -->
+    <div class="modal-overlay" id="galleryModal">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close modal"></button>
+            
+            <div class="modal-progress">
+                <div class="progress-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- LEFT PART: IMAGE -->
+            <div class="modal-gallery">
+                <div class="modal-image-wrapper">
+                    <img class="modal-image" src="" alt="">
+                    <div class="modal-loading">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-nav">
+                    <button class="modal-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="modal-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="modal-counter">
+                    <span class="current-index">1</span> / <span class="total-images">24</span>
+                </div>
+            </div>
+            
+            <!-- RIGHT PART: DESCRIPTION -->
+            <div class="modal-sidebar">
+                <div class="modal-header">
+                    <h3 class="modal-title">Portfolio Image</h3>
+                    <p class="modal-category">Category</p>
+                </div>
+                
+                <div class="modal-description">
+                    <p>Loading description...</p>
+                </div>
+                
+                <div class="modal-meta">
+                    <div class="meta-grid">
+                        <div class="meta-item">
+                            <div class="meta-label">Client</div>
+                            <div class="meta-value">Amira Studio</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Date</div>
+                            <div class="meta-value">2024</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Location</div>
+                            <div class="meta-value">Dubai, UAE</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Service</div>
+                            <div class="meta-value">Makeup Artistry</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-tech">
+                    <span class="tech-tag">Traditional</span>
+                    <span class="tech-tag">Gold Accents</span>
+                    <span class="tech-tag">Hand-painted</span>
+                    <span class="tech-tag">Luxury</span>
+                </div>
+            </div>
+            
+            <div class="modal-hint">
+                <span class="hint-key">ESC</span> to close • 
+                <span class="hint-key">←</span> 
+                <span class="hint-key">→</span> to navigate
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    
+    
+    <!-- Gallery JS -->
+    <script src="js/gallery.js"></script>
+</body>
+</html>

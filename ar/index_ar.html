@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أميرة | فن مكياج الكوتور الشرقي</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../en/css/style.css">
+    
+    <!-- RTL Adjustments -->
+    <link rel="stylesheet" href="css/rtl.css">
+    
+   <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* Quick CSS for preloader */
+        .no-js .hero-title span { opacity: 1 !important; }
+        body.loaded .loading-screen {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        
+        /* Arabic typography */
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .font-serif-ar {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .font-display-ar {
+            font-family: 'El Messiri', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== PRELOADER ===== -->
+    <div class="loading-screen">
+        <div class="loading-bg">
+            <div class="bg-glow"></div>
+            <div class="bg-pattern"></div>
+        </div>
+        
+        <div class="loading-logo">
+            <div class="logo-circle">
+                <div class="circle-border">
+                    <div class="circle-spin"></div>
+                </div>
+                <div class="logo-letter">أ</div>
+                <div class="logo-glow"></div>
+            </div>
+        </div>
+        
+        <div class="loading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill">
+                    <div class="progress-shine"></div>
+                </div>
+            </div>
+            <div class="progress-text">
+                <span class="percentage">0%</span>
+                <span class="loading-message">جاري تحميل التجربة الفاخرة</span>
+            </div>
+        </div>
+        
+        <div class="loading-quote">
+            <div class="quote-line"></div>
+            <div class="quote-content">
+                <p class="font-serif-ar">"الجمال الحقيقي يبدأ عندما تقرر أن تكون نفسك"</p>
+                <span class="quote-author">— كوكو شانيل</span>
+            </div>
+            <div class="quote-line"></div>
+        </div>
+        
+        <div class="loading-decor">
+            <div class="decor-element de1"></div>
+            <div class="decor-element de2"></div>
+            <div class="decor-element de3"></div>
+            <div class="decor-element de4"></div>
+            <div class="decor-element de5"></div>
+            <div class="decor-line dl1"></div>
+            <div class="decor-line dl2"></div>
+        </div>
+    </div>
+
+    <!-- ===== ANIMATED BACKGROUND ===== -->
+    <div class="animated-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div class="cursor">
+        <div class="cursor-inner"></div>
+        <div class="cursor-outer"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="luxury-nav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-brand">
+                <a href="#hero" class="brand-link">
+                    <div class="brand-symbol">أ</div>
+                    <div class="brand-name">ميرة</div>
+                </a>
+            </div>
+            
+            <!-- Menu -->
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link active">
+                    <span class="link-number">٠١</span>
+                    <span class="link-text">الرئيسية</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <span class="link-number">٠٢</span>
+                    <span class="link-text">فلسفتي</span>
+                </a>
+                <a href="#services" class="nav-link">
+                    <span class="link-number">٠٣</span>
+                    <span class="link-text">الخدمات</span>
+                </a>
+                <a href="#portfolio" class="nav-link">
+                    <span class="link-number">٠٤</span>
+                    <span class="link-text">الأعمال</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="link-number">٠٥</span>
+                    <span class="link-text">اتصل بي</span>
+                </a>
+            </div>
+            
+            <!-- Right Side: Language Selector + CTA -->
+            <div class="nav-right">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="lang-btn" id="langToggle">
+                        <span class="lang-code">AR</span>
+                        <i class="fas fa-chevron-down lang-arrow"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="ar">العربية</button>
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="sv">Svenska</button>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="nav-actions">
+                    <a href="#contact" class="cta-btn">
+                        <span class="btn-text">احجز الآن</span>
+                        <div class="btn-icon">
+                            <i class="fas fa-sparkle"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="mobileToggle">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <!-- Text Part Right -->
+            <div class="hero-content">
+                <div class="hero-main">
+                    <div class="hero-tagline">
+                        <span class="tagline-text">فن مكياج الكوتور الشرقي</span>
+                        <div class="tagline-line"></div>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-line font-display-ar">حيث تلتقي الأصالة</span>
+                        <span class="title-line font-display-ar">والابتكار لخلق</span>
+                        <span class="title-line accent font-display-ar">جمال خالد</span>
+                    </h1>
+                    
+                    <p class="hero-description font-display-ar">
+                        نربط بين التقنيات الشرقية القديمة والرفاهية المعاصرة لتقديم تجربة جمالية فريدة.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#contact" class="hero-btn btn-primary">
+                            <span>ابدأ رحلتك</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <a href="#portfolio" class="hero-btn btn-secondary">
+                            <span>شاهد الأعمال</span>
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator">
+                    <div class="indicator-dot"></div>
+                    <span>انتقل لاكتشاف المزيد</span>
+                </div>
+            </div>
+            
+            <!-- Image Part Left -->
+            <div class="hero-image">
+                <div class="image-container">
+                    <div class="main-image" style="background-image: url('../images/hero-1.jpg');">
+                        <div class="image-overlay"></div>
+                    </div>
+                    
+                    <div class="image-decoration deco-1"></div>
+                    <div class="image-decoration deco-2"></div>
+                    <div class="image-decoration deco-3"></div>
+                    
+                    <div class="floating-element fe-1">
+                        <i class="fas fa-sparkle"></i>
+                    </div>
+                    <div class="floating-element fe-2">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="floating-element fe-3">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PHILOSOPHY SECTION ===== -->
+    <section id="about" class="philosophy-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-number">٠٢</div>
+                <h2 class="section-title font-display-ar">فلسفتي</h2>
+                <div class="section-subtitle font-display-ar">فن الجمال الخالد</div>
+            </div>
+            
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <div class="philosophy-quote">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="quote-text font-serif-ar">
+                            "الجمال الحقيقي لا يكمن في الكمال، بل في الانسجام بين الأصالة والابتكار."
+                        </p>
+                        <div class="quote-author font-display-ar">— أميرة</div>
+                    </div>
+                    
+                    <div class="philosophy-description">
+                        <p class="font-display-ar">
+                            كمصففة شعر ومكياج، أؤمن بأن المكياج ليس مجرد تحسين للمظهر - بل هو شكل من أشكال الفن الذي يحتفل بالتراث مع احتضان الحداثة.
+                            فلسفتي متجذرة في التقاليد الغنية لطقوس الجمال الشرقية، مع إعادة تصورها من خلال منظور معاصر.
+                        </p>
+                        
+                        <p class="font-display-ar">
+                            كل عمل فني هو توازن دقيق بين التقنيات القديمة والرفاهية الحديثة، مصمم لإبراز جوهرك الفريد بدلاً من إخفائه.
+                            لا أضع المكياج فحسب - بل أصنع تجارب تجعلك تشعرين بأنك مرئية، مفهومة، ومحتفى بك.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <div class="card-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-hand-sparkles"></i>
+                            </div>
+                        </div>
+                        <h3 class="card-title font-display-ar">الحرفية اليدوية</h3>
+                        <p class="card-text font-display-ar">
+                            كل ضربة مقصودة، كل تفصيل مصنوع يدويًا بعناية ودقة تأتي من سنوات من الممارسة المتفانية.
+                        </p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="card-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        <h3 class="card-title font-display-ar">الارتباط الشخصي</h3>
+                        <p class="card-text font-display-ar">
+                            أستمع، أفهم، وأبتكر مظاهر تحتفل بتفردك وقصتك. رحلتك الجمالية شخصية، وكذلك نهجي.
+                        </p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="card-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                        </div>
+                        <h3 class="card-title font-display-ar">التراث المعاد تصوره</h3>
+                        <p class="card-text font-display-ar">
+                            التقنيات الشرقية التقليدية تلتقي بالرفاهية الحديثة - لخلق مظاهر تكرم الماضي مع احتضان مستقبل الجمال.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="philosophy-decoration">
+                    <div class="deco-line dl-1"></div>
+                    <div class="deco-dot dd-1"></div>
+                    <div class="deco-dot dd-2"></div>
+                    <div class="deco-dot dd-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES PREVIEW SECTION ===== -->
+    <section class="services-preview">
+        <div class="section-container">
+            <div class="preview-header">
+                <div class="section-number">٠٣</div>
+                <h2 class="section-title font-display-ar">الخدمات المميزة</h2>
+                <div class="section-subtitle font-display-ar">تجارب جمالية راقية</div>
+            </div>
+            
+            <div class="services-slider">
+                <!-- Service 1 -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <div class="image-wrapper" style="background-image: url('../images/bridal.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="service-number">٠١</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title font-display-ar">كوتور العروس</h3>
+                        <p class="service-description font-display-ar">
+                            تحول كامل لعروس مع تصاميم مستوحاة من الحنة التقليدية وأناقة معاصرة.
+                        </p>
+                        <a href="#services" class="service-link">
+                            <span>استكشف الخدمة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <div class="image-wrapper" style="background-image: url('../images/editorial-artistry.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="service-number">٠٢</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title font-display-ar">فن التحرير</h3>
+                        <p class="service-description font-display-ar">
+                            مكياج أزياء راقٍ لجلسات التصوير، عروض الأزياء، والفعاليات الحمراء بلمسة فنية.
+                        </p>
+                        <a href="#services" class="service-link">
+                            <span>استكشف الخدمة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <div class="image-wrapper" style="background-image: url('../images/master-class.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="service-number">٠٣</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title font-display-ar">فصول رئيسية</h3>
+                        <p class="service-description font-display-ar">
+                            تعلم التقنيات الشرقية التقليدية المدمجة مع طرق التطبيق المعاصرة.
+                        </p>
+                        <a href="#services" class="service-link">
+                            <span>استكشف الخدمة</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview-footer">
+                <a href="services_ar.html" class="view-all-btn">
+                    <span>عرض جميع الخدمات</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO SECTION ===== -->
+<section id="portfolio" class="portfolio-section">
+    <div class="section-container">
+        <div class="section-header">
+            <div class="section-number">٠٤</div>
+            <h2 class="section-title font-display-ar">الأعمال</h2>
+            <div class="section-subtitle font-display-ar">لمحة عن فني</div>
+        </div>
+        
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">جميع الأعمال</button>
+            <button class="filter-btn" data-filter="bridal">عرائس</button>
+            <button class="filter-btn" data-filter="editorial">تحريرية</button>
+            <button class="filter-btn" data-filter="events">فعاليات</button>
+            <button class="filter-btn" data-filter="traditional">تقليدية</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <!-- Portfolio Item 1 -->
+            <div class="portfolio-item" data-category="bridal" data-description="مكياج عروس فاخر مع لمسات ذهبية وأنماط عربية رقيقة. تم إنشاؤه لحفل زفاف شرقي تقليدي، يتميز هذا المظهر بزخارف مرسومة يدويًا وتفاصيل أوراق ذهب 24 قيراطًا تلتقط جوهر الفخامة والتقليد. أرادت العروس مظهرًا يكرم تراثها مع شعور معاصر وأنيق.">
+                <div class="portfolio-image">
+                    <img src="../images/bridal-1.jpg" alt="مكياج عروس ساحر" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <div class="overlay-content">
+                            <h3 class="portfolio-title font-display-ar">عروس ساحرة</h3>
+                            <p class="portfolio-category font-display-ar">كوتور العروس</p>
+                            <button class="view-project-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 2 -->
+            <div class="portfolio-item" data-category="editorial" data-description="جلسة تصوير تحريرية لفوغ العربية تتميز بلمسات مذهبة وأنماط هندسية جريئة. تم إلهام هذا المظهر بالفن والعمارة الإسلامية التقليدية، مع إعادة تصوره للأزياء العصرية. تلتقط العناصر المعدنية الضوء بشكل جميل، مما يخلق تأثيرًا ساحرًا يظهر بشكل استثنائي في الصور.">
+                <div class="portfolio-image">
+                    <img src="../images/editorial-1.jpg" alt="مكياج تحريري مذهب" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <div class="overlay-content">
+                            <h3 class="portfolio-title font-display-ar">تحريري مذهب</h3>
+                            <p class="portfolio-category font-display-ar">مجلة أزياء</p>
+                            <button class="view-project-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 3 -->
+            <div class="portfolio-item" data-category="traditional" data-description="مكياج احتفال حنة تقليدي يجمع بين الألوان الترابية الطبيعية والأنماط الرمزية. تم إنشاؤه لحفل حنة ما قبل الزفاف، يكرم هذا المظهر تقاليد جمال البدو مع الحفاظ على شعور ناعم ورومانسي. تكمل الباليت الترابية تصاميم الحنة بشكل مثالي.">
+                <div class="portfolio-image">
+                    <img src="../images/traditional-1.jpg" alt="مكياج حنة تقليدي" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <div class="overlay-content">
+                            <h3 class="portfolio-title font-display-ar">حنة تقليدية</h3>
+                            <p class="portfolio-category font-display-ar">احتفال تقليدي</p>
+                            <button class="view-project-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 4 -->
+            <div class="portfolio-item" data-category="events" data-description="أناقة السجادة الحمراء لمهرجان دبي السينمائي الدولي. يتميز هذا المظهر المسائي المتطور بعيون مدخنة بلمسات معدنية وميزات محددة بشكل مثالي تتحمل فلاشات الكاميرا والأضواء الساطعة. تم تصميم المظهر ليكون خالدًا مع إحداث تأثير.">
+                <div class="portfolio-image">
+                    <img src="../images/event-1.jpg" alt="مكياج سجادة حمراء" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <div class="overlay-content">
+                            <h3 class="portfolio-title font-display-ar">أناقة السجادة الحمراء</h3>
+                            <p class="portfolio-category font-display-ar">حفل توزيع جوائز</p>
+                            <button class="view-project-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 5 (Added) -->
+            <div class="portfolio-item" data-category="bridal" data-description="مظهر عروس ملكي معاصر يتميز بنظرة معاصرة للعناصر التقليدية. الخطوط النظيفة واللمعان الخفيف يخلقان جمالًا ملكيًا لكن مقبول. كان هذا المظهر مثاليًا لعروس أرادت أن تشعر بأنها ملكية دون أن تكون تقليدية جدًا.">
+                <div class="portfolio-image">
+                    <img src="../images/bridal-2.jpg" alt="مكياج ملكي معاصر" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <div class="overlay-content">
+                            <h3 class="portfolio-title font-display-ar">ملكية معاصرة</h3>
+                            <p class="portfolio-category font-display-ar">كوتور العروس</p>
+                            <button class="view-project-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 6 (Added) -->
+            <div class="portfolio-item" data-category="editorial" data-description="حملة أزياء مستوحاة من أزهار الصحراء وجمال الواحات. يتميز هذا المظهر الأثيري بألوان الباستيل الناعمة الممزوجة بلمسات معدنية، مما يخلق تأثيرًا حالمًا وخياليًا. تم تصميم المكياج لتكمل المجوهرات المعقدة والأقمشة المتدفقة.">
+                <div class="portfolio-image">
+                    <img src="../images/editorial-2.jpg" alt="مكياج أزهار الصحراء" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <div class="overlay-content">
+                            <h3 class="portfolio-title font-display-ar">أزهار الصحراء</h3>
+                            <p class="portfolio-category font-display-ar">حملة أزياء</p>
+                            <button class="view-project-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="portfolio-cta">
+            <p class="cta-text font-display-ar">شاهد معرضي الكامل للتحولات</p>
+            <a href="gallery_ar.html" class="cta-btn">
+                <span>استكشف المحفظة الكاملة</span>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section class="testimonials-section">
+        <div class="section-container">
+            <div class="testimonials-header">
+                <div class="section-number">٠٤.١</div>
+                <h2 class="section-title font-display-ar">قصص العملاء</h2>
+                <div class="section-subtitle font-display-ar">كلمات تلهمني</div>
+            </div>
+            
+            <div class="testimonials-slider">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote-mark">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="testimonial-text font-serif-ar">
+                            "حولت أميرة مظهري في يوم زفافي إلى شيء يفوق أحلامي البريئة.
+                            اهتمامها بالتفاصيل وفهمها للتقنيات التقليدية المدمجة مع الأناقة الحديثة كان استثنائيًا."
+                        </p>
+                        <div class="client-info">
+                            <h4 class="client-name font-display-ar">سارة المنصوري</h4>
+                            <p class="client-details font-display-ar">دبي | عروس دولية</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote-mark">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="testimonial-text font-serif-ar">
+                            "العمل مع أميرة في جلسة التصوير التحريرية كان درسًا رئيسيًا في الفن.
+                            قدرتها على خلق مظاهر تروي قصصًا من خلال المكياج رائعة حقًا."
+                        </p>
+                        <div class="client-info">
+                            <h4 class="client-name font-display-ar">ماركوس تشن</h4>
+                            <p class="client-details font-display-ar">فوغ العربية | المخرج الإبداعي</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <button class="nav-btn prev-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="nav-dots">
+                    <span class="nav-dot active"></span>
+                    <span class="nav-dot"></span>
+                </div>
+                <button class="nav-btn next-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-number">٠٥</div>
+                <h2 class="section-title font-display-ar">ابدأ رحلتك</h2>
+                <div class="section-subtitle font-display-ar">جدول استشارتك</div>
+            </div>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title font-display-ar">البريد الإلكتروني</h3>
+                            <a href="mailto:amira@couture.com" class="info-link">amira@couture.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title font-display-ar">الهاتف</h3>
+                            <a href="tel:+971123456789" class="info-link">٩٨٧ ٦٥٤ ٣٢١ ٩٧١+</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title font-display-ar">الاستوديو</h3>
+                            <p class="info-text font-display-ar">
+                                منطقة دبي للتصميم<br>
+                                المبنى ٧، الاستوديو ٣٠٢<br>
+                                دبي، الإمارات
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title font-display-ar">ساعات العمل</h3>
+                            <p class="info-text font-display-ar">
+                                بالحجز المسبق فقط<br>
+                                الإثنين - السبت: ٩ صباحًا - ٧ مساءً<br>
+                                الأحد: مغلق
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required placeholder="اسمك الكامل *">
+                                <label for="name" class="font-display-ar">الاسم الكامل</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required placeholder="البريد الإلكتروني *">
+                                <label for="email" class="font-display-ar">البريد الإلكتروني</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف">
+                            <label for="phone" class="font-display-ar">رقم الهاتف</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>اختر الخدمة *</option>
+                                <option value="bridal">كوتور العروس</option>
+                                <option value="editorial">فن التحرير</option>
+                                <option value="events">فعاليات خاصة</option>
+                                <option value="masterclass">فصول رئيسية</option>
+                                <option value="consultation">استشارة شخصية</option>
+                            </select>
+                            <label for="service" class="font-display-ar">الخدمة المطلوبة</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="أخبرنا عن رؤيتك..."></textarea>
+                            <label for="message" class="font-display-ar">رسالتك</label>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="submit" class="submit-btn">
+                                <span>إرسال الطلب</span>
+                                <i class="fas fa-paper-plane" style="transform: rotate(180deg) scaleX(-1); display: inline-block;"></i>
+                            </button>
+                            <p class="form-note font-display-ar">سأرد خلال ٢٤ ساعة لتحديد موعد استشارتك</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="footer-symbol">أ</div>
+                <div class="footer-brand">
+                    <div class="footer-name">أميرة</div>
+                    <div class="footer-tagline font-display-ar">فن مكياج الكوتور الشرقي</div>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <div class="nav-column">
+                    <h4 class="nav-title font-display-ar">التنقل</h4>
+                    <a href="#hero" class="footer-link font-display-ar">الرئيسية</a>
+                    <a href="#about" class="footer-link font-display-ar">فلسفتي</a>
+                    <a href="#services" class="footer-link font-display-ar">الخدمات</a>
+                    <a href="#portfolio" class="footer-link font-display-ar">الأعمال</a>
+                    <a href="#contact" class="footer-link font-display-ar">اتصل بي</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title font-display-ar">الخدمات</h4>
+                    <a href="#" class="footer-link font-display-ar">كوتور العروس</a>
+                    <a href="#" class="footer-link font-display-ar">فن التحرير</a>
+                    <a href="#" class="footer-link font-display-ar">فعاليات خاصة</a>
+                    <a href="#" class="footer-link font-display-ar">فصول رئيسية</a>
+                    <a href="#" class="footer-link font-display-ar">استشارات</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title font-display-ar">تواصل معي</h4>
+                    <a href="#" class="footer-link font-display-ar">إنستغرام</a>
+                    <a href="#" class="footer-link font-display-ar">بينتيريست</a>
+                    <a href="#" class="footer-link font-display-ar">بيهانس</a>
+                    <a href="#" class="footer-link font-display-ar">فوغ العربية</a>
+                </div>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h4 class="newsletter-title font-display-ar">انضم إلى عالمي</h4>
+                <p class="newsletter-text font-display-ar">احصل على رؤى جمالية حصرية ووصول مبكر إلى الفصول الرئيسية.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="عنوان بريدك الإلكتروني" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © ٢٠٢٦ أوليكساندرا زدورونوك. جميع الحقوق محفوظة.
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-bottom-link font-display-ar">سياسة الخصوصية</a>
+                    <a href="#" class="footer-bottom-link font-display-ar">شروط الخدمة</a>
+                    <a href="#" class="footer-bottom-link font-display-ar">سياسة الكوكيز</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Main JS -->
+    <script src="js/main-ar.js"></script>
+    
+    
+</body>
+</html>

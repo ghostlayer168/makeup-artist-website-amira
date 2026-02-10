@@ -1,0 +1,18 @@
+
+.cta-btn-primary i.fa-calendar-check,
+.cta-btn-secondary i.fa-home,
+.service-book-btn i.fa-arrow-left,
+.service-view-btn i.fa-images,
+.service-view-btn i.fa-info-circle,
+.service-view-btn i.fa-calendar,
+.faq-cta .cta-btn i.fa-envelope,
+.nav-actions .cta-btn i.fa-sparkle,
+.submit-btn i.fa-paper-plane,
+.hero-btn i,
+.service-link i,
+.view-all-btn i,
+.cta-btn i {
+    transform: scaleX(-1) !important;
+    display: inline-block !important;
+    transform-origin: center !important;
+}

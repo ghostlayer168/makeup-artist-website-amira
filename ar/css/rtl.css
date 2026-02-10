@@ -1,0 +1,314 @@
+/* ===== RTL ADJUSTMENTS ===== */
+
+/* Base RTL */
+html[dir="rtl"] {
+    direction: rtl;
+}
+
+html[dir="rtl"] body {
+    font-family: 'Cairo', sans-serif;
+    text-align: right;
+}
+
+/* Typography Classes for Arabic */
+.font-display-ar {
+    font-family: 'El Messiri', sans-serif;
+}
+
+.font-serif-ar {
+    font-family: 'Noto Naskh Arabic', serif;
+}
+
+/* Layout Adjustments */
+html[dir="rtl"] .hero-container,
+html[dir="rtl"] .philosophy-text,
+html[dir="rtl"] .contact-wrapper,
+html[dir="rtl"] .form-row,
+html[dir="rtl"] .modal-details,
+html[dir="rtl"] .meta-grid {
+    direction: rtl;
+}
+
+/* Navigation */
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .footer-nav {
+    direction: rtl;
+}
+
+html[dir="rtl"] .nav-menu {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+html[dir="rtl"] .nav-right {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+/* Text Alignment */
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .philosophy-quote,
+html[dir="rtl"] .philosophy-description,
+html[dir="rtl"] .service-content,
+html[dir="rtl"] .testimonial-content,
+html[dir="rtl"] .info-content,
+html[dir="rtl"] .form-group,
+html[dir="rtl"] .nav-column,
+html[dir="rtl"] .footer-newsletter {
+    text-align: right;
+}
+
+/* Section Headers */
+html[dir="rtl"] .section-header,
+html[dir="rtl"] .preview-header,
+html[dir="rtl"] .testimonials-header {
+    text-align: center;
+}
+
+/* Borders and Padding */
+html[dir="rtl"] .philosophy-description {
+    border-left: none;
+    border-right: 1px solid rgba(255, 215, 0, 0.2);
+    padding-left: 0;
+    padding-right: var(--space-md);
+}
+
+/* Buttons and Icons */
+html[dir="rtl"] .hero-btn i,
+html[dir="rtl"] .service-link i,
+html[dir="rtl"] .view-all-btn i,
+html[dir="rtl"] .cta-btn i,
+html[dir="rtl"] .submit-btn i,
+html[dir="rtl"] .mobile-cta-btn i {
+    transform: rotate(180deg);
+}
+
+html[dir="rtl"] .service-link:hover i,
+html[dir="rtl"] .view-all-btn:hover i,
+html[dir="rtl"] .cta-btn:hover i,
+html[dir="rtl"] .submit-btn:hover i {
+    transform: rotate(180deg) translateX(-5px);
+}
+
+/* Form Elements */
+html[dir="rtl"] .form-group label {
+    right: 12px;
+    left: auto;
+}
+
+html[dir="rtl"] .form-group select {
+    background-position: left 20px center;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+/* Modal Adjustments */
+html[dir="rtl"] .modal-sidebar {
+    border-left: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Language Selector */
+html[dir="rtl"] .lang-btn {
+    direction: rtl;
+}
+
+/* Numbers and Dates */
+html[dir="rtl"] .link-number,
+html[dir="rtl"] .section-number,
+html[dir="rtl"] .service-number {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Testimonial Navigation */
+html[dir="rtl"] .nav-btn.prev-btn i {
+    transform: rotate(180deg);
+}
+
+html[dir="rtl"] .nav-btn.next-btn i {
+    transform: rotate(180deg);
+}
+
+/* Mobile Menu */
+html[dir="rtl"] .mobile-menu-nav {
+    align-items: flex-end;
+}
+
+html[dir="rtl"] .mobile-nav-link {
+    text-align: right;
+}
+
+html[dir="rtl"] .mobile-nav-link .link-text::after {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+/* Footer */
+html[dir="rtl"] .footer-link:hover {
+    transform: translateX(-5px);
+}
+
+/* Contact Form */
+html[dir="rtl"] .form-footer {
+    flex-direction: row-reverse;
+}
+
+/* Portfolio */
+html[dir="rtl"] .portfolio-filter {
+    justify-content: center;
+}
+
+/* Loading Screen */
+html[dir="rtl"] .loading-quote {
+    direction: rtl;
+}
+
+/* Hero Section Adjustments */
+@media (min-width: 992px) {
+    html[dir="rtl"] .hero-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    html[dir="rtl"] .hero-content {
+        order: 2;
+    }
+    
+    html[dir="rtl"] .hero-image {
+        order: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    html[dir="rtl"] .philosophy-description {
+        border-right: none;
+        border-top: 1px solid rgba(255, 215, 0, 0.2);
+        padding-right: 0;
+        padding-top: var(--space-lg);
+    }
+    
+    html[dir="rtl"] .contact-wrapper {
+        direction: rtl;
+    }
+}
+
+/* Modal for RTL */
+html[dir="rtl"] .modal-container {
+    direction: rtl;
+}
+
+html[dir="rtl"] .modal-sidebar {
+    text-align: right;
+}
+
+html[dir="rtl"] .modal-description p {
+    text-align: right;
+}
+
+html[dir="rtl"] .detail-item {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .modal-meta {
+    text-align: right;
+}
+
+/* Fix for form placeholders in Arabic */
+html[dir="rtl"] ::placeholder {
+    text-align: right;
+    direction: rtl;
+}
+
+/* Fix for select dropdown */
+html[dir="rtl"] select option {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Adjust newsletter form button */
+html[dir="rtl"] .newsletter-form {
+    direction: rtl;
+}
+
+/* Fix for mobile menu close button */
+html[dir="rtl"] .mobile-close-btn {
+    left: 0;
+    right: auto;
+}
+
+/* Adjust language dropdown for RTL */
+html[dir="rtl"] .lang-dropdown {
+    right: auto;
+    left: 0;
+}
+
+/* Fix for portfolio overlay */
+html[dir="rtl"] .overlay-content {
+    text-align: right;
+}
+
+/* Adjust testimonial quote mark */
+html[dir="rtl"] .quote-mark {
+    transform: scaleX(-1);
+}
+html[dir="rtl"] .contact-form .submit-btn i.fa-paper-plane {
+    transform: scaleX(-1) !important;
+    display: inline-block !important;
+}
+.cursor-inner, .cursor-outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    pointer-events: none;
+    
+    transform: translate(-50%, -50%);
+    will-change: transform;
+}
+
+.cursor-inner {
+    width: 8px;
+    height: 8px;
+    background: var(--gold-primary);
+    border-radius: var(--radius-circle);
+    transition: width 0.3s, height 0.3s, opacity 0.3s;
+}
+
+.cursor-outer {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--gold-primary);
+    border-radius: var(--radius-circle);
+    transition: all 0.2s;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .cursor-inner, .cursor-outer {
+        display: none !important;
+    }
+}
+
+a:hover ~ .cursor-outer,
+button:hover ~ .cursor-outer,
+.nav-link:hover ~ .cursor-outer,
+.service-nav-btn:hover ~ .cursor-outer,
+.service-book-btn:hover ~ .cursor-outer,
+.faq-question:hover ~ .cursor-outer,
+.cta-btn:hover ~ .cursor-outer,
+.mobile-cta-btn:hover ~ .cursor-outer {
+    border-color: var(--gold-secondary);
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+a:hover ~ .cursor-inner,
+button:hover ~ .cursor-inner,
+.nav-link:hover ~ .cursor-inner,
+.service-nav-btn:hover ~ .cursor-inner,
+.service-book-btn:hover ~ .cursor-inner,
+.faq-question:hover ~ .cursor-inner,
+.cta-btn:hover ~ .cursor-inner,
+.mobile-cta-btn:hover ~ .cursor-inner {
+    background: var(--gold-secondary);
+    transform: translate(-50%, -50%) scale(1.5);
+}

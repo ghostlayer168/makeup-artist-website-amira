@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="sv" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tjänster | AMIRA - Eastern Couture Makeup Artistry</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../en/css/style.css">
+    
+    <!-- Services CSS -->
+    <link rel="stylesheet" href="../en/css/services.css">
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* Quick CSS for preloader */
+        .no-js .hero-title span { opacity: 1 !important; }
+        body.loaded .loading-screen {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== PRELOADER ===== -->
+    <div class="loading-screen">
+        <!-- Animated Background -->
+        <div class="loading-bg">
+            <div class="bg-glow"></div>
+            <div class="bg-pattern"></div>
+        </div>
+        
+        <!-- Logo Animation -->
+        <div class="loading-logo">
+            <div class="logo-circle">
+                <div class="circle-border">
+                    <div class="circle-spin"></div>
+                </div>
+                <div class="logo-letter">A</div>
+                <div class="logo-glow"></div>
+            </div>
+        </div>
+        
+        <!-- Progress -->
+        <div class="loading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill">
+                    <div class="progress-shine"></div>
+                </div>
+            </div>
+            <div class="progress-text">
+                <span class="percentage">0%</span>
+                <span class="loading-message">Laddar tjänster</span>
+            </div>
+        </div>
+        
+        <!-- Quote -->
+        <div class="loading-quote">
+            <div class="quote-line"></div>
+            <div class="quote-content">
+                <p>"Det bästa sminket är det som får dig att känna dig som den vackraste versionen av dig själv"</p>
+                <span class="quote-author">— Amira</span>
+            </div>
+            <div class="quote-line"></div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="loading-decor">
+            <div class="decor-element de1"></div>
+            <div class="decor-element de2"></div>
+            <div class="decor-element de3"></div>
+            <div class="decor-element de4"></div>
+            <div class="decor-element de5"></div>
+            <div class="decor-line dl1"></div>
+            <div class="decor-line dl2"></div>
+        </div>
+    </div>
+
+    <!-- ===== ANIMATED BACKGROUND ===== -->
+    <div class="animated-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div class="cursor">
+        <div class="cursor-inner"></div>
+        <div class="cursor-outer"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="luxury-nav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-brand">
+                <a href="index_sv.html" class="brand-link">
+                    <div class="brand-symbol">A</div>
+                    <div class="brand-name">MIRA</div>
+                </a>
+            </div>
+            
+            <!-- Menu -->
+            <div class="nav-menu">
+                <a href="index_sv.html" class="nav-link">
+                    <span class="link-number">01</span>
+                    <span class="link-text">Hem</span>
+                </a>
+                <a href="index_sv.html#about" class="nav-link">
+                    <span class="link-number">02</span>
+                    <span class="link-text">Filosofi</span>
+                </a>
+                <a href="#hero" class="nav-link active">
+                    <span class="link-number">03</span>
+                    <span class="link-text">Tjänster</span>
+                </a>
+                <a href="index_sv.html#portfolio" class="nav-link">
+                    <span class="link-number">04</span>
+                    <span class="link-text">Portfolio</span>
+                </a>
+                <a href="index_sv.html#contact" class="nav-link">
+                    <span class="link-number">05</span>
+                    <span class="link-text">Kontakt</span>
+                </a>
+            </div>
+            
+            <!-- Right Side: Language Selector + CTA -->
+            <div class="nav-right">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="lang-btn" id="langToggle">
+                        <span class="lang-code">SV</span>
+                        <i class="fas fa-chevron-down lang-arrow"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="sv">Svenska</button>
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="ar">العربية</button>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="nav-actions">
+                    <a href="index_sv.html#contact" class="cta-btn">
+                        <span class="btn-text">Boka Nu</span>
+                        <div class="btn-icon">
+                            <i class="fas fa-sparkle"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="mobileToggle">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="services-hero">
+        <div class="section-container">
+            <div class="services-header">
+                <div class="section-number">03</div>
+                <h1 class="section-title">Signaturetjänster</h1>
+                <div class="section-subtitle">Förhöjda skönhetsupplevelser</div>
+                
+                <div class="services-intro">
+                    <p>Varje tjänst är noggrant utformad för att hylla din unika skönhet samtidigt som den hedrar de rika traditionerna inom östlig konst. Från bröllopstransformationer till redaktionella mästerverk - upptäck den perfekta upplevelsen för din resa.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Background -->
+        <div class="services-hero-bg">
+            <div class="bg-gradient"></div>
+            <div class="bg-pattern"></div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES GRID ===== -->
+    <section class="services-grid-section">
+        <div class="section-container">
+            <!-- Service Navigation -->
+            <div class="services-navigation">
+                <div class="nav-scroll">
+                    <a href="#bridal" class="service-nav-btn active">
+                        <span class="nav-icon"><i class="fas fa-heart"></i></span>
+                        <span class="nav-text">Bröllop</span>
+                    </a>
+                    <a href="#editorial" class="service-nav-btn">
+                        <span class="nav-icon"><i class="fas fa-camera"></i></span>
+                        <span class="nav-text">Redaktionellt</span>
+                    </a>
+                    <a href="#events" class="service-nav-btn">
+                        <span class="nav-icon"><i class="fas fa-star"></i></span>
+                        <span class="nav-text">Event</span>
+                    </a>
+                    <a href="#masterclass" class="service-nav-btn">
+                        <span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>
+                        <span class="nav-text">Masterklasser</span>
+                    </a>
+                    <a href="#consultation" class="service-nav-btn">
+                        <span class="nav-icon"><i class="fas fa-comments"></i></span>
+                        <span class="nav-text">Konsultation</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Bridal Couture -->
+            <div class="service-detail vertical-gallery" id="bridal">
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-number">01</div>
+                        <div class="service-category">Premiumtjänst</div>
+                    </div>
+                    
+                    <h2 class="service-title">Bröllopshantverk</h2>
+                    <div class="service-tagline">Konsten att skapa evig elegans</div>
+                    
+                    <div class="service-description">
+                        <p>En komplett bröllopstransformationsupplevelse som blandar traditionella östliga tekniker med modern lyx. Varje detalj är noggrant utformad för att skapa en look som hedrar arv samtidigt som den omfamnar modern sofistikering.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Traditionella henna-inspirerade design</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>24k guldblad detaljer</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Anpassad färgmatchning</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Långvarigt smink för ceremonier</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Förhandsrådgivning inför bröllop</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-range">
+                            <span class="price-label">Från och med</span>
+                            <span class="price-amount">12 000 kr</span>
+                        </div>
+                        <div class="price-note">Anpassade paket tillgängliga</div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <a href="index_sv.html#contact" class="service-book-btn">
+                            <span>Boka Konsultation</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="index_sv.html#portfolio" class="service-view-btn">
+                            <span>Se Galleri</span>
+                            <i class="fas fa-images"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-gallery-vertical">
+                    <div class="vertical-main">
+                        <div class="vertical-image" style="background-image: url('/images/bridal-1.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="image-label">Bröllopslook</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vertical-thumbs">
+                        <div class="vertical-thumb" style="background-image: url('/images/bridal-1.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('/images/bridal-2.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('/images/bridal-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Editorial Artistry -->
+            <div class="service-detail vertical-gallery" id="editorial">
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-number">02</div>
+                        <div class="service-category">Kreativ tjänst</div>
+                    </div>
+                    
+                    <h2 class="service-title">Redaktionell konstnärlighet</h2>
+                    <div class="service-tagline">Där mode möter fantasi</div>
+                    
+                    <div class="service-description">
+                        <p>High-fashion smink för fotograferingar, catwalkvisningar och röda mattan-evenemang. Transformerande looks som berättar historier och skapar visuell poesi genom sminkkonst.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Konceptutveckling</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Catwalk-klara applikationer</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Kameraperfekt smink</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Specialeffekter</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>På plats-tjänster</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-range">
+                            <span class="price-label">Från och med</span>
+                            <span class="price-amount">8 000 kr</span>
+                        </div>
+                        <div class="price-note">Per projekt</div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <a href="index_sv.html#contact" class="service-book-btn">
+                            <span>Diskutera Projekt</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="index_sv.html#portfolio" class="service-view-btn">
+                            <span>Se Galleri</span>
+                            <i class="fas fa-images"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-gallery-vertical">
+                    <div class="vertical-main">
+                        <div class="vertical-image" style="background-image: url('/images/editorial-1.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="image-label">Redaktionellt mästerverk</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vertical-thumbs">
+                        <div class="vertical-thumb" style="background-image: url('/images/editorial-1.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('/images/editorial-2.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('/images/editorial-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Events -->
+            <div class="service-detail vertical-gallery" id="events">
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-number">03</div>
+                        <div class="service-category">Lyxtjänst</div>
+                    </div>
+                    
+                    <h2 class="service-title">Specialevenemang</h2>
+                    <div class="service-tagline">Röda mattan glamour</div>
+                    
+                    <div class="service-description">
+                        <p>Sophistikerat smink för galor, prisceremonier och exklusiva evenemang. Tidlös elegans som tål kameraflash och skapar oförglömliga intryck.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Röda mattan-klart</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Kameraflash-tåligt</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Långvariga formler</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Touch-up kit ingår</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>På plats-applikation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-range">
+                            <span class="price-label">Från och med</span>
+                            <span class="price-amount">6 000 kr</span>
+                        </div>
+                        <div class="price-note">Per person</div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <a href="index_sv.html#contact" class="service-book-btn">
+                            <span>Boka Tid</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="index_sv.html#portfolio" class="service-view-btn">
+                            <span>Se Galleri</span>
+                            <i class="fas fa-images"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-gallery-vertical">
+                    <div class="vertical-main">
+                        <div class="vertical-image" style="background-image: url('/images/event-1.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="image-label">Event glamour</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vertical-thumbs">
+                        <div class="vertical-thumb" style="background-image: url('/images/event-1.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('/images/event-2.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('/images/event-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Master Classes -->
+            <div class="service-detail vertical-gallery" id="masterclass">
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-number">04</div>
+                        <div class="service-category">Utbildningstjänst</div>
+                    </div>
+                    
+                    <h2 class="service-title">Masterklasser</h2>
+                    <div class="service-tagline">Lär dig östlig skönhetskonst</div>
+                    
+                    <div class="service-description">
+                        <p>Nedsänkande lärarupplevelser där du upptäcker traditionella östliga tekniker blandade med moderna applikationsmetoder. Från grundläggande färdigheter till avancerad konstnärlighet.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Små gruppsessioner</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Traditionella tekniker</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Lyxproduktkunskap</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Praktisk övning</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Slutförandecertifikat</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-range">
+                            <span class="price-label">Från och med</span>
+                            <span class="price-amount">4 000 kr</span>
+                        </div>
+                        <div class="price-note">Per session</div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <a href="index_sv.html#contact" class="service-book-btn">
+                            <span>Anmäl Dig Nu</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="service-view-btn">
+                            <span>Se Schema</span>
+                            <i class="fas fa-calendar"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-gallery-vertical">
+                    <div class="vertical-main">
+                        <div class="vertical-image" style="background-image: url('/images/master-class-1.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="image-label">Lärarsession</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vertical-thumbs">
+                        <div class="vertical-thumb" style="background-image: url('/images/master-class-1.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('/images/master-class-2.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('/images/master-class-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Personal Consultation -->
+            <div class="service-detail vertical-gallery" id="consultation">
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-number">05</div>
+                        <div class="service-category">Grundläggande tjänst</div>
+                    </div>
+                    
+                    <h2 class="service-title">Personlig Konsultation</h2>
+                    <div class="service-tagline">Din skönhetsresa börjar här</div>
+                    
+                    <div class="service-description">
+                        <p>En personlig en-mot-en-session för att förstå dina unika skönhetsbehov, preferenser och mål. Vi skapar en anpassad skönhetsplan som hyllar din individualitet.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Hudanalys</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Färgmatchning</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Produktrekommendationer</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Anpassad rutinkreation</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Uppföljningsstöd</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-range">
+                            <span class="price-label">Från och med</span>
+                            <span class="price-amount">2 500 kr</span>
+                        </div>
+                        <div class="price-note">Inkluderar hudvårdsguide</div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <a href="index_sv.html#contact" class="service-book-btn">
+                            <span>Boka Konsultation</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="service-view-btn">
+                            <span>Läs Mer</span>
+                            <i class="fas fa-info-circle"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-gallery-vertical">
+                    <div class="vertical-main">
+                        <div class="vertical-image" style="background-image: url('/images/consultation-1.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="image-label">Personlig session</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vertical-thumbs">
+                        <div class="vertical-thumb" style="background-image: url('/images/consultation-1.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('/images/consultation-2.jpg');"></div>
+                        <div class="vertical-thumb" style="background-image: url('/images/consultation-3.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="process-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-number">03.1</div>
+                <h2 class="section-title">Amira-upplevelsen</h2>
+                <div class="section-subtitle">En resa av transformation</div>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Inledande Konsultation</h3>
+                        <p class="step-description">Vi börjar med ett ingående samtal för att förstå din vision, preferenser och kärnan i vad du vill uppnå.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Design & Planering</h3>
+                        <p class="step-description">Anpassad lookutveckling med skisser, färgpaletter och produktval speciellt anpassat för dig.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Förberedelsesession</h3>
+                        <p class="step-description">Hudvårdsförberedelse och provkörning för att säkerställa perfektion. Vi finjusterar varje detalj före huvudevenemanget.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Konstnärlig Applikation</h3>
+                        <p class="step-description">Transformationen börjar. Noggrann applikation med traditionella tekniker och lyxprodukter.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Slutlig Avslöjning & Vård</h3>
+                        <p class="step-description">Den magiska avslöjningen följt av personlig eftervårdsvägledning för att bibehålla din look under hela ditt evenemang.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-number">03.2</div>
+                <h2 class="section-title">Vanliga Frågor</h2>
+                <div class="section-subtitle">Dina frågor besvarade</div>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text">Hur långt i förväg ska jag boka?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>För bröllopstjänster rekommenderar vi att du bokar 6-12 månader i förväg. Redaktionella och eventbokningar bör göras minst 4-8 veckor i förväg. Masterklasser har begränsat antal platser, så bokning 1-2 månader i förväg rekommenderas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text">Reser du för evenemang?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ja, jag reser globalt för bröllop, redaktionella fotograferingar och specialevenemang. Reseutgifter beräknas baserat på plats och ingår i ditt anpassade pris.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text">Vilka produkter använder du?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Jag använder uteslutande lyxiga, högpresterande produkter från märken som Chantecaille, Charlotte Tilbury, Tom Ford och Pat McGrath Labs, tillsammans med specialiserade traditionella produkter från Mellanöstern och Sydasien.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text">Kan du jobba med känslig hud?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolut. Under vår konsultation diskuterar vi eventuella hudproblem eller allergier. Jag använder hypoallergena produkter och utför hudtest vid behov för att säkerställa komfort och säkerhet.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text">Vad ingår i bröllopspaket?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Bröllopspaket inkluderar: förhandsrådgivning inför bröllop, provsession, bröllopsdagssmink för bruden, touch-up kit, och valfria tillägg som smink för bröllopssällskap, traditionell henna-design konsultation, och hudvårdsförberedande sessioner.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-text">Erbjuder du grupppriser?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ja, grupppriser är tillgängliga för bröllopssällskap, företagsevenemang och specialtillfällen. Kontakta mig med din gruppstorlek och krav för ett anpassat pris.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-cta">
+                <p>Har du fler frågor? Jag är här för att hjälpa.</p>
+                <a href="index_sv.html#contact" class="cta-btn">
+                    <span>Kontakta Mig</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS PREVIEW ===== -->
+    <section class="services-testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-number">03.3</div>
+                <h2 class="section-title">Kundupplevelser</h2>
+                <div class="section-subtitle">Berättelser om transformation</div>
+            </div>
+            
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('/images/client-1.jpg');"></div>
+                        <div class="client-details">
+                            <h4>Sarah Al-Mansoori</h4>
+                            <p>Bröllopskund</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Amira transformerade min bröllopsdagslook till något bortom mina vildaste drömmar. Hennes uppmärksamhet på detaljer och förståelse för traditionella tekniker blandade med modern elegans var extraordinär."</p>
+                    </div>
+                    <div class="service-badge">
+                        <i class="fas fa-heart"></i>
+                        <span>Bröllopshantverk</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('/images/client-2.jpg');"></div>
+                        <div class="client-details">
+                            <h4>Marcus Chen</h4>
+                            <p>Vogue Arabia</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Att arbeta med Amira på vår redaktionella fotografering var en masterklass i konstnärlighet. Hennes förmåga att skapa looks som berättar historier genom smink är verkligen anmärkningsvärd."</p>
+                    </div>
+                    <div class="service-badge">
+                        <i class="fas fa-camera"></i>
+                        <span>Redaktionell konstnärlighet</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('/images/client-3.jpg');"></div>
+                        <div class="client-details">
+                            <h4>Leila Hassan</h4>
+                            <p>Kulturattaché</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Som någon som värdesätter arv och tradition var jag förbluffad över hur Amira hedrar kulturella element samtidigt som hon skapar en samtida look som kändes autentiskt mig."</p>
+                    </div>
+                    <div class="service-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Masterklass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="services-cta">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Redo att påbörja din skönhetsresa?</h2>
+                <p class="cta-description">Varje tjänst är mer än bara smink - det är en upplevelse utformad för att hylla din unika skönhet samtidigt som den hedrar århundraden av konstnärlig tradition.</p>
+                
+                <div class="cta-buttons">
+                    <a href="index_sv.html#contact" class="cta-btn-primary">
+                        <span>Boka Din Konsultation</span>
+                        <i class="fas fa-calendar-check"></i>
+                    </a>
+                    <a href="index_sv.html" class="cta-btn-secondary">
+                        <span>Tillbaka till Hem</span>
+                        <i class="fas fa-home"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="cta-decoration">
+                <div class="decor-element de1"></div>
+                <div class="decor-element de2"></div>
+                <div class="decor-element de3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
+            <!-- Footer Logo -->
+            <div class="footer-logo">
+                <div class="footer-symbol">A</div>
+                <div class="footer-brand">
+                    <div class="footer-name">AMIRA</div>
+                    <div class="footer-tagline">Eastern Couture Makeup Artistry</div>
+                </div>
+            </div>
+            
+            <!-- Footer Navigation -->
+            <div class="footer-nav">
+                <div class="nav-column">
+                    <h4 class="nav-title">Navigation</h4>
+                    <a href="index_sv.html" class="footer-link">Hem</a>
+                    <a href="index_sv.html#about" class="footer-link">Min Filosofi</a>
+                    <a href="services_sv.html" class="footer-link">Tjänster</a>
+                    <a href="index_sv.html#portfolio" class="footer-link">Portfolio</a>
+                    <a href="index_sv.html#contact" class="footer-link">Kontakt</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Tjänster</h4>
+                    <a href="services_sv.html#bridal" class="footer-link">Bröllopshantverk</a>
+                    <a href="services_sv.html#editorial" class="footer-link">Redaktionell konstnärlighet</a>
+                    <a href="services_sv.html#events" class="footer-link">Specialevenemang</a>
+                    <a href="services_sv.html#masterclass" class="footer-link">Masterklasser</a>
+                    <a href="services_sv.html#consultation" class="footer-link">Konsultationer</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Anslut</h4>
+                    <a href="#" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">Pinterest</a>
+                    <a href="#" class="footer-link">Behance</a>
+                    <a href="#" class="footer-link">Vogue Arabia</a>
+                </div>
+            </div>
+            
+            <!-- Footer Newsletter -->
+            <div class="footer-newsletter">
+                <h4 class="newsletter-title">Gå med i min värld</h4>
+                <p class="newsletter-text">Få exklusiva skönhetsinsikter och tidig tillgång till masterklasser.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Din e-postadress" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2026 Oleksandra Zdoronok. Alla rättigheter förbehållna.
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-bottom-link">Integritetspolicy</a>
+                    <a href="#" class="footer-bottom-link">Användarvillkor</a>
+                    <a href="#" class="footer-bottom-link">Cookiepolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    
+    
+    <!-- Services JS -->
+    <script src="js/services.js"></script>
+</body>
+</html>

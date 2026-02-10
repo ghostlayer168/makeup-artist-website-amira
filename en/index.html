@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMIRA | Eastern Couture Makeup Artistry</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* Quick CSS for preloader */
+        .no-js .hero-title span { opacity: 1 !important; }
+        body.loaded .loading-screen {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== PRELOADER ===== -->
+    <div class="loading-screen">
+        <!-- Animated Background -->
+        <div class="loading-bg">
+            <div class="bg-glow"></div>
+            <div class="bg-pattern"></div>
+        </div>
+        
+        <!-- Logo Animation -->
+        <div class="loading-logo">
+            <div class="logo-circle">
+                <div class="circle-border">
+                    <div class="circle-spin"></div>
+                </div>
+                <div class="logo-letter">A</div>
+                <div class="logo-glow"></div>
+            </div>
+        </div>
+        
+        <!-- Progress -->
+        <div class="loading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill">
+                    <div class="progress-shine"></div>
+                </div>
+            </div>
+            <div class="progress-text">
+                <span class="percentage">0%</span>
+                <span class="loading-message">Loading Luxury Experience</span>
+            </div>
+        </div>
+        
+        <!-- Quote -->
+        <div class="loading-quote">
+            <div class="quote-line"></div>
+            <div class="quote-content">
+                <p>"Beauty begins the moment you decide to be yourself"</p>
+                <span class="quote-author">— Coco Chanel</span>
+            </div>
+            <div class="quote-line"></div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="loading-decor">
+            <div class="decor-element de1"></div>
+            <div class="decor-element de2"></div>
+            <div class="decor-element de3"></div>
+            <div class="decor-element de4"></div>
+            <div class="decor-element de5"></div>
+            <div class="decor-line dl1"></div>
+            <div class="decor-line dl2"></div>
+        </div>
+    </div>
+
+    <!-- ===== ANIMATED BACKGROUND ===== -->
+    <div class="animated-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div class="cursor">
+        <div class="cursor-inner"></div>
+        <div class="cursor-outer"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="luxury-nav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-brand">
+                <a href="#hero" class="brand-link">
+                    <div class="brand-symbol">A</div>
+                    <div class="brand-name">MIRA</div>
+                </a>
+            </div>
+            
+            <!-- Menu -->
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link active">
+                    <span class="link-number">01</span>
+                    <span class="link-text">Home</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <span class="link-number">02</span>
+                    <span class="link-text">Philosophy</span>
+                </a>
+                <a href="#services" class="nav-link">
+                    <span class="link-number">03</span>
+                    <span class="link-text">Services</span>
+                </a>
+                <a href="#portfolio" class="nav-link">
+                    <span class="link-number">04</span>
+                    <span class="link-text">Portfolio</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="link-number">05</span>
+                    <span class="link-text">Contact</span>
+                </a>
+            </div>
+            
+            <!-- Right Side: Language Selector + CTA -->
+            <div class="nav-right">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="lang-btn" id="langToggle">
+                        <span class="lang-code">EN</span>
+                        <i class="fas fa-chevron-down lang-arrow"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="sv">Svenska</button>
+                        <button class="lang-option" data-lang="ar">العربية</button>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="nav-actions">
+                    <a href="#contact" class="cta-btn">
+                        <span class="btn-text">Book Now</span>
+                        <div class="btn-icon">
+                            <i class="fas fa-sparkle"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="mobileToggle">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION  ===== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            
+            <div class="hero-content">
+                <div class="hero-main">
+                    <div class="hero-tagline">
+                        <span class="tagline-text">Eastern Couture Makeup Artistry</span>
+                        <div class="tagline-line"></div>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-line">Where Heritage &</span>
+                        <span class="title-line">Innovation Create</span>
+                        <span class="title-line accent">Timeless Beauty</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Bridging centuries-old Eastern techniques with contemporary luxury for an unparalleled beauty experience.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#contact" class="hero-btn btn-primary">
+                            <span>Begin Your Journey</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#portfolio" class="hero-btn btn-secondary">
+                            <span>View Portfolio</span>
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator">
+                    <div class="indicator-dot"></div>
+                    <span>Scroll to Discover</span>
+                </div>
+            </div>
+            
+            
+            <div class="hero-image">
+                <div class="image-container">
+                    
+                    <div class="main-image" style="background-image: url('../images/hero-1.jpg');">
+                        <div class="image-overlay"></div>
+                    </div>
+                    
+                    
+                    <div class="image-decoration deco-1"></div>
+                    <div class="image-decoration deco-2"></div>
+                    <div class="image-decoration deco-3"></div>
+                    
+                   
+                    <div class="floating-element fe-1">
+                        <i class="fas fa-sparkle"></i>
+                    </div>
+                    <div class="floating-element fe-2">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="floating-element fe-3">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PHILOSOPHY SECTION ===== -->
+    <section id="about" class="philosophy-section">
+        <div class="section-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h2 class="section-title">My Philosophy</h2>
+                <div class="section-subtitle">The Art of Timeless Beauty</div>
+            </div>
+            
+            <!-- Philosophy Content -->
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <div class="philosophy-quote">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="quote-text">
+                            "True beauty lies not in perfection, but in the harmony between tradition and innovation."
+                        </p>
+                        <div class="quote-author">— Amira</div>
+                    </div>
+                    
+                    <div class="philosophy-description">
+                        <p>
+                            As a makeup artist, I believe that makeup is more than just enhancement—it's a form of art that celebrates heritage while embracing modernity. 
+                            My philosophy is rooted in the rich traditions of Eastern beauty rituals, reimagined through a contemporary lens.
+                        </p>
+                        
+                        <p>
+                            Each creation is a delicate balance of centuries-old techniques and modern luxury, crafted to reveal your unique essence rather than conceal it.
+                            I don't just apply makeup—I create experiences that make you feel seen, understood, and celebrated.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Philosophy Grid -->
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <div class="card-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-hand-sparkles"></i>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Artisanal Craftsmanship</h3>
+                        <p class="card-text">Every stroke is intentional, every detail meticulously handcrafted with the precision and care that comes from years of dedicated practice.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="card-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Personal Connection</h3>
+                        <p class="card-text">I listen, understand, and create looks that celebrate your individuality and story. Your beauty journey is personal, and so is my approach.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="card-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Heritage Reimagined</h3>
+                        <p class="card-text">Traditional Eastern techniques meet modern luxury—creating looks that honor the past while embracing the future of beauty.</p>
+                    </div>
+                </div>
+                
+                <!-- Decorative Elements -->
+                <div class="philosophy-decoration">
+                    <div class="deco-line dl-1"></div>
+                    <div class="deco-dot dd-1"></div>
+                    <div class="deco-dot dd-2"></div>
+                    <div class="deco-dot dd-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES PREVIEW SECTION ===== -->
+    <section class="services-preview">
+        <div class="section-container">
+            <div class="preview-header">
+                <div class="section-number">03</div>
+                <h2 class="section-title">Signature Services</h2>
+                <div class="section-subtitle">Elevated Beauty Experiences</div>
+            </div>
+            
+            <div class="services-slider">
+                <!-- Service 1 -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <div class="image-wrapper" style="background-image: url('/images/bridal.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="service-number">01</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Bridal Couture</h3>
+                        <p class="service-description">Complete bridal transformation with traditional henna-inspired designs and modern elegance.</p>
+                        <a href="#services" class="service-link">
+                            <span>Explore Service</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <div class="image-wrapper" style="background-image: url('/images/editorial-artistry.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="service-number">02</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Editorial Artistry</h3>
+                        <p class="service-description">High-fashion makeup for photoshoots, runway shows, and red carpet events with artistic flair.</p>
+                        <a href="services.html#" class="service-link">
+                            <span>Explore Service</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <div class="image-wrapper" style="background-image: url('/images/master-class.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="service-number">03</div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Master Classes</h3>
+                        <p class="service-description">Learn traditional Eastern techniques blended with contemporary application methods.</p>
+                        <a href="#services" class="service-link">
+                            <span>Explore Service</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview-footer">
+                <a href="services.html" class="view-all-btn">
+                    <span>View All Services</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO SECTION ===== -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="section-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h2 class="section-title">Portfolio</h2>
+                <div class="section-subtitle">A Glimpse Into My Artistry</div>
+            </div>
+            
+            <!-- Portfolio Filter -->
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All Works</button>
+                <button class="filter-btn" data-filter="bridal">Bridal</button>
+                <button class="filter-btn" data-filter="editorial">Editorial</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="traditional">Traditional</button>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item" data-category="bridal" data-description="Exquisite bridal makeup with golden accents and delicate Arabic patterns. Created for a traditional Eastern wedding ceremony, this look features hand-painted motifs and 24k gold leaf detailing that captures the essence of luxury and tradition. The bride wanted a look that honored her heritage while feeling modern and elegant.">
+                    <div class="portfolio-image">
+                        <img src="../images/bridal-1.jpg" alt="Enchanted Bride Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Enchanted Bride</h3>
+                                <p class="portfolio-category">Bridal Couture</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item" data-category="editorial" data-description="Editorial shoot for Vogue Arabia featuring gilded accents and bold geometric patterns. This look was inspired by traditional Islamic art and architecture, reimagined for modern high fashion. The metallic elements catch the light beautifully, creating a mesmerizing effect that photographs exceptionally well.">
+                    <div class="portfolio-image">
+                        <img src="../images/editorial-1.jpg" alt="Gilded Editorial Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Gilded Editorial</h3>
+                                <p class="portfolio-category">Fashion Magazine</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item" data-category="traditional" data-description="Traditional henna celebration makeup combining natural earth tones with symbolic patterns. Created for a pre-wedding henna ceremony, this look honors Bedouin beauty traditions while maintaining a soft, romantic feel. The earthy palette complements henna designs perfectly.">
+                    <div class="portfolio-image">
+                        <img src="../images/traditional-1.jpg" alt="Henna Celebration Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Henna Celebration</h3>
+                                <p class="portfolio-category">Traditional Ceremony</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item" data-category="events" data-description="Red carpet glamour for the Dubai International Film Festival. This sophisticated evening look features smoky eyes with metallic accents and perfectly contoured features that stand up to camera flashes and bright lights. The look was designed to be timeless yet make a statement.">
+                    <div class="portfolio-image">
+                        <img src="../images/event-1.jpg" alt="Red Carpet Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Red Carpet Glam</h3>
+                                <p class="portfolio-category">Award Ceremony</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item" data-category="bridal" data-description="Modern royal bridal look featuring a contemporary take on traditional elements. The clean lines and subtle shimmer create a regal yet approachable aesthetic. This look was perfect for a bride who wanted to feel like royalty without being overly traditional.">
+                    <div class="portfolio-image">
+                        <img src="../images/bridal-2.jpg" alt="Modern Royalty Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Modern Royalty</h3>
+                                <p class="portfolio-category">Bridal Couture</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item" data-category="editorial" data-description="Fashion campaign inspired by desert blooms and oasis beauty. This ethereal look features soft pastels blended with metallic accents, creating a dreamy, otherworldly effect. The makeup was designed to complement intricate jewelry and flowing fabrics.">
+                    <div class="portfolio-image">
+                        <img src="../images/editorial-2.jpg" alt="Desert Bloom Makeup" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3 class="portfolio-title">Desert Bloom</h3>
+                                <p class="portfolio-category">Fashion Campaign</p>
+                                <button class="view-project-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio CTA -->
+            <div class="portfolio-cta">
+                <p class="cta-text">View my complete gallery of transformations</p>
+                <a href="gallery.html" class="cta-btn">
+                    <span>Explore Full Portfolio</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section class="testimonials-section">
+        <div class="section-container">
+            <div class="testimonials-header">
+                <div class="section-number">04.1</div>
+                <h2 class="section-title">Client Stories</h2>
+                <div class="section-subtitle">Words That Inspire Me</div>
+            </div>
+            
+            <div class="testimonials-slider">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote-mark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Amira transformed my wedding day look into something beyond my wildest dreams. 
+                            Her attention to detail and understanding of traditional techniques blended with modern elegance was extraordinary."
+                        </p>
+                        <div class="client-info">
+                            <h4 class="client-name">Sarah Al-Mansoori</h4>
+                            <p class="client-details">Dubai | International Bride</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote-mark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Working with Amira on our editorial shoot was a masterclass in artistry. 
+                            Her ability to create looks that tell stories through makeup is truly remarkable."
+                        </p>
+                        <div class="client-info">
+                            <h4 class="client-name">Marcus Chen</h4>
+                            <p class="client-details">Vogue Arabia | Creative Director</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="quote-mark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "As someone who values heritage and tradition, I was amazed at how Amira honored 
+                            cultural elements while creating a contemporary look that felt authentically me."
+                        </p>
+                        <div class="client-info">
+                            <h4 class="client-name">Leila Hassan</h4>
+                            <p class="client-details">London | Cultural Ambassador</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial Navigation -->
+            <div class="testimonial-nav">
+                <button class="nav-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="nav-dots">
+                    <span class="nav-dot active"></span>
+                    <span class="nav-dot"></span>
+                    <span class="nav-dot"></span>
+                </div>
+                <button class="nav-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h2 class="section-title">Begin Your Journey</h2>
+                <div class="section-subtitle">Schedule Your Consultation</div>
+            </div>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Email</h3>
+                            <a href="mailto:amira@couture.com" class="info-link">amira@couture.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Phone</h3>
+                            <a href="tel:+971123456789" class="info-link">+971 123 456 789</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Studio</h3>
+                            <p class="info-text">
+                                Dubai Design District<br>
+                                Building 7, Studio 302<br>
+                                Dubai, UAE
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Hours</h3>
+                            <p class="info-text">
+                                By Appointment Only<br>
+                                Monday - Saturday: 9AM - 7PM<br>
+                                Sunday: Closed
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required placeholder="Your Name *">
+                                <label for="name">Full Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required placeholder="Email Address *">
+                                <label for="email">Email Address</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select Service *</option>
+                                <option value="bridal">Bridal Couture</option>
+                                <option value="editorial">Editorial Artistry</option>
+                                <option value="events">Special Events</option>
+                                <option value="masterclass">Master Classes</option>
+                                <option value="consultation">Personal Consultation</option>
+                            </select>
+                            <label for="service">Service Interest</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your vision..."></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="submit" class="submit-btn">
+                                <span>Submit Request</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                            <p class="form-note">I'll respond within 24 hours to schedule your consultation</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
+            <!-- Footer Logo -->
+            <div class="footer-logo">
+                <div class="footer-symbol">A</div>
+                <div class="footer-brand">
+                    <div class="footer-name">AMIRA</div>
+                    <div class="footer-tagline">Eastern Couture Makeup Artistry</div>
+                </div>
+            </div>
+            
+            <!-- Footer Navigation -->
+            <div class="footer-nav">
+                <div class="nav-column">
+                    <h4 class="nav-title">Navigation</h4>
+                    <a href="#hero" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">My Philosophy</a>
+                    <a href="#services" class="footer-link">Services</a>
+                    <a href="#portfolio" class="footer-link">Portfolio</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Services</h4>
+                    <a href="#" class="footer-link">Bridal Couture</a>
+                    <a href="#" class="footer-link">Editorial Artistry</a>
+                    <a href="#" class="footer-link">Special Events</a>
+                    <a href="#" class="footer-link">Master Classes</a>
+                    <a href="#" class="footer-link">Consultations</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Connect</h4>
+                    <a href="#" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">Pinterest</a>
+                    <a href="#" class="footer-link">Behance</a>
+                    <a href="#" class="footer-link">Vogue Arabia</a>
+                </div>
+            </div>
+            
+            <!-- Footer Newsletter -->
+            <div class="footer-newsletter">
+                <h4 class="newsletter-title">Join My World</h4>
+                <p class="newsletter-text">Receive exclusive beauty insights and early access to master classes.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2026 Oleksandra Zdoronok. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Service</a>
+                    <a href="#" class="footer-bottom-link">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

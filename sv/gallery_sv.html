@@ -1,0 +1,1046 @@
+
+<!DOCTYPE html>
+<html lang="sv" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfölj | AMIRA - Östlig Couture Sminkkonst</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../en/css/style.css">
+    
+    <!-- Gallery CSS -->
+    <link rel="stylesheet" href="../en/css/gallery.css">
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* Quick CSS for preloader */
+        .no-js .hero-title span { opacity: 1 !important; }
+        body.loaded .loading-screen {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== PRELOADER ===== -->
+    <div class="loading-screen">
+        <!-- Animated Background -->
+        <div class="loading-bg">
+            <div class="bg-glow"></div>
+            <div class="bg-pattern"></div>
+        </div>
+        
+        <!-- Logo Animation -->
+        <div class="loading-logo">
+            <div class="logo-circle">
+                <div class="circle-border">
+                    <div class="circle-spin"></div>
+                </div>
+                <div class="logo-letter">A</div>
+                <div class="logo-glow"></div>
+            </div>
+        </div>
+        
+        <!-- Progress -->
+        <div class="loading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill">
+                    <div class="progress-shine"></div>
+                </div>
+            </div>
+            <div class="progress-text">
+                <span class="percentage">0%</span>
+                <span class="loading-message">Laddar Portföljgalleri</span>
+            </div>
+        </div>
+        
+        <!-- Quote -->
+        <div class="loading-quote">
+            <div class="quote-line"></div>
+            <div class="quote-content">
+                <p>"Skönhet är inte i ansiktet; skönhet är ett ljus i hjärtat"</p>
+                <span class="quote-author">— Kahlil Gibran</span>
+            </div>
+            <div class="quote-line"></div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="loading-decor">
+            <div class="decor-element de1"></div>
+            <div class="decor-element de2"></div>
+            <div class="decor-element de3"></div>
+            <div class="decor-element de4"></div>
+            <div class="decor-element de5"></div>
+            <div class="decor-line dl1"></div>
+            <div class="decor-line dl2"></div>
+        </div>
+    </div>
+
+    <!-- ===== ANIMATED BACKGROUND ===== -->
+    <div class="animated-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div class="cursor">
+        <div class="cursor-inner"></div>
+        <div class="cursor-outer"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="luxury-nav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-brand">
+                <a href="index_sv.html" class="brand-link">
+                    <div class="brand-symbol">A</div>
+                    <div class="brand-name">MIRA</div>
+                </a>
+            </div>
+            
+            <!-- Menu -->
+            <div class="nav-menu">
+                <a href="index_sv.html" class="nav-link">
+                    <span class="link-number">01</span>
+                    <span class="link-text">Hem</span>
+                </a>
+                <a href="index_sv.html#about" class="nav-link">
+                    <span class="link-number">02</span>
+                    <span class="link-text">Filosofi</span>
+                </a>
+                <a href="services_sv.html" class="nav-link">
+                    <span class="link-number">03</span>
+                    <span class="link-text">Tjänster</span>
+                </a>
+                <a href="#hero" class="nav-link active">
+                    <span class="link-number">04</span>
+                    <span class="link-text">Portfölj</span>
+                </a>
+                <a href="index_sv.html#contact" class="nav-link">
+                    <span class="link-number">05</span>
+                    <span class="link-text">Kontakt</span>
+                </a>
+            </div>
+            
+            <!-- Right Side: Language Selector + CTA -->
+            <div class="nav-right">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="lang-btn" id="langToggle">
+                        <span class="lang-code">SV</span>
+                        <i class="fas fa-chevron-down lang-arrow"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="sv">Svenska</button>
+                        <button class="lang-option" data-lang="ar">العربية</button>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="nav-actions">
+                    <a href="index_sv.html#contact" class="cta-btn">
+                        <span class="btn-text">Boka Nu</span>
+                        <div class="btn-icon">
+                            <i class="fas fa-sparkle"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="mobileToggle">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="gallery-hero">
+        <div class="section-container">
+            <div class="gallery-header">
+                <div class="section-number">04</div>
+                <h1 class="section-title">Portföljgalleri</h1>
+                <div class="section-subtitle">En Visuell Resa Genom Konst</div>
+                
+                <div class="gallery-intro">
+                    <p>Utforska den kompletta samlingen av transformerande sminkkonst. Varje bild berättar en historia om skönhet, tradition och innovation – fångar ögonblick där östligt arv möter samtida elegans.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Background -->
+        <div class="gallery-hero-bg">
+            <div class="bg-gradient"></div>
+            <div class="bg-pattern"></div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY FILTER ===== -->
+    <section class="gallery-filter-section">
+        <div class="section-container">
+            <div class="filter-nav">
+                <button class="filter-nav-btn active" data-filter="all">
+                    <span class="filter-icon"><i class="fas fa-star"></i></span>
+                    <span class="filter-text">Alla Verk</span>
+                </button>
+                
+                <button class="filter-nav-btn" data-filter="bridal">
+                    <span class="filter-icon"><i class="fas fa-heart"></i></span>
+                    <span class="filter-text">Brudsmink</span>
+                </button>
+                
+                <button class="filter-nav-btn" data-filter="editorial">
+                    <span class="filter-icon"><i class="fas fa-camera"></i></span>
+                    <span class="filter-text">Redaktionellt</span>
+                </button>
+                
+                <button class="filter-nav-btn" data-filter="traditional">
+                    <span class="filter-icon"><i class="fas fa-hands-praying"></i></span>
+                    <span class="filter-text">Traditionellt</span>
+                </button>
+                
+                <button class="filter-nav-btn" data-filter="events">
+                    <span class="filter-icon"><i class="fas fa-glass-cheers"></i></span>
+                    <span class="filter-text">Evenemang</span>
+                </button>
+                
+                <button class="filter-nav-btn" data-filter="special">
+                    <span class="filter-icon"><i class="fas fa-gem"></i></span>
+                    <span class="filter-text">Specialeffekter</span>
+                </button>
+            </div>
+            
+            <!-- Sort Options -->
+            <div class="sort-options">
+                <div class="sort-label">Sortera efter:</div>
+                <select class="sort-select" id="sortSelect">
+                    <option value="date-desc">Senaste</option>
+                    <option value="date-asc">Äldst först</option>
+                    <option value="category">Kategori</option>
+                    <option value="featured">Utvalda</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAIN GALLERY GRID ===== -->
+    <section class="gallery-grid-section">
+        <div class="section-container">
+            <!-- Gallery Counter -->
+            <div class="gallery-counter">
+                <div class="counter-item">
+                    <span class="counter-number" id="totalImages">24</span>
+                    <span class="counter-label">Totalt Antal Verk</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="filteredImages">24</span>
+                    <span class="counter-label">Visar</span>
+                </div>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery Item 1 - Bridal -->
+                <div class="gallery-item" data-category="bridal" data-date="2024-03-15" data-featured="true">
+                    <div class="gallery-image">
+                        <img src="/images/bridal-1.jpg" alt="Förtrollad Brud - Traditionellt Arabiskt Bröllop" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Förtrollad Brud</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Brudsmink</span>
+                                    <span class="image-date">Mars 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="0">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 - Editorial -->
+                <div class="gallery-item" data-category="editorial" data-date="2024-02-28" data-featured="true">
+                    <div class="gallery-image">
+                        <img src="/images/editorial-1.jpg" alt="Förgylld Redaktionell - Vogue Arabia" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Förgylld Redaktionell</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Redaktionellt</span>
+                                    <span class="image-date">Februari 2024</span>
+                                </div>
+                                <button class="view-btn" data-index="1">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 - Traditional -->
+                <div class="gallery-item" data-category="traditional" data-date="2024-01-20">
+                    <div class="gallery-image">
+                        <img src="/images/traditional-1.jpg" alt="Hennafirande - Förbröllopsceremoni" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Hennafirande</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Traditionellt</span>
+                                    <span class="image-date">Januari 2024</span>
+                                </div>
+                                <button class="view-btn" data-index="2">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 - Events -->
+                <div class="gallery-item" data-category="events" data-date="2023-12-10">
+                    <div class="gallery-image">
+                        <img src="/images/event-1.jpg" alt="Röda Mattan Glam - Dubai Film Festival" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Röda Mattan Glam</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Evenemang</span>
+                                    <span class="image-date">December 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="3">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 - Bridal -->
+                <div class="gallery-item" data-category="bridal" data-date="2023-11-05" data-featured="true">
+                    <div class="gallery-image">
+                        <img src="/images/bridal-2.jpg" alt="Modern Royalitet - Samtida Brudlook" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Modern Royalitet</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Brudsmink</span>
+                                    <span class="image-date">November 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="4">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 - Editorial -->
+                <div class="gallery-item" data-category="editorial" data-date="2023-10-18">
+                    <div class="gallery-image">
+                        <img src="/images/editorial-2.jpg" alt="Ökenblomma - Modekampanj" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Ökenblomma</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Redaktionellt</span>
+                                    <span class="image-date">Oktober 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="5">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 7 - Special -->
+                <div class="gallery-item" data-category="special" data-date="2023-09-22">
+                    <div class="gallery-image">
+                        <img src="/images/special-1.jpg" alt="Metallisk Fantasi - Kreativ Sminkkonst" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Metallisk Fantasi</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Specialeffekter</span>
+                                    <span class="image-date">September 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="6">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 8 - Traditional -->
+                <div class="gallery-item" data-category="traditional" data-date="2023-08-14">
+                    <div class="gallery-image">
+                        <img src="/images/traditional-2.jpg" alt="Oasskönhet - Ökeninspirerad Look" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Oasskönhet</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Traditionellt</span>
+                                    <span class="image-date">Augusti 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="7">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 9 - Events -->
+                <div class="gallery-item" data-category="events" data-date="2023-07-30">
+                    <div class="gallery-image">
+                        <img src="/images/event-2.jpg" alt="Galakväll - Lyxevenemangsmink" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Galakväll</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Evenemang</span>
+                                    <span class="image-date">Juli 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="8">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 10 - Bridal -->
+                <div class="gallery-item" data-category="bridal" data-date="2023-06-12">
+                    <div class="gallery-image">
+                        <img src="/images/bridal-3.jpg" alt="Guldbrud - Kungligt Bröllopssmink" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Guldbrud</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Brudsmink</span>
+                                    <span class="image-date">Juni 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="9">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 11 - Editorial -->
+                <div class="gallery-item" data-category="editorial" data-date="2023-05-05">
+                    <div class="gallery-image">
+                        <img src="/images/editorial-3.jpg" alt="Urban Oas - Stadsinspirerad Redaktionell" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Urban Oas</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Redaktionellt</span>
+                                    <span class="image-date">Maj 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="10">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 12 - Special -->
+                <div class="gallery-item" data-category="special" data-date="2023-04-18">
+                    <div class="gallery-image">
+                        <img src="/images/special-2.jpg" alt="Kristalldrömmar - Fantasismink" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Kristalldrömmar</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Specialeffekter</span>
+                                    <span class="image-date">April 2023</span>
+                                </div>
+                                <button class="view-btn" data-index="11">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 13 - Traditional -->
+                <div class="gallery-item" data-category="traditional" data-date="2023-03-22">
+                    <div class="gallery-image">
+                        <img src="/images/traditional-3.jpg" alt="Bedouin Drottning - Ökenskönhet" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Bedouin Drottning</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Traditionellt</span>
+                                    <span class="image-date">Mars 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="12">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 14 - Events -->
+                <div class="gallery-item" data-category="events" data-date="2023-02-14">
+                    <div class="gallery-image">
+                        <img src="/images/event-3.jpg" alt="Valentins Elegans - Specialevenemang" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Valentins Elegans</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Evenemang</span>
+                                    <span class="image-date">Februari 2024</span>
+                                </div>
+                                <button class="view-btn" data-index="13">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 15 - Bridal -->
+                <div class="gallery-item" data-category="bridal" data-date="2023-01-08">
+                    <div class="gallery-image">
+                        <img src="/images/bridal-4.jpg" alt="Vinterbrud - Säsongsbrudlook" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Vinterbrud</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Brudsmink</span>
+                                    <span class="image-date">Januari 2026</span>
+                                </div>
+                                <button class="view-btn" data-index="14">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 16 - Editorial -->
+                <div class="gallery-item" data-category="editorial" data-date="2022-12-01">
+                    <div class="gallery-image">
+                        <img src="/images/editorial-4.jpg" alt="Frusen Elegans - Vinterredaktionell" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Frusen Elegans</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Redaktionellt</span>
+                                    <span class="image-date">December 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="15">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 17 - Special -->
+                <div class="gallery-item" data-category="special" data-date="2022-11-15">
+                    <div class="gallery-image">
+                        <img src="/images/special-3.jpg" alt="Galaktisk Drottning - Kosmiskt Smink" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Galaktisk Drottning</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Specialeffekter</span>
+                                    <span class="image-date">November 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="16">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 18 - Traditional -->
+                <div class="gallery-item" data-category="traditional" data-date="2022-10-20">
+                    <div class="gallery-image">
+                        <img src="/images/traditional-4.jpg" alt="Arabiska Nätter - Klassisk Look" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Arabiska Nätter</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Traditionellt</span>
+                                    <span class="image-date">Oktober 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="17">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 19 - Events -->
+                <div class="gallery-item" data-category="events" data-date="2022-09-05">
+                    <div class="gallery-image">
+                        <img src="/images/event-4.jpg" alt="Solnedgångssammankomst - Kvällsevenemang" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Solnedgångssammankomst</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Evenemang</span>
+                                    <span class="image-date">September 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="18">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 20 - Bridal -->
+                <div class="gallery-item" data-category="bridal" data-date="2022-08-18">
+                    <div class="gallery-image">
+                        <img src="/images/bridal-5.jpg" alt="Ökenros - Utomhusbröllop" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Ökenros</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Brudsmink</span>
+                                    <span class="image-date">Augusti 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="19">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 21 - Editorial -->
+                <div class="gallery-item" data-category="editorial" data-date="2022-07-12">
+                    <div class="gallery-image">
+                        <img src="/images/editorial-5.jpg" alt="Gyllene Timmen - Sommarredaktionell" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Gyllene Timmen</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Redaktionellt</span>
+                                    <span class="image-date">Juli 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="20">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 22 - Special -->
+                <div class="gallery-item" data-category="special" data-date="2022-06-25">
+                    <div class="gallery-image">
+                        <img src="/images/special-4.jpg" alt="Havsgudinna - Vatteninspirerad" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Havsgudinna</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Specialeffekter</span>
+                                    <span class="image-date">Juni 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="21">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 23 - Traditional -->
+                <div class="gallery-item" data-category="traditional" data-date="2022-05-30">
+                    <div class="gallery-image">
+                        <img src="/images/traditional-5.jpg" alt="Marockansk Drottning - Kulturell Look" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Marockansk Drottning</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Traditionellt</span>
+                                    <span class="image-date">Maj 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="22">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 24 - Events -->
+                <div class="gallery-item" data-category="events" data-date="2022-04-15">
+                    <div class="gallery-image">
+                        <img src="/images/event-5.jpg" alt="Vårgala - Säsongsevenemang" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3 class="image-title">Vårgala</h3>
+                                <div class="image-meta">
+                                    <span class="image-category">Evenemang</span>
+                                    <span class="image-date">April 2025</span>
+                                </div>
+                                <button class="view-btn" data-index="23">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Visa Detaljer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="load-more-container" id="loadMoreContainer">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    <span>Visa Fler Verk</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORY SHOWCASE ===== -->
+    <section class="category-showcase">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-number">04.1</div>
+                <h2 class="section-title">Utforska efter Kategori</h2>
+                <div class="section-subtitle">Specialiserade Konstsamlingar</div>
+            </div>
+            
+            <div class="category-grid">
+                <!-- Bridal Category -->
+                <div class="category-card" data-category="bridal">
+                    <div class="category-image">
+                        <div class="image-wrapper" style="background-image: url('/images/bridal-showcase.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="category-label">
+                                <span class="label-text">Brudcouture</span>
+                                <span class="label-count">5 Samlingar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Brudförvandlingar</h3>
+                        <p class="category-description">Kompletta brudresor från traditionella ceremonier till moderna firanden.</p>
+                        <a href="#bridal-gallery" class="category-link">
+                            <span>Visa Brudgalleri</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Editorial Category -->
+                <div class="category-card" data-category="editorial">
+                    <div class="category-image">
+                        <div class="image-wrapper" style="background-image: url('/images/editorial-showcase.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="category-label">
+                                <span class="label-text">Redaktionellt</span>
+                                <span class="label-count">5 Samlingar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Mode & Redaktionellt</h3>
+                        <p class="category-description">High-fashion smink för tidningar, moderevyer och kreativa projekt.</p>
+                        <a href="#editorial-gallery" class="category-link">
+                            <span>Visa Redaktionellt Galleri</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Traditional Category -->
+                <div class="category-card" data-category="traditional">
+                    <div class="category-image">
+                        <div class="image-wrapper" style="background-image: url('/images/traditional-showcase.jpg');">
+                            <div class="image-overlay"></div>
+                            <div class="category-label">
+                                <span class="label-text">Traditionellt</span>
+                                <span class="label-count">5 Samlingar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Kulturellt Arv</h3>
+                        <p class="category-description">Traditionella östliga tekniker och kulturellt festningssmink.</p>
+                        <a href="#traditional-gallery" class="category-link">
+                            <span>Visa Traditionellt Galleri</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATISTICS SECTION ===== -->
+    <section class="gallery-stats">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Förvandlingar</div>
+                    <div class="stat-description">Vackra klienter förvandlade</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Års Erfarenhet</div>
+                    <div class="stat-description">Behärskar östliga tekniker</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Utvalda Verk</div>
+                    <div class="stat-description">I denna gallerisamling</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Kategorier</div>
+                    <div class="stat-description">Specialiserad sminkkonst</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="gallery-cta">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Inspirerad av Det Du Ser?</h2>
+                <p class="cta-description">Låt oss skapa ditt eget mästerverk. Boka en konsultation för att diskutera din vision och påbörja din förvandlingsresa.</p>
+                
+                <div class="cta-buttons">
+                    <a href="index_sv.html#contact" class="cta-btn-primary">
+                        <span>Boka Din Konsultation</span>
+                        <i class="fas fa-calendar-check"></i>
+                    </a>
+                    <a href="services_sv.html" class="cta-btn-secondary">
+                        <span>Utforska Tjänster</span>
+                        <i class="fas fa-sparkles"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="cta-decoration">
+                <div class="decor-element de1"></div>
+                <div class="decor-element de2"></div>
+                <div class="decor-element de3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
+            <!-- Footer Logo -->
+            <div class="footer-logo">
+                <div class="footer-symbol">A</div>
+                <div class="footer-brand">
+                    <div class="footer-name">AMIRA</div>
+                    <div class="footer-tagline">Östlig Couture Sminkkonst</div>
+                </div>
+            </div>
+            
+            <!-- Footer Navigation -->
+            <div class="footer-nav">
+                <div class="nav-column">
+                    <h4 class="nav-title">Navigation</h4>
+                    <a href="index_sv.html" class="footer-link">Hem</a>
+                    <a href="index_sv.html#about" class="footer-link">Min Filosofi</a>
+                    <a href="services_sv.html" class="footer-link">Tjänster</a>
+                    <a href="gallery_sv.html" class="footer-link">Portfölj</a>
+                    <a href="index_sv.html#contact" class="footer-link">Kontakt</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Portfölj</h4>
+                    <a href="#bridal" class="footer-link">Brudsamlingar</a>
+                    <a href="#editorial" class="footer-link">Redaktionell Konst</a>
+                    <a href="#traditional" class="footer-link">Traditionella Looks</a>
+                    <a href="#events" class="footer-link">Evenemangssmink</a>
+                    <a href="#special" class="footer-link">Specialeffekter</a>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Anslut</h4>
+                    <a href="#" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">Pinterest</a>
+                    <a href="#" class="footer-link">Behance</a>
+                    <a href="#" class="footer-link">Vogue Arabia</a>
+                </div>
+            </div>
+            
+            <!-- Footer Newsletter -->
+            <div class="footer-newsletter">
+                <h4 class="newsletter-title">Bakom Kulisserna</h4>
+                <p class="newsletter-text">Få exklusiv åtkomst till studiosessioner och nya portföljtillskott.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Din e-postadress" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2026 Oleksandra Zdoronok. Alla rättigheter förbehållna.
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-bottom-link">Integritetspolicy</a>
+                    <a href="#" class="footer-bottom-link">Användarvillkor</a>
+                    <a href="#" class="footer-bottom-link">Cookiepolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL OVERLAY ===== -->
+    <div class="modal-overlay" id="galleryModal">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Stäng modal"></button>
+            
+            <div class="modal-progress">
+                <div class="progress-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- LEFT PART: IMAGE -->
+            <div class="modal-gallery">
+                <div class="modal-image-wrapper">
+                    <img class="modal-image" src="" alt="">
+                    <div class="modal-loading">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-nav">
+                    <button class="modal-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="modal-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="modal-counter">
+                    <span class="current-index">1</span> / <span class="total-images">24</span>
+                </div>
+            </div>
+            
+            <!-- RIGHT PART: DESCRIPTION -->
+            <div class="modal-sidebar">
+                <div class="modal-header">
+                    <h3 class="modal-title">Portföljbild</h3>
+                    <p class="modal-category">Kategori</p>
+                </div>
+                
+                <div class="modal-description">
+                    <p>Laddar beskrivning...</p>
+                </div>
+                
+                <div class="modal-meta">
+                    <div class="meta-grid">
+                        <div class="meta-item">
+                            <div class="meta-label">Klient</div>
+                            <div class="meta-value">Amira Studio</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Datum</div>
+                            <div class="meta-value">2024</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Plats</div>
+                            <div class="meta-value">Dubai, Förenade Arabemiraten</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Tjänst</div>
+                            <div class="meta-value">Sminkkonst</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-tech">
+                    <span class="tech-tag">Traditionell</span>
+                    <span class="tech-tag">Guldaccenter</span>
+                    <span class="tech-tag">Handmålade</span>
+                    <span class="tech-tag">Lyx</span>
+                </div>
+            </div>
+            
+            <div class="modal-hint">
+                <span class="hint-key">ESC</span> för att stänga • 
+                <span class="hint-key">←</span> 
+                <span class="hint-key">→</span> för att navigera
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Gallery JS -->
+    <script src="js/gallery.js"></script>
+</body>
+</html>
