@@ -11,11 +11,11 @@ A premium, multilingual portfolio website for luxury makeup artist Amira, featur
 
 ## 🌍 Live Demo
 👉 **[View Live Website](https://ghostlayer168.github.io/makeup-artist-website-amira/en/index.html)**  
-*Replace with your actual GitHub Pages URL*
+
 
 ## 📸 Website Preview
 ![Main Page Preview](screenshot.png)  
-*Elegant hero section showcasing luxury makeup artistry*
+
 
 ## ✨ Key Features
 
