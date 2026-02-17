@@ -551,7 +551,7 @@ const GalleryNavigation = {
                 targetUrl = '../../ar/gallery_ar.html';
                 break;
             case 'en':
-                targetUrl = '../../en/gallery.html';
+                targetUrl = '/makeup-artist-website-amira/en/gallery.html';
                 break;
             case 'sv':
                 targetUrl = '../../sv/gallery_sv.html';
@@ -841,7 +841,7 @@ const GalleryLanguage = {
                 targetUrl = '../../ar/gallery_ar.html';
                 break;
             case 'en':
-                targetUrl = '../../en/gallery.html';
+                targetUrl = '/makeup-artist-website-amira/en/gallery.html';
                 break;
             case 'sv':
                 targetUrl = '../../sv/gallery_sv.html';
