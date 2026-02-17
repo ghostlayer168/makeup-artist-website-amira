@@ -227,17 +227,13 @@ const Navigation = {
     },
     
     openMobileMenu() {
-        // Block body scroll
         document.body.classList.add('mobile-menu-open');
         
-        // Create overlay
         this.createMobileOverlay();
         
-        // Show overlay
         this.mobileOverlay.classList.add('active');
         this.mobileToggle.classList.add('active');
         
-        // Animate menu items
         setTimeout(() => {
             this.animateMenuItems();
         }, 10);
@@ -257,7 +253,6 @@ const Navigation = {
         document.body.appendChild(overlay);
         this.mobileOverlay = overlay;
         
-        // Bind events
         this.bindMobileMenuEvents(overlay);
         
         return overlay;
@@ -268,18 +263,15 @@ const Navigation = {
         
         return `
             <div class="mobile-menu-container">
-                <!-- Close button -->
                 <button class="mobile-close-btn" aria-label="إغلاق القائمة">
                     <span class="close-icon"></span>
                 </button>
                 
-                <!-- Logo in menu -->
                 <div class="mobile-menu-logo">
                     <div class="symbol">أ</div>
                     <div class="brand">أميرة ستوديو</div>
                 </div>
                 
-                <!-- Navigation - main content -->
                 <nav class="mobile-menu-nav">
                     <a href="#hero" class="mobile-nav-link">
                         <span class="link-number">٠١</span>
@@ -307,7 +299,6 @@ const Navigation = {
                     </a>
                 </nav>
                 
-                <!-- Language selector -->
                 <div class="mobile-language-section">
                     <div class="language-label">اختر اللغة</div>
                     <div class="language-buttons">
@@ -328,14 +319,12 @@ const Navigation = {
                     </div>
                 </div>
                 
-                <!-- CTA button -->
                 <a href="#contact" class="mobile-cta-btn">
                     <span>احجز استشارة</span>
                     <i class="fas fa-arrow-left"></i>
                 </a>
             </div>
             
-            <!-- Decorative elements -->
             <div class="mobile-menu-decoration">
                 <div class="mobile-decor-element mde-1"></div>
                 <div class="mobile-decor-element mde-2"></div>
@@ -345,7 +334,6 @@ const Navigation = {
     },
     
     bindMobileMenuEvents(overlay) {
-        // Close button
         const closeBtn = overlay.querySelector('.mobile-close-btn');
         if (closeBtn) {
             closeBtn.addEventListener('click', (e) => {
@@ -355,7 +343,6 @@ const Navigation = {
             });
         }
         
-        // Navigation links
         const navLinks = overlay.querySelectorAll('.mobile-nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
@@ -364,7 +351,6 @@ const Navigation = {
             });
         });
         
-        // Language buttons
         const langButtons = overlay.querySelectorAll('.language-btn');
         langButtons.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -373,7 +359,6 @@ const Navigation = {
             });
         });
         
-        // CTA button
         const ctaBtn = overlay.querySelector('.mobile-cta-btn');
         if (ctaBtn) {
             ctaBtn.addEventListener('click', (e) => {
@@ -382,7 +367,6 @@ const Navigation = {
             });
         }
         
-        // Close on overlay click (except container)
         overlay.addEventListener('click', (e) => {
             if (e.target === overlay) {
                 this.closeMobileMenu();
@@ -395,32 +379,28 @@ const Navigation = {
         const lang = button.dataset.lang;
         const langCode = lang.toUpperCase();
         
-        // Close menu before redirecting
         this.closeMobileMenu();
         
-        // Determine redirect URL based on language
         let targetUrl = '';
         
         switch(lang) {
             case 'en':
-                targetUrl = '../makeup-artist-website-amira/en/index.html';
+                targetUrl = '../en/index.html';
                 break;
             case 'sv':
                 targetUrl = '../sv/index_sv.html';
                 break;
             case 'ar':
-                targetUrl = '../makeup-artist-website-amira/ar/index_ar.html';
+                targetUrl = '../ar/index_ar.html';
                 break;
             default:
-                targetUrl = '../makeup-artist-website-amira/en/index.html';
+                targetUrl = '../en/index.html';
         }
         
         console.log(`Switching language to: ${langCode}, redirecting to: ${targetUrl}`);
         
-        // Save selected language in localStorage
         localStorage.setItem('preferredLanguage', lang);
         
-        // Button animation
         gsap.to(button, {
             scale: 0.95,
             duration: 0.1,
@@ -428,9 +408,7 @@ const Navigation = {
             repeat: 1
         });
         
-        // Add small delay for menu closing animation
         setTimeout(() => {
-            // Redirect to another page
             window.location.href = targetUrl;
         }, 300);
     },
@@ -442,7 +420,6 @@ const Navigation = {
         const langSection = this.mobileOverlay.querySelector('.mobile-language-section');
         const ctaBtn = this.mobileOverlay.querySelector('.mobile-cta-btn');
         
-        // Animation timeline
         const tl = gsap.timeline();
         
         navLinks.forEach((link, index) => {
@@ -475,7 +452,6 @@ const Navigation = {
         
         this.closeMobileMenu();
         
-        // Small delay for closing animation
         setTimeout(() => {
             if (href.startsWith('#')) {
                 const targetElement = document.querySelector(href);
@@ -495,10 +471,8 @@ const Navigation = {
     closeMobileMenu() {
         if (!this.mobileOverlay) return;
         
-        // Remove scroll lock
         document.body.classList.remove('mobile-menu-open');
         
-        // Fade out animation
         gsap.to(this.mobileOverlay, {
             opacity: 0,
             duration: 0.4,
@@ -549,7 +523,6 @@ const Language = {
         
         this.bindEvents();
         
-        // Restore saved language
         this.restoreLanguage();
         
         console.log('Language selector initialized');
@@ -579,7 +552,6 @@ const Language = {
         const lang = e.currentTarget.dataset.lang;
         const langCode = lang.toUpperCase();
         
-        // Update main selector
         if (this.langToggle) {
             this.langToggle.querySelector('.lang-code').textContent = langCode;
         }
@@ -588,7 +560,6 @@ const Language = {
         
         console.log(`Language selected: ${langCode}`);
         
-        // Animation
         gsap.to(e.currentTarget, {
             scale: 0.95,
             duration: 0.1,
@@ -596,32 +567,28 @@ const Language = {
             repeat: 1
         });
         
-        // Save selected language in localStorage
         localStorage.setItem('preferredLanguage', lang);
         
-        // Determine redirect URL based on language
         let targetUrl = '';
         
         switch(lang) {
             case 'en':
-                targetUrl = '../makeup-artist-website-amira/en/index.html';
+                targetUrl = '../en/index.html';
                 break;
             case 'sv':
                 targetUrl = '../sv/index_sv.html';
                 break;
             case 'ar':
-                targetUrl = '../makeup-artist-website-amira/ar/index_ar.html';
+                targetUrl = '../ar/index_ar.html';
                 break;
             default:
-                targetUrl = '../makeup-artist-website-amira/en/index.html';
+                targetUrl = '../en/index.html';
         }
         
-        // Redirect to another page
         window.location.href = targetUrl;
     },
     
     restoreLanguage() {
-        // Restore saved language from localStorage
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang && this.langToggle) {
             const langCode = savedLang.toUpperCase();
@@ -705,7 +672,6 @@ const ActiveNav = {
         window.addEventListener('scroll', Utils.throttle(() => this.checkActiveSection(), 100));
         window.addEventListener('resize', Utils.debounce(() => this.checkActiveSection(), 250));
         
-        // Add handlers for smooth scrolling to sections
         this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => this.handleNavClick(e));
         });
@@ -720,7 +686,6 @@ const ActiveNav = {
         const href = e.currentTarget.getAttribute('href');
         
         if (href === '#services') {
-            // Scroll to services-preview
             const servicesPreview = document.querySelector('.services-preview');
             if (servicesPreview) {
                 const headerHeight = document.querySelector('.luxury-nav')?.offsetHeight || 0;
@@ -731,7 +696,6 @@ const ActiveNav = {
                     behavior: 'smooth'
                 });
                 
-                // Update active link
                 this.setActiveNavLink('services-preview');
             }
         } else if (href.startsWith('#')) {
@@ -745,7 +709,6 @@ const ActiveNav = {
                     behavior: 'smooth'
                 });
                 
-                // Update active link
                 this.setActiveNavLink(href.substring(1));
             }
         }
@@ -761,7 +724,7 @@ const ActiveNav = {
             
             if (scrollPosition >= sectionTop &&
                 scrollPosition < sectionTop + sectionHeight) {
-                // For services-preview use 'services' for compatibility
+                
                 if (section.classList.contains('services-preview')) {
                     currentSectionId = 'services';
                 } else {
@@ -776,10 +739,8 @@ const ActiveNav = {
     setActiveNavLink(sectionId) {
         if (!sectionId) return;
         
-        // Update regular navigation links
         this.navLinks.forEach(link => {
             const href = link.getAttribute('href');
-            // Compare considering that services-preview can be services
             const shouldBeActive = (href === `#${sectionId}`) ||
                                   (sectionId === 'services' && href === '#services');
             
@@ -790,10 +751,8 @@ const ActiveNav = {
             }
         });
         
-        // Update mobile navigation links
         this.mobileNavLinks.forEach(link => {
             const href = link.getAttribute('href');
-            // Compare considering that services-preview can be services
             const shouldBeActive = (href === `#${sectionId}`) ||
                                   (sectionId === 'services' && href === '#services');
             
@@ -891,7 +850,6 @@ const PortfolioModal = {
         this.portfolioImages = [];
         this.isInitialized = false;
         
-        // Wait for page to load
         setTimeout(() => {
             this.initializeAfterLoad();
         }, 1000);
@@ -904,13 +862,10 @@ const PortfolioModal = {
         
         console.log('PortfolioModal: Starting initialization after page load');
         
-        // Collect portfolio images
         this.collectPortfolioImages();
         
-        // Create modal
         this.createModal();
         
-        // Bind events
         this.bindEvents();
         
         this.isInitialized = true;
@@ -919,7 +874,6 @@ const PortfolioModal = {
     },
     
     getPortfolioDescription(item) {
-        // Try different description sources
         const descriptionSources = [
             () => item.getAttribute('data-description'),
             () => item.querySelector('.portfolio-description')?.textContent,
@@ -934,7 +888,6 @@ const PortfolioModal = {
             }
         }
         
-        // Default description
         const title = item.querySelector('.portfolio-title')?.textContent || 'Portfolio Item';
         const category = item.querySelector('.portfolio-category')?.textContent || 'Art';
         
@@ -946,7 +899,6 @@ const PortfolioModal = {
         
         this.portfolioImages = [];
         
-        // Find all portfolio items
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         console.log('PortfolioModal: Found portfolio items:', portfolioItems.length);
         
@@ -956,19 +908,16 @@ const PortfolioModal = {
         }
         
         portfolioItems.forEach((item, index) => {
-            // Find image
             const img = item.querySelector('.portfolio-img');
             if (!img) {
                 console.warn(`PortfolioModal: Image not found in item ${index}`);
                 return;
             }
             
-            // Get data
             const title = item.querySelector('.portfolio-title')?.textContent || `Portfolio ${index + 1}`;
             const category = item.querySelector('.portfolio-category')?.textContent || 'Uncategorized';
             const description = this.getPortfolioDescription(item);
             
-            // Add to array
             this.portfolioImages.push({
                 src: img.src,
                 alt: img.alt || title,
@@ -985,7 +934,6 @@ const PortfolioModal = {
     },
     
     createModal() {
-        // Check if modal already exists
         if (document.getElementById('portfolioModal')) {
             this.modalOverlay = document.getElementById('portfolioModal');
             console.log('PortfolioModal: Modal already exists');
@@ -994,11 +942,9 @@ const PortfolioModal = {
         
         console.log('PortfolioModal: Creating modal');
         
-        // Create modal HTML - FIXED VERSION
         const modalHTML = `
             <div class="modal-overlay" id="portfolioModal">
                 <div class="modal-container">
-                    <!-- Empty button as styles are applied via ::before -->
                     <button class="modal-close" aria-label="إغلاق النافذة"></button>
                     
                     <div class="modal-progress">
@@ -1009,7 +955,6 @@ const PortfolioModal = {
                         </div>
                     </div>
                     
-                    <!-- LEFT PART: IMAGE -->
                     <div class="modal-gallery">
                         <div class="modal-image-wrapper">
                             <img class="modal-image" src="" alt="">
@@ -1032,7 +977,6 @@ const PortfolioModal = {
                         </div>
                     </div>
                     
-                    <!-- RIGHT PART: DESCRIPTION -->
                     <div class="modal-sidebar">
                         <div class="modal-header">
                             <h3 class="modal-title">صورة المحفظة</h3>
@@ -1106,16 +1050,12 @@ const PortfolioModal = {
     bindEvents() {
         console.log('PortfolioModal: Binding events...');
         
-        // Bind events to view buttons
         this.bindViewButtons();
         
-        // Bind events to portfolio cards
         this.bindPortfolioItems();
         
-        // Bind modal events
         this.bindModalEvents();
         
-        // Bind keyboard events
         this.bindKeyboardEvents();
         
         console.log('PortfolioModal: Events bound');
@@ -1141,11 +1081,10 @@ const PortfolioModal = {
     
     bindPortfolioItems() {
         const portfolioItems = document.querySelectorAll('.portfolio-item');
-        console.log('PortfolioModal: Binding events to cards:', portfolioItems.length);
+        console.log('PortfolioModal: Binding events to portfolio cards:', portfolioItems.length);
         
         portfolioItems.forEach((item, index) => {
             item.addEventListener('click', (e) => {
-                // Check if click was on view button
                 if (!e.target.closest('.view-project-btn')) {
                     console.log(`PortfolioModal: Click on portfolio card ${index}`);
                     this.openModal(index);
@@ -1155,7 +1094,6 @@ const PortfolioModal = {
     },
     
     bindModalEvents() {
-        // Close button
         const closeBtn = this.modalOverlay?.querySelector('.modal-close');
         if (closeBtn) {
             closeBtn.addEventListener('click', (e) => {
@@ -1164,7 +1102,6 @@ const PortfolioModal = {
             });
         }
         
-        // Navigation buttons
         const prevBtn = this.modalOverlay?.querySelector('.modal-prev');
         const nextBtn = this.modalOverlay?.querySelector('.modal-next');
         
@@ -1182,7 +1119,6 @@ const PortfolioModal = {
             });
         }
         
-        // Close on overlay click
         if (this.modalOverlay) {
             this.modalOverlay.addEventListener('click', (e) => {
                 if (e.target === this.modalOverlay) {
@@ -1194,17 +1130,15 @@ const PortfolioModal = {
     
     bindKeyboardEvents() {
         document.addEventListener('keydown', (e) => {
-            // Close on Escape
             if (e.key === 'Escape' && this.modalOverlay && this.modalOverlay.classList.contains('active')) {
                 this.closeModal();
             }
             
-            // Navigation with arrow keys
             if (this.modalOverlay && this.modalOverlay.classList.contains('active')) {
                 if (e.key === 'ArrowLeft') {
-                    this.prevImage();
-                } else if (e.key === 'ArrowRight') {
                     this.nextImage();
+                } else if (e.key === 'ArrowRight') {
+                    this.prevImage();
                 }
             }
         });
@@ -1213,13 +1147,11 @@ const PortfolioModal = {
     openModal(index) {
         console.log(`PortfolioModal: Opening modal for index ${index}`);
         
-        // Check if modal is initialized
         if (!this.modalOverlay) {
             console.error('PortfolioModal: Modal not created!');
             this.createModal();
         }
         
-        // Check if there are images
         if (this.portfolioImages.length === 0) {
             console.warn('PortfolioModal: No portfolio images!');
             this.collectPortfolioImages();
@@ -1230,7 +1162,6 @@ const PortfolioModal = {
             }
         }
         
-        // Check index
         if (index < 0 || index >= this.portfolioImages.length) {
             console.error(`PortfolioModal: Invalid index ${index}. Valid range: 0-${this.portfolioImages.length - 1}`);
             index = 0;
@@ -1241,13 +1172,10 @@ const PortfolioModal = {
         
         console.log('PortfolioModal: Opening image:', imageData.title);
         
-        // Update modal content
         this.updateModalContent(imageData);
         
-        // Show modal
         this.showModal();
         
-        // Block page scroll
         document.body.style.overflow = 'hidden';
         
         console.log('PortfolioModal: Modal opened');
@@ -1263,23 +1191,19 @@ const PortfolioModal = {
         const currentIndex = this.modalOverlay.querySelector('.current-index');
         const totalImages = this.modalOverlay.querySelector('.total-images');
         
-        // Also update metadata
         const metaClient = this.modalOverlay.querySelector('.meta-item:nth-child(1) .meta-value');
         const metaDate = this.modalOverlay.querySelector('.meta-item:nth-child(2) .meta-value');
         const metaService = this.modalOverlay.querySelector('.meta-item:nth-child(4) .meta-value');
         
-        // Show loading
         if (modalLoading) {
             modalLoading.style.display = 'grid';
         }
         
-        // Set image
         if (modalImage) {
             modalImage.style.opacity = '0';
             modalImage.src = imageData.src;
             modalImage.alt = imageData.alt;
             
-            // Hide loading when image loads
             modalImage.onload = () => {
                 if (modalLoading) {
                     modalLoading.style.display = 'none';
@@ -1288,7 +1212,6 @@ const PortfolioModal = {
                 modalImage.classList.add('loaded');
             };
             
-            // Handle load error
             modalImage.onerror = () => {
                 console.error('PortfolioModal: Error loading image:', imageData.src);
                 if (modalLoading) {
@@ -1297,7 +1220,6 @@ const PortfolioModal = {
             };
         }
         
-        // Update text
         if (modalTitle) {
             modalTitle.textContent = imageData.title;
         }
@@ -1320,7 +1242,6 @@ const PortfolioModal = {
             totalImages.textContent = this.convertToArabicNumerals(this.portfolioImages.length);
         }
         
-        // Update metadata
         if (metaClient) {
             metaClient.textContent = 'أميرة ستوديو';
         }
@@ -1333,7 +1254,6 @@ const PortfolioModal = {
             metaService.textContent = imageData.category;
         }
         
-        // Update progress dots
         this.updateProgressDots();
     },
     
@@ -1351,10 +1271,8 @@ const PortfolioModal = {
     showModal() {
         if (!this.modalOverlay) return;
         
-        // Show modal
         this.modalOverlay.classList.add('active');
         
-        // Show animation
         const modalContainer = this.modalOverlay.querySelector('.modal-container');
         if (modalContainer) {
             modalContainer.style.opacity = '0';
@@ -1373,7 +1291,6 @@ const PortfolioModal = {
         
         console.log('PortfolioModal: Closing modal');
         
-        // Fade out animation
         const modalContainer = this.modalOverlay.querySelector('.modal-container');
         if (modalContainer) {
             modalContainer.style.opacity = '0';
@@ -1382,10 +1299,8 @@ const PortfolioModal = {
         }
         
         setTimeout(() => {
-            // Hide modal
             this.modalOverlay.classList.remove('active');
             
-            // Allow page scroll
             document.body.style.overflow = '';
             
             console.log('PortfolioModal: Modal closed');
@@ -1532,7 +1447,7 @@ const Testimonials = {
                 ease: "power2.out"
             });
             this.updateDots();
-    }
+        }
     },
     
     updateDots() {
@@ -1866,14 +1781,11 @@ const PageLoader = {
         console.log('AMIRA Website - Eastern Couture Makeup Artistry (Arabic Version)');
         document.documentElement.classList.remove('no-js');
         
-        // Set Arabic language
         document.documentElement.lang = 'ar';
         document.documentElement.dir = 'rtl';
         
-        // Restore language from localStorage
         this.restoreLanguage();
         
-        // Check if there is a preloader
         const loadingScreen = document.querySelector('.loading-screen');
         if (loadingScreen) {
             this.initArabicPreloader();
@@ -1883,7 +1795,6 @@ const PageLoader = {
     },
     
     restoreLanguage() {
-        // Restore saved language from localStorage
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang) {
             const langCode = savedLang.toUpperCase();
@@ -1905,7 +1816,6 @@ const PageLoader = {
             return;
         }
         
-        // Arabic loading messages
         const arabicMessages = [
             "جاري تحميل الأصول الفاخرة",
             "جاري تهيئة الفن",
@@ -1919,11 +1829,9 @@ const PageLoader = {
             
             if (progressFill) progressFill.style.width = `${progress}%`;
             if (percentage) {
-                // Convert to Arabic numerals
                 percentage.textContent = this.convertToArabicNumerals(progress) + '%';
             }
             
-            // Update Arabic message
             if (loadingMessage) {
                 if (progress < 25) loadingMessage.textContent = arabicMessages[0];
                 else if (progress < 50) loadingMessage.textContent = arabicMessages[1];
@@ -1982,7 +1890,6 @@ const PageLoader = {
     },
     
     convertPageNumbers() {
-        // Convert all numbers on page to Arabic numerals
         const elementsToConvert = document.querySelectorAll(
             '.link-number, .section-number, .service-number, ' +
             '.current-index, .total-images, .copyright, ' +
@@ -2001,7 +1908,6 @@ const PageLoader = {
     initializeApp() {
         console.log('Initializing Arabic application...');
         
-        // Initialize all modules
         try {
             Cursor.init();
             Navigation.init();
@@ -2016,10 +1922,8 @@ const PageLoader = {
             
             console.log('AMIRA Arabic Website fully loaded! ✨');
             
-            // Add small parallax effect for hero image
             this.initParallax();
             
-            // Convert any remaining numbers
             setTimeout(() => this.convertPageNumbers(), 500);
             
         } catch (error) {
@@ -2042,14 +1946,12 @@ const PageLoader = {
     }
 };
 
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => PageLoader.init());
 } else {
     PageLoader.init();
 }
 
-// Export modules for global access
 window.AMIRA = {
     Config,
     Utils,
@@ -2066,7 +1968,6 @@ window.AMIRA = {
     PageLoader
 };
 
-// Global function for testing modal
 window.testPortfolioModal = function(index = 0) {
     if (window.AMIRA && window.AMIRA.PortfolioModal) {
         window.AMIRA.PortfolioModal.openModal(index);
