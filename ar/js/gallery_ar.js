@@ -548,16 +548,16 @@ const GalleryNavigation = {
         
         switch(lang) {
             case 'ar':
-                targetUrl = '../../makeup-artist-website-amira/ar/gallery_ar.html';
+                targetUrl = '../ar/gallery_ar.html';
                 break;
             case 'en':
-                targetUrl = '/makeup-artist-website-amira/makeup-artist-website-amira/en/gallery.html';
+                targetUrl = '../en/gallery.html';
                 break;
             case 'sv':
-                targetUrl = '../../sv/gallery_sv.html';
+                targetUrl = '../sv/gallery_sv.html';
                 break;
             default:
-                targetUrl = '../../makeup-artist-website-amira/ar/gallery_ar.html';
+                targetUrl = '../ar/gallery_ar.html';
         }
         
         console.log(`Switching language to: ${langCode}, redirecting to: ${targetUrl}`);
@@ -838,16 +838,16 @@ const GalleryLanguage = {
         
         switch(lang) {
             case 'ar':
-                targetUrl = '../../makeup-artist-website-amira/ar/gallery_ar.html';
+                targetUrl = '../ar/gallery_ar.html';
                 break;
             case 'en':
-                targetUrl = '/makeup-artist-website-amira/makeup-artist-website-amira/en/gallery.html';
+                targetUrl = '../en/gallery.html';
                 break;
             case 'sv':
-                targetUrl = '../../sv/gallery_sv.html';
+                targetUrl = '../sv/gallery_sv.html';
                 break;
             default:
-                targetUrl = '../../makeup-artist-website-amira/ar/gallery_ar.html';
+                targetUrl = '../ar/gallery_ar.html';
         }
         
         console.log(`Redirecting to: ${targetUrl}`);
