@@ -46,6 +46,83 @@ const GalleryUtils = {
             rect.top <= (window.innerHeight || document.documentElement.clientHeight) * offset &&
             rect.bottom >= 0
         );
+    },
+    
+    convertToArabicNumerals(number) {
+        const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+        const numberStr = String(number);
+        let arabicStr = '';
+        
+        for (let char of numberStr) {
+            if (char >= '0' && char <= '9') {
+                arabicStr += arabicNumerals[parseInt(char)];
+            } else {
+                arabicStr += char;
+            }
+        }
+        
+        return arabicStr;
+    }
+};
+
+// ============================================
+// UTILITY: GET PAGE INFO
+// ============================================
+const PageUtils = {
+    getCurrentPageInfo() {
+        const path = window.location.pathname;
+        const filename = path.split('/').pop() || 'gallery_ar.html';
+        const langFolder = path.includes('/ar/') ? 'ar' : 
+                          path.includes('/sv/') ? 'sv' : 'en';
+        
+        let baseName = filename;
+        if (filename.includes('_ar.')) {
+            baseName = filename.replace('_ar', '');
+        } else if (filename.includes('_sv.')) {
+            baseName = filename.replace('_sv', '');
+        }
+        
+        return {
+            path: path,
+            filename: filename,
+            baseName: baseName,
+            lang: langFolder,
+            isGalleryPage: baseName.includes('gallery')
+        };
+    },
+    
+    getTargetUrl(targetLang, currentPageInfo) {
+        const { baseName, lang: currentLang } = currentPageInfo;
+        
+        let targetFilename = '';
+        
+        if (targetLang === 'en') {
+            targetFilename = baseName.replace('_ar', '').replace('_sv', '');
+        } else if (targetLang === 'sv') {
+            if (baseName.includes('_sv')) {
+                targetFilename = baseName;
+            } else {
+                targetFilename = baseName.replace('.html', '_sv.html');
+            }
+        } else if (targetLang === 'ar') {
+            if (baseName.includes('_ar')) {
+                targetFilename = baseName;
+            } else {
+                targetFilename = baseName.replace('.html', '_ar.html');
+            }
+        } else {
+            targetFilename = baseName.replace('_ar', '').replace('_sv', '');
+        }
+        
+        if (!targetFilename.endsWith('.html')) {
+            targetFilename += '.html';
+        }
+        
+        if (currentLang === targetLang) {
+            return targetFilename;
+        } else {
+            return `../${targetLang}/${targetFilename}`;
+        }
     }
 };
 
@@ -102,10 +179,6 @@ const GalleryCursor = {
                 duration: 0.3,
                 ease: GalleryConfig.animation.easing.power3
             });
-        } else {
-            // Fallback without GSAP
-            this.cursorInner.style.transform = `translate(${this.state.x}px, ${this.state.y}px)`;
-            this.cursorOuter.style.transform = `translate(${this.state.x}px, ${this.state.y}px)`;
         }
         
         this.state.lastX = this.state.x;
@@ -129,11 +202,6 @@ const GalleryCursor = {
                     duration: GalleryConfig.animation.duration.fast,
                     ease: GalleryConfig.animation.easing.smooth
                 });
-            } else {
-                this.cursorInner.style.transform += ' scale(1.5)';
-                this.cursorOuter.style.transform += ' scale(1.2)';
-                this.cursorInner.style.transition = 'transform 0.3s ease';
-                this.cursorOuter.style.transition = 'transform 0.3s ease';
             }
         }
     },
@@ -155,9 +223,6 @@ const GalleryCursor = {
                     duration: GalleryConfig.animation.duration.fast,
                     ease: GalleryConfig.animation.easing.smooth
                 });
-            } else {
-                this.cursorInner.style.transform = this.cursorInner.style.transform.replace(' scale(1.5)', '');
-                this.cursorOuter.style.transform = this.cursorOuter.style.transform.replace(' scale(1.2)', '');
             }
         }
     },
@@ -174,9 +239,6 @@ const GalleryCursor = {
                     scale: 0.8,
                     duration: GalleryConfig.animation.duration.fast
                 });
-            } else {
-                this.cursorInner.style.transform += ' scale(1.3)';
-                this.cursorOuter.style.transform += ' scale(0.8)';
             }
         }
     },
@@ -193,9 +255,6 @@ const GalleryCursor = {
                     scale: 1,
                     duration: GalleryConfig.animation.duration.fast
                 });
-            } else {
-                this.cursorInner.style.transform = this.cursorInner.style.transform.replace(' scale(1.3)', '');
-                this.cursorOuter.style.transform = this.cursorOuter.style.transform.replace(' scale(0.8)', '');
             }
         }
     }
@@ -208,7 +267,9 @@ const GalleryPageLoader = {
     init() {
         console.log('Gallery page loader initializing...');
         
-        // Restore language from localStorage
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+        
         this.restoreLanguage();
         
         const loadingScreen = document.querySelector('.loading-screen');
@@ -241,12 +302,11 @@ const GalleryPageLoader = {
             return;
         }
         
-        // Arabic loading messages
         const messages = [
-            "جاري تحميل معرض الأعمال",
+            "جاري تحميل المحفظة",
             "جاري تهيئة الصور",
             "جاري إعداد التجربة",
-            "جاهز تقريباً"
+            "جاهز تقريبًا"
         ];
         
         let progress = 0;
@@ -254,20 +314,8 @@ const GalleryPageLoader = {
             progress += 1;
             
             if (progressFill) progressFill.style.width = `${progress}%`;
-            
-            // Convert to Arabic numerals for percentage display
             if (percentage) {
-                const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-                const progressStr = progress.toString();
-                let arabicProgress = '';
-                for (let char of progressStr) {
-                    if (char >= '0' && char <= '9') {
-                        arabicProgress += arabicNumerals[parseInt(char)];
-                    } else {
-                        arabicProgress += char;
-                    }
-                }
-                percentage.textContent = `${arabicProgress}%`;
+                percentage.textContent = GalleryUtils.convertToArabicNumerals(progress) + '%';
             }
             
             if (loadingMessage) {
@@ -307,6 +355,7 @@ const GalleryPageLoader = {
                     loadingScreen.style.visibility = 'hidden';
                     document.body.classList.add('loaded');
                     this.initializeApp();
+                    this.convertPageNumbers();
                 }
             });
         } else {
@@ -315,15 +364,29 @@ const GalleryPageLoader = {
                 loadingScreen.style.visibility = 'hidden';
                 document.body.classList.add('loaded');
                 this.initializeApp();
+                this.convertPageNumbers();
             }, 1000);
         }
+    },
+    
+    convertPageNumbers() {
+        const elementsToConvert = document.querySelectorAll(
+            '.link-number, .section-number, .counter-number, .stat-number, .label-count, .current-index, .total-images'
+        );
+        
+        elementsToConvert.forEach(element => {
+            const originalText = element.textContent;
+            const convertedText = GalleryUtils.convertToArabicNumerals(originalText);
+            if (convertedText !== originalText) {
+                element.textContent = convertedText;
+            }
+        });
     },
     
     initializeApp() {
         console.log('Initializing gallery page...');
         
         try {
-            // Initialize cursor first
             GalleryCursor.init();
             GalleryNavigation.init();
             GalleryLanguage.init();
@@ -331,6 +394,8 @@ const GalleryPageLoader = {
             GalleryModal.init();
             
             console.log('Gallery page fully loaded! ✨');
+            
+            setTimeout(() => this.convertPageNumbers(), 500);
         } catch (error) {
             console.error('Error initializing gallery page:', error);
         }
@@ -421,7 +486,7 @@ const GalleryNavigation = {
     },
     
     generateMobileMenuContent() {
-        const activeLang = document.querySelector('.lang-code')?.textContent || 'AR';
+        const activeLang = 'AR';
         const currentPage = window.location.pathname.split('/').pop();
         
         return `
@@ -431,34 +496,34 @@ const GalleryNavigation = {
                 </button>
                 
                 <div class="mobile-menu-logo">
-                    <div class="symbol">A</div>
-                    <div class="brand">AMIRA STUDIO</div>
+                    <div class="symbol">أ</div>
+                    <div class="brand">أميرة ستوديو</div>
                 </div>
                 
                 <nav class="mobile-menu-nav">
-                    <a href="../../makeup-artist-website-amira/ar/index_ar.html" class="mobile-nav-link ${currentPage === 'index_ar.html' || currentPage === '' ? 'active' : ''}">
+                    <a href="../ar/index_ar.html" class="mobile-nav-link ${currentPage === 'index_ar.html' ? 'active' : ''}">
                         <span class="link-number">٠١</span>
                         <span class="link-text">الرئيسية</span>
                     </a>
                     
-                    <a href="../../makeup-artist-website-amira/ar/index_ar.html#philosophy" class="mobile-nav-link">
+                    <a href="../ar/index_ar.html#about" class="mobile-nav-link">
                         <span class="link-number">٠٢</span>
-                        <span class="link-text">الفلسفة</span>
+                        <span class="link-text">فلسفتي</span>
                     </a>
                     
-                    <a href="../../makeup-artist-website-amira/ar/services_ar.html" class="mobile-nav-link">
+                    <a href="../ar/services_ar.html" class="mobile-nav-link ${currentPage === 'services_ar.html' ? 'active' : ''}">
                         <span class="link-number">٠٣</span>
                         <span class="link-text">الخدمات</span>
                     </a>
                     
-                    <a href="../../makeup-artist-website-amira/ar/gallery_ar.html" class="mobile-nav-link ${currentPage === 'gallery_ar.html' ? 'active' : ''}">
+                    <a href="../ar/gallery_ar.html" class="mobile-nav-link ${currentPage === 'gallery_ar.html' ? 'active' : ''}">
                         <span class="link-number">٠٤</span>
-                        <span class="link-text">المعرض</span>
+                        <span class="link-text">المحفظة</span>
                     </a>
                     
-                    <a href="../../makeup-artist-website-amira/ar/index_ar.html#contact" class="mobile-nav-link">
+                    <a href="../ar/index_ar.html#contact" class="mobile-nav-link">
                         <span class="link-number">٠٥</span>
-                        <span class="link-text">اتصل بنا</span>
+                        <span class="link-text">اتصل بي</span>
                     </a>
                 </nav>
                 
@@ -482,9 +547,9 @@ const GalleryNavigation = {
                     </div>
                 </div>
                 
-                <a href="../../makeup-artist-website-amira/ar/index_ar.html#contact" class="mobile-cta-btn">
-                    <span>حجز استشارة</span>
-                    <i class="fas fa-arrow-right"></i>
+                <a href="../ar/index_ar.html#contact" class="mobile-cta-btn">
+                    <span>احجز استشارة</span>
+                    <i class="fas fa-arrow-left"></i>
                 </a>
             </div>
             
@@ -547,14 +612,14 @@ const GalleryNavigation = {
         let targetUrl = '';
         
         switch(lang) {
-            case 'ar':
-                targetUrl = '../ar/gallery_ar.html';
-                break;
             case 'en':
                 targetUrl = '../en/gallery.html';
                 break;
             case 'sv':
                 targetUrl = '../sv/gallery_sv.html';
+                break;
+            case 'ar':
+                targetUrl = '../ar/gallery_ar.html';
                 break;
             default:
                 targetUrl = '../ar/gallery_ar.html';
@@ -621,7 +686,7 @@ const GalleryNavigation = {
             if (href.includes('.html')) {
                 window.location.href = href;
             } else if (href.startsWith('#')) {
-                if (href === '#hero' && window.location.pathname.includes('gallery_ar.html')) {
+                if (href === '#hero') {
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
@@ -689,7 +754,7 @@ const GalleryNavigation = {
 };
 
 // ============================================
-// MODULE: LANGUAGE SELECTOR (FIXED VERSION)
+// MODULE: LANGUAGE SELECTOR
 // ============================================
 const GalleryLanguage = {
     init() {
@@ -715,7 +780,6 @@ const GalleryLanguage = {
         
         this.bindEvents();
         
-        // Restore saved language
         this.restoreLanguage();
         
         console.log('Gallery Language selector initialized successfully');
@@ -724,7 +788,6 @@ const GalleryLanguage = {
     bindEvents() {
         console.log('Binding language selector events...');
         
-        // Toggle dropdown on button click
         if (this.langToggle) {
             this.langToggle.addEventListener('click', (e) => {
                 console.log('Language toggle clicked');
@@ -732,7 +795,6 @@ const GalleryLanguage = {
             });
         }
         
-        // Handle option selection
         if (this.langOptions && this.langOptions.length > 0) {
             this.langOptions.forEach(option => {
                 option.addEventListener('click', (e) => {
@@ -742,12 +804,10 @@ const GalleryLanguage = {
             });
         }
         
-        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             this.closeDropdown(e);
         });
         
-        // Close on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.langDropdown && this.langDropdown.classList.contains('active')) {
                 this.closeAllDropdowns();
@@ -767,17 +827,14 @@ const GalleryLanguage = {
         
         const isActive = this.langDropdown.classList.contains('active');
         
-        // Close all dropdowns first
         this.closeAllDropdowns();
         
-        // Toggle current dropdown
         if (!isActive) {
             this.langDropdown.classList.add('active');
             this.langToggle.classList.add('active');
             
             console.log('Dropdown opened');
             
-            // Add animation if GSAP is available
             if (typeof gsap !== 'undefined') {
                 gsap.fromTo(this.langDropdown, 
                     { opacity: 0, y: -10 },
@@ -801,21 +858,17 @@ const GalleryLanguage = {
         
         console.log(`Language selected: ${langCode}`);
         
-        // Update the toggle button text
         const langCodeElement = this.langToggle.querySelector('.lang-code');
         if (langCodeElement) {
             langCodeElement.textContent = langCode;
         }
         
-        // Close dropdown
         this.closeAllDropdowns();
         
-        // Save to localStorage
         if (lang) {
             localStorage.setItem('preferredLanguage', lang);
         }
         
-        // Animate the selected option if GSAP is available
         if (typeof gsap !== 'undefined') {
             gsap.to(option, {
                 scale: 0.95,
@@ -823,12 +876,10 @@ const GalleryLanguage = {
                 yoyo: true,
                 repeat: 1,
                 onComplete: () => {
-                    // Determine redirect URL
                     this.redirectToLanguage(lang);
                 }
             });
         } else {
-            // Redirect immediately if no GSAP
             this.redirectToLanguage(lang);
         }
     },
@@ -837,14 +888,14 @@ const GalleryLanguage = {
         let targetUrl = '';
         
         switch(lang) {
-            case 'ar':
-                targetUrl = '../ar/gallery_ar.html';
-                break;
             case 'en':
                 targetUrl = '../en/gallery.html';
                 break;
             case 'sv':
                 targetUrl = '../sv/gallery_sv.html';
+                break;
+            case 'ar':
+                targetUrl = '../ar/gallery_ar.html';
                 break;
             default:
                 targetUrl = '../ar/gallery_ar.html';
@@ -852,7 +903,6 @@ const GalleryLanguage = {
         
         console.log(`Redirecting to: ${targetUrl}`);
         
-        // Small delay for animation, then redirect
         setTimeout(() => {
             window.location.href = targetUrl;
         }, 150);
@@ -880,7 +930,6 @@ const GalleryLanguage = {
     },
     
     closeDropdown(e) {
-        // Don't close if click is inside the language selector elements
         if (this.langToggle && this.langToggle.contains(e.target)) {
             return;
         }
@@ -889,7 +938,6 @@ const GalleryLanguage = {
             return;
         }
         
-        // Otherwise, close the dropdown
         this.closeAllDropdowns();
     }
 };
@@ -907,11 +955,9 @@ const Gallery = {
         this.visibleCount = 12;
         this.totalItems = 0;
         
-        // Initialization
         this.collectGalleryItems();
         this.bindGalleryEvents();
         
-        // APPLY initial filtering and sorting
         this.applyFilterAndSort();
         
         console.log('Gallery initialized with', this.totalItems, 'items');
@@ -922,7 +968,6 @@ const Gallery = {
         
         const items = document.querySelectorAll('.gallery-item');
         this.galleryItems = Array.from(items).map((item, index) => {
-            // Get date from data attribute
             let dateStr = item.dataset.date || '';
             let date = new Date();
             
@@ -931,7 +976,7 @@ const Gallery = {
                     date = new Date(dateStr);
                     if (isNaN(date.getTime())) {
                         console.warn('Invalid date:', dateStr, 'for item', index);
-                        date = new Date(); // fallback
+                        date = new Date();
                     }
                 } catch (e) {
                     console.warn('Error parsing date:', dateStr, e);
@@ -946,7 +991,7 @@ const Gallery = {
                 dateStr: dateStr,
                 featured: item.dataset.featured === 'true',
                 index: index,
-                originalOrder: index // Keep original order
+                originalOrder: index
             };
         });
         
@@ -958,35 +1003,31 @@ const Gallery = {
     bindGalleryEvents() {
         console.log('Binding gallery events...');
         
-        // Filters
         const filterButtons = document.querySelectorAll('.filter-nav-btn');
         filterButtons.forEach(button => {
             button.addEventListener('click', (e) => this.handleFilter(e));
         });
         
-        // Sorting
         const sortSelect = document.getElementById('sortSelect');
         if (sortSelect) {
             sortSelect.addEventListener('change', (e) => this.handleSort(e));
         }
         
-        // Load More button
         const loadMoreBtn = document.getElementById('loadMoreBtn');
         if (loadMoreBtn) {
             loadMoreBtn.addEventListener('click', () => this.loadMore());
         }
         
-        // Gallery view buttons
         const viewButtons = document.querySelectorAll('.view-btn');
         viewButtons.forEach((btn, index) => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                this.openGalleryModal(index);
+                const itemIndex = parseInt(btn.dataset.index || index);
+                this.openGalleryModal(itemIndex);
             });
         });
         
-        // Gallery card clicks
         const galleryItems = document.querySelectorAll('.gallery-item');
         galleryItems.forEach((item, index) => {
             item.addEventListener('click', (e) => {
@@ -996,13 +1037,11 @@ const Gallery = {
             });
         });
         
-        // Category links
         const categoryLinks = document.querySelectorAll('.category-link');
         categoryLinks.forEach(link => {
             link.addEventListener('click', (e) => this.handleCategoryLink(e));
         });
         
-        // Footer links
         const footerLinks = document.querySelectorAll('.footer-link');
         footerLinks.forEach(link => {
             link.addEventListener('click', (e) => this.handleFooterLink(e));
@@ -1049,12 +1088,10 @@ const Gallery = {
         
         console.log('Filter clicked:', filter);
         
-        // Update active button
         const filterButtons = document.querySelectorAll('.filter-nav-btn');
         filterButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
         
-        // Button animation
         if (typeof gsap !== 'undefined') {
             gsap.to(button, {
                 scale: 0.95,
@@ -1064,35 +1101,29 @@ const Gallery = {
             });
         }
         
-        // Apply filter
         this.currentFilter = filter;
-        this.visibleCount = 12; // Reset counter
+        this.visibleCount = 12;
         this.applyFilterAndSort();
         
-        // Scroll to gallery
         this.scrollToGallery();
     },
     
     handleSort(e) {
         this.currentSort = e.target.value;
         console.log('Sort changed to:', this.currentSort);
-        this.visibleCount = 12; // Reset counter when sorting changes
+        this.visibleCount = 12;
         this.applyFilterAndSort();
     },
     
     applyFilterAndSort() {
         console.log('Applying filter:', this.currentFilter, 'and sort:', this.currentSort);
         
-        // 1. Get filtered items
         let filteredItems = this.getFilteredItems();
         
-        // 2. Sort filtered items
         let sortedItems = this.sortItems(filteredItems);
         
-        // 3. Update display
         this.updateDisplay(sortedItems);
         
-        // 4. Update UI
         this.updateUI(sortedItems.length);
     },
     
@@ -1104,30 +1135,27 @@ const Gallery = {
     },
     
     sortItems(items) {
-        // Create copy for sorting
         const sorted = [...items];
         
         sorted.sort((a, b) => {
             switch (this.currentSort) {
                 case 'date-desc':
-                    return b.date - a.date; // Newest first
+                    return b.date - a.date;
                     
                 case 'date-asc':
-                    return a.date - b.date; // Oldest first
+                    return a.date - b.date;
                     
                 case 'featured':
-                    // Featured first, then by date (newest first)
                     if (a.featured && !b.featured) return -1;
                     if (!a.featured && b.featured) return 1;
                     return b.date - a.date;
                     
                 case 'category':
-                    // First by category, then by date (newest first)
                     const catCompare = a.category.localeCompare(b.category);
                     return catCompare !== 0 ? catCompare : b.date - a.date;
                     
                 default:
-                    return a.originalOrder - b.originalOrder; // Original order
+                    return a.originalOrder - b.originalOrder;
             }
         });
         
@@ -1137,14 +1165,12 @@ const Gallery = {
     updateDisplay(sortedItems) {
         console.log('Updating display. Total filtered:', sortedItems.length, 'Showing:', Math.min(this.visibleCount, sortedItems.length));
         
-        // 1. First hide ALL elements
         this.galleryItems.forEach(item => {
             item.element.style.display = 'none';
             item.element.style.opacity = '0';
             item.element.style.transform = 'scale(0.9)';
         });
         
-        // 2. Show only visible elements
         const visibleItems = sortedItems.slice(0, this.visibleCount);
         
         visibleItems.forEach((item, index) => {
@@ -1169,10 +1195,8 @@ const Gallery = {
     },
     
     updateUI(filteredCount) {
-        // Update counters
         this.updateGalleryCounter(filteredCount);
         
-        // Update Load More button
         this.updateLoadMoreButton(filteredCount);
     },
     
@@ -1181,34 +1205,12 @@ const Gallery = {
         const filteredElement = document.getElementById('filteredImages');
         
         if (totalElement) {
-            // Convert to Arabic numerals
-            const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-            const totalStr = this.totalItems.toString();
-            let arabicTotal = '';
-            for (let char of totalStr) {
-                if (char >= '0' && char <= '9') {
-                    arabicTotal += arabicNumerals[parseInt(char)];
-                } else {
-                    arabicTotal += char;
-                }
-            }
-            totalElement.textContent = arabicTotal;
+            totalElement.textContent = GalleryUtils.convertToArabicNumerals(this.totalItems);
         }
         
         if (filteredElement) {
             const showingCount = Math.min(filteredCount, this.visibleCount);
-            // Convert to Arabic numerals
-            const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-            const showingStr = showingCount.toString();
-            let arabicShowing = '';
-            for (let char of showingStr) {
-                if (char >= '0' && char <= '9') {
-                    arabicShowing += arabicNumerals[parseInt(char)];
-                } else {
-                    arabicShowing += char;
-                }
-            }
-            filteredElement.textContent = arabicShowing;
+            filteredElement.textContent = GalleryUtils.convertToArabicNumerals(showingCount);
         }
     },
     
@@ -1222,28 +1224,13 @@ const Gallery = {
         console.log('Load More check - Total filtered:', filteredCount, 'Visible:', this.visibleCount, 'Remaining:', remaining);
         
         if (remaining > 0) {
-            // There are more items to load
             loadMoreContainer.style.display = 'block';
-            
-            // Convert remaining to Arabic numerals
-            const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-            const remainingStr = remaining.toString();
-            let arabicRemaining = '';
-            for (let char of remainingStr) {
-                if (char >= '0' && char <= '9') {
-                    arabicRemaining += arabicNumerals[parseInt(char)];
-                } else {
-                    arabicRemaining += char;
-                }
-            }
-            
             loadMoreBtn.innerHTML = `
-                <span>تحميل المزيد (${arabicRemaining} متبقي)</span>
+                <span>تحميل المزيد (${GalleryUtils.convertToArabicNumerals(remaining)} متبقي)</span>
                 <i class="fas fa-chevron-down"></i>
             `;
             loadMoreBtn.disabled = false;
         } else {
-            // All items already shown
             loadMoreContainer.style.display = 'none';
             loadMoreBtn.disabled = true;
         }
@@ -1252,11 +1239,9 @@ const Gallery = {
     loadMore() {
         console.log('Load More clicked');
         
-        // Get current filtered and sorted items
         const filteredItems = this.getFilteredItems();
         const sortedItems = this.sortItems(filteredItems);
         
-        // Check if there are more items to load
         const remaining = sortedItems.length - this.visibleCount;
         
         if (remaining <= 0) {
@@ -1265,15 +1250,12 @@ const Gallery = {
             return;
         }
         
-        // Determine how many items to load (max 6 or remaining)
         const itemsToLoad = Math.min(6, remaining);
         console.log('Loading', itemsToLoad, 'more items');
         
-        // Increase visible count
         const oldVisibleCount = this.visibleCount;
         this.visibleCount += itemsToLoad;
         
-        // Show new items
         const newItems = sortedItems.slice(oldVisibleCount, this.visibleCount);
         
         newItems.forEach((item, index) => {
@@ -1307,10 +1289,8 @@ const Gallery = {
             }, 50);
         });
         
-        // Update UI
         this.updateUI(sortedItems.length);
         
-        // Button animation
         const loadMoreBtn = document.getElementById('loadMoreBtn');
         if (loadMoreBtn && typeof gsap !== 'undefined') {
             gsap.to(loadMoreBtn, {
@@ -1321,7 +1301,6 @@ const Gallery = {
             });
         }
         
-        // Scroll down a bit to show new items
         setTimeout(() => {
             if (newItems.length > 0 && newItems[0].element) {
                 const elementTop = newItems[0].element.getBoundingClientRect().top + window.pageYOffset;
@@ -1341,13 +1320,21 @@ const Gallery = {
         const href = link.getAttribute('href');
         
         if (href.startsWith('#')) {
-            const category = href.substring(1).replace('-gallery', '');
-            console.log('Category link clicked:', category);
+            const categoryMap = {
+                '#bridal-gallery': 'bridal',
+                '#editorial-gallery': 'editorial',
+                '#traditional-gallery': 'traditional',
+                '#events-gallery': 'events',
+                '#special-gallery': 'special'
+            };
             
-            // Find corresponding filter button
-            const filterButton = document.querySelector(`.filter-nav-btn[data-filter="${category}"]`);
-            if (filterButton) {
-                filterButton.click();
+            const category = categoryMap[href];
+            if (category) {
+                console.log('Category link clicked:', category);
+                const filterButton = document.querySelector(`.filter-nav-btn[data-filter="${category}"]`);
+                if (filterButton) {
+                    filterButton.click();
+                }
             }
         }
     },
@@ -1368,21 +1355,10 @@ const Gallery = {
     openGalleryModal(index) {
         console.log('Opening gallery modal for index:', index);
         
-        // Use GalleryModal
-        if (window.AMIRA && window.AMIRA.GalleryModal) {
-            window.AMIRA.GalleryModal.openModal(index);
-        } else if (GalleryModal) {
+        if (GalleryModal) {
             GalleryModal.openModal(index);
         } else {
             console.error('GalleryModal not available');
-            // Fallback
-            const item = this.galleryItems[index];
-            if (item && item.element) {
-                const img = item.element.querySelector('img');
-                if (img && img.src) {
-                    window.open(img.src, '_blank');
-                }
-            }
         }
     }
 };
@@ -1395,17 +1371,17 @@ const GalleryModal = {
         console.log('Initializing Gallery Modal...');
         
         this.modal = document.getElementById('galleryModal');
-        this.modalImage = this.modal?.querySelector('.modal-image');
-        this.modalTitle = this.modal?.querySelector('.modal-title');
-        this.modalCategory = this.modal?.querySelector('.modal-category');
-        this.modalDescription = this.modal?.querySelector('.modal-description p');
-        this.currentIndex = 0;
-        this.imagesData = this.collectGalleryImages();
-        
         if (!this.modal) {
             console.error('Gallery modal not found');
             return;
         }
+        
+        this.modalImage = this.modal.querySelector('.modal-image');
+        this.modalTitle = this.modal.querySelector('.modal-title');
+        this.modalCategory = this.modal.querySelector('.modal-category');
+        this.modalDescription = this.modal.querySelector('.modal-description p');
+        this.currentIndex = 0;
+        this.imagesData = this.collectGalleryImages();
         
         this.bindModalEvents();
         console.log('Gallery Modal initialized with', this.imagesData.length, 'images');
@@ -1415,8 +1391,8 @@ const GalleryModal = {
         const galleryItems = document.querySelectorAll('.gallery-item');
         return Array.from(galleryItems).map((item, index) => {
             const img = item.querySelector('img');
-            const title = item.querySelector('.image-title')?.textContent || `صورة المعرض ${index + 1}`;
-            const category = item.querySelector('.image-category')?.textContent || 'المعرض';
+            const title = item.querySelector('.image-title')?.textContent || `صورة المحفظة ${index + 1}`;
+            const category = item.querySelector('.image-category')?.textContent || 'المحفظة';
             const date = item.querySelector('.image-date')?.textContent || '';
             
             return {
@@ -1433,19 +1409,24 @@ const GalleryModal = {
     
     generateDescription(title, category) {
         const descriptions = {
-            bridal: `تحول مذهل للعروس بعنوان "${title}". هذا المظهر يجمع بين تقنيات العروس الشرقية التقليدية والأناقة الحديثة، مع تفاصيل معقدة وتشطيبات فاخرة تخلق جمالاً خالداً مثاليًا ليومك الخاص.`,
-            editorial: `تحفة فنية تحريرية "${title}" تعرض فن مكياج الأزياء الراقية. تم إنشاء هذا المظهر لجلسة تصوير احترافية، تدمج التعبير الإبداعي مع الدقة التقنية لإنتاج صور تروي قصة بصرية مقنعة.`,
-            traditional: `مظهر المكياج التقليدي "${title}" الذي يكرم التراث الثقافي. يتضمن هذا التصميم تقنيات الجمال الشرقية الأصيلة التي تم تناقلها عبر الأجيال، مع إعادة تخيلها بأناقة معاصرة للاحتفالات الحديثة.`,
-            events: `مكياج المناسبات الخاصة "${title}" المصمم للمناسبات التي لا تنسى. يضمن هذا المظهر المبهر أن تبرزي بثقة، مع تركيبات طويلة الأمد وتشطيبات جاهزة للكاميرا تتحمل ساعات من الاحتفال.`,
-            special: `مكياج المؤثرات الخاصة الإبداعي "${title}" الذي يوضح الابتكار الفني. يدفع هذا المظهر التحويلي حدود فن المكياج، مدمجًا المهارة التقنية مع التصميم الخيالي لخلق تجارب بصرية فريدة حقًا.`
+            bridal: `تحفة عروس مذهلة بعنوان "${title}". يجمع هذا المظهر بين تقنيات العرائس الشرقية التقليدية والأناقة العصرية، مع تفاصيل معقدة ولمسات نهائية فاخرة تخلق جمالًا خالدًا مثاليًا ليومك الخاص.`,
+            editorial: `تحفة تحريرية "${title}" تعرض فن مكياج الأزياء الراقية. تم إنشاء هذا المظهر لجلسة تصوير احترافية، مزجًا بين التعبير الإبداعي والدقة التقنية لإنتاج صور تروي قصة بصرية مقنعة.`,
+            traditional: `مظهر مكياج تقليدي "${title}" يكرم التراث الثقافي. يدمج هذا التصميم تقنيات جمال شرقية أصيلة تناقلتها الأجيال، مع إعادة تصورها بأناقة معاصرة للاحتفالات العصرية.`,
+            events: `مكياج فعاليات خاصة "${title}" مصمم للمناسبات التي لا تنسى. يضمن هذا المظهر الفاخر أن تتألقي بثقة، مع تركيبات طويلة الأمد ولمسات نهائية تتحمل ساعات من الاحتفال.`,
+            special: `مكياج مؤثرات خاصة إبداعي "${title}" يظهر الابتكار الفني. يدفع هذا المظهر التحويلي حدود فن المكياج، مزيجًا بين المهارة التقنية والتصميم الخيالي لخلق تجارب بصرية فريدة حقًا.`
         };
         
-        return descriptions[category.toLowerCase()] || 
-               `عمل فني مذهل لفن المكياج بعنوان "${title}" من مجموعة أعمال أميرة. هذه التحفة الفنية تظهر التوازن المثالي بين التقنيات التقليدية والجماليات الحديثة، مما يخلق جمالًا يتجاوز الموضات ويحتفل بالفردية.`;
+        const catKey = category.toLowerCase();
+        if (catKey.includes('عرائس')) return descriptions.bridal;
+        if (catKey.includes('تحرير')) return descriptions.editorial;
+        if (catKey.includes('تقليد')) return descriptions.traditional;
+        if (catKey.includes('فعاليات') || catKey.includes('مناسبات')) return descriptions.events;
+        if (catKey.includes('مؤثرات') || catKey.includes('خاص')) return descriptions.special;
+        
+        return `عمل فني مذهل بعنوان "${title}" من محفظة أميرة. تعرض هذه التحفة الفنية التوازن المثالي بين التقنيات التقليدية والجماليات الحديثة، مما يخلق جمالًا يتجاوز الموضة ويحتفل بالفردية.`;
     },
     
     bindModalEvents() {
-        // Close button
         const closeBtn = this.modal.querySelector('.modal-close');
         if (closeBtn) {
             closeBtn.addEventListener('click', (e) => {
@@ -1454,7 +1435,6 @@ const GalleryModal = {
             });
         }
         
-        // Navigation buttons
         const prevBtn = this.modal.querySelector('.modal-prev');
         const nextBtn = this.modal.querySelector('.modal-next');
         
@@ -1472,7 +1452,6 @@ const GalleryModal = {
             });
         }
         
-        // Close on overlay click
         if (this.modal) {
             this.modal.addEventListener('click', (e) => {
                 if (e.target === this.modal) {
@@ -1481,15 +1460,14 @@ const GalleryModal = {
             });
         }
         
-        // Keyboard events
         document.addEventListener('keydown', (e) => {
             if (this.modal && this.modal.classList.contains('active')) {
                 if (e.key === 'Escape') {
                     this.closeModal();
                 } else if (e.key === 'ArrowLeft') {
-                    this.prevImage();
-                } else if (e.key === 'ArrowRight') {
                     this.nextImage();
+                } else if (e.key === 'ArrowRight') {
+                    this.prevImage();
                 }
             }
         });
@@ -1498,13 +1476,11 @@ const GalleryModal = {
     openModal(index) {
         console.log('Gallery Modal: Opening for index', index);
         
-        // Check data
         if (this.imagesData.length === 0) {
             console.error('No gallery images found');
             return;
         }
         
-        // Check index
         if (index < 0 || index >= this.imagesData.length) {
             console.error('Invalid index:', index);
             index = 0;
@@ -1513,20 +1489,16 @@ const GalleryModal = {
         this.currentIndex = index;
         const imageData = this.imagesData[index];
         
-        // Update modal content
         this.updateModalContent(imageData);
         
-        // Show modal
         this.showModal();
         
-        // Block page scroll
         document.body.style.overflow = 'hidden';
     },
     
     updateModalContent(imageData) {
         if (!this.modal) return;
         
-        // Modal elements
         const modalImage = this.modal.querySelector('.modal-image');
         const modalTitle = this.modal.querySelector('.modal-title');
         const modalCategory = this.modal.querySelector('.modal-category');
@@ -1535,22 +1507,18 @@ const GalleryModal = {
         const currentIndex = this.modal.querySelector('.current-index');
         const totalImages = this.modal.querySelector('.total-images');
         
-        // Update meta data
         const metaDate = this.modal.querySelector('.meta-item:nth-child(2) .meta-value');
         const metaService = this.modal.querySelector('.meta-item:nth-child(4) .meta-value');
         
-        // Show loading
         if (modalLoading) {
             modalLoading.style.display = 'grid';
         }
         
-        // Set image
         if (modalImage) {
             modalImage.style.opacity = '0';
             modalImage.src = imageData.src;
             modalImage.alt = imageData.alt;
             
-            // When image loads
             modalImage.onload = () => {
                 if (modalLoading) {
                     modalLoading.style.display = 'none';
@@ -1559,7 +1527,6 @@ const GalleryModal = {
                 modalImage.classList.add('loaded');
             };
             
-            // Handle load error
             modalImage.onerror = () => {
                 console.error('Failed to load image:', imageData.src);
                 if (modalLoading) {
@@ -1569,7 +1536,6 @@ const GalleryModal = {
             };
         }
         
-        // Update text
         if (modalTitle) {
             modalTitle.textContent = imageData.title;
         }
@@ -1582,48 +1548,23 @@ const GalleryModal = {
             modalDescription.textContent = imageData.description;
         }
         
-        // Convert to Arabic numerals for index display
         if (currentIndex) {
-            const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-            const indexStr = (this.currentIndex + 1).toString();
-            let arabicIndex = '';
-            for (let char of indexStr) {
-                if (char >= '0' && char <= '9') {
-                    arabicIndex += arabicNumerals[parseInt(char)];
-                } else {
-                    arabicIndex += char;
-                }
-            }
-            currentIndex.textContent = arabicIndex;
+            currentIndex.textContent = GalleryUtils.convertToArabicNumerals(this.currentIndex + 1);
         }
         
         if (totalImages) {
-            const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-            const totalStr = this.imagesData.length.toString();
-            let arabicTotal = '';
-            for (let char of totalStr) {
-                if (char >= '0' && char <= '9') {
-                    arabicTotal += arabicNumerals[parseInt(char)];
-                } else {
-                    arabicTotal += char;
-                }
-            }
-            totalImages.textContent = arabicTotal;
+            totalImages.textContent = GalleryUtils.convertToArabicNumerals(this.imagesData.length);
         }
         
-        // Update meta data
         if (metaDate) {
-            metaDate.textContent = imageData.date || new Date().getFullYear();
+            metaDate.textContent = imageData.date || GalleryUtils.convertToArabicNumerals(new Date().getFullYear());
         }
         
         if (metaService) {
             metaService.textContent = imageData.category;
         }
         
-        // Update progress dots
         this.updateProgressDots();
-        
-        // Update tags
         this.updateTechTags(imageData.category);
     },
     
@@ -1631,10 +1572,8 @@ const GalleryModal = {
         const dotsContainer = this.modal.querySelector('.progress-dots');
         if (!dotsContainer) return;
         
-        // Clear container
         dotsContainer.innerHTML = '';
         
-        // Create new dots
         this.imagesData.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.className = `progress-dot ${index === this.currentIndex ? 'active' : ''}`;
@@ -1651,21 +1590,16 @@ const GalleryModal = {
         const techContainer = this.modal.querySelector('.modal-tech');
         if (!techContainer) return;
         
-        // Tags by category
-        const tags = {
-            bridal: ['تقليدي', 'لمسات ذهبية', 'مرسوم يدويًا', 'عروس', 'فاخر'],
-            editorial: ['تحريري', 'أزياء راقية', 'جاهز للكاميرا', 'إبداعي', 'فني'],
-            traditional: ['ثقافي', 'تراث', 'تقليدي', 'أصيل', 'شرقي'],
-            events: ['مناسبات', 'مبهر', 'طويل الأمد', 'مقاوم للفلاش', 'أنيق'],
-            special: ['مؤثرات خاصة', 'إبداعي', 'فني', 'تحويلي', 'ابتكاري']
-        };
+        const tags = [
+            'تقليدي',
+            'لمسات ذهبية',
+            'مرسوم يدويًا',
+            'فاخر'
+        ];
         
-        // Clear container
         techContainer.innerHTML = '';
         
-        // Add tags
-        const categoryTags = tags[category.toLowerCase()] || ['مكياج', 'فن', 'جمال', 'فاخر'];
-        categoryTags.forEach(tag => {
+        tags.forEach(tag => {
             const span = document.createElement('span');
             span.className = 'tech-tag';
             span.textContent = tag;
@@ -1676,10 +1610,8 @@ const GalleryModal = {
     showModal() {
         if (!this.modal) return;
         
-        // Show modal
         this.modal.classList.add('active');
         
-        // Appearance animation
         const modalContainer = this.modal.querySelector('.modal-container');
         if (modalContainer) {
             modalContainer.style.opacity = '0';
@@ -1698,7 +1630,6 @@ const GalleryModal = {
         
         console.log('Gallery Modal: Closing');
         
-        // Disappearance animation
         const modalContainer = this.modal.querySelector('.modal-container');
         if (modalContainer) {
             modalContainer.style.opacity = '0';
@@ -1707,12 +1638,8 @@ const GalleryModal = {
         }
         
         setTimeout(() => {
-            // Hide modal
             this.modal.classList.remove('active');
-            
-            // Allow page scroll
             document.body.style.overflow = '';
-            
             console.log('Gallery Modal: Closed');
         }, 300);
     },
@@ -1741,20 +1668,16 @@ const GalleryPage = {
     init() {
         console.log('Initializing Gallery Page...');
         
-        // ADDED: Check current page
         console.log('Current page:', window.location.pathname);
         
-        // Add scroll animations
         this.initScrollAnimations();
         
-        // ADDED: Initialize additional handlers
         this.initAdditionalHandlers();
         
         console.log('Gallery Page fully loaded!');
     },
     
     initScrollAnimations() {
-        // Animation for category cards
         const categoryCards = document.querySelectorAll('.category-card');
         const statsItems = document.querySelectorAll('.stat-item');
         
@@ -1784,7 +1707,6 @@ const GalleryPage = {
             });
         }, observerOptions);
         
-        // Observe elements
         categoryCards.forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
@@ -1798,9 +1720,7 @@ const GalleryPage = {
         });
     },
     
-    // ADDED: Additional handlers
     initAdditionalHandlers() {
-        // Handle all anchor links
         const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
         allAnchorLinks.forEach(link => {
             if (!link.classList.contains('nav-link') && 
@@ -1828,7 +1748,6 @@ const GalleryPage = {
             }
         });
         
-        // Handler for buttons in CTA section
         const ctaButtons = document.querySelectorAll('.cta-btn-primary, .cta-btn-secondary');
         ctaButtons.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -1847,7 +1766,6 @@ const GalleryPage = {
                             });
                         }
                     } else if (href.includes('.html')) {
-                        // Normal navigation
                         return true;
                     }
                 }
@@ -1865,7 +1783,6 @@ if (document.readyState === 'loading') {
     GalleryPageLoader.init();
 }
 
-// Export for global access
 window.AMIRA = window.AMIRA || {};
 window.AMIRA.Gallery = Gallery;
 window.AMIRA.GalleryModal = GalleryModal;
@@ -1873,29 +1790,19 @@ window.AMIRA.GalleryPage = GalleryPage;
 window.AMIRA.GalleryNavigation = GalleryNavigation;
 window.AMIRA.GalleryLanguage = GalleryLanguage;
 window.AMIRA.GalleryCursor = GalleryCursor;
+window.AMIRA.PageUtils = PageUtils;
 
-// Global function for testing navigation
-window.testNavigation = function() {
-    console.log('Testing navigation...');
-    console.log('All nav links:', document.querySelectorAll('.nav-link').length);
-    console.log('Current URL:', window.location.href);
-};
-
-// Simple fallback if something goes wrong
 window.addEventListener('click', function(e) {
-    // If user clicked on navigation link and it didn't work
     const navLink = e.target.closest('.nav-link');
     if (navLink) {
         const href = navLink.getAttribute('href');
         
-        // If it's a normal page navigation
         if (href && href.includes('.html') && !href.includes('#')) {
             window.location.href = href;
         }
     }
 });
 
-// Handle Escape key for closing mobile menu
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const mobileOverlay = document.querySelector('.mobile-menu-overlay');
@@ -1907,7 +1814,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Debug function to check language selector
 window.debugLanguageSelector = function() {
     console.log('=== Debug Language Selector ===');
     console.log('langToggle:', document.getElementById('langToggle'));

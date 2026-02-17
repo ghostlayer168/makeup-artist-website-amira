@@ -16,7 +16,6 @@ const ServicesConfig = {
     }
 };
 
-// Utilities for services.js
 const ServicesUtils = {
     debounce(func, wait) {
         let timeout;
@@ -39,6 +38,22 @@ const ServicesUtils = {
                 setTimeout(() => inThrottle = false, limit);
             }
         };
+    },
+    
+    convertToArabicNumerals(number) {
+        const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+        const numberStr = String(number);
+        let arabicStr = '';
+        
+        for (let char of numberStr) {
+            if (char >= '0' && char <= '9') {
+                arabicStr += arabicNumerals[parseInt(char)];
+            } else {
+                arabicStr += char;
+            }
+        }
+        
+        return arabicStr;
     }
 };
 
@@ -95,10 +110,6 @@ const ServicesCursor = {
                 duration: 0.3,
                 ease: ServicesConfig.animation.easing.power3
             });
-        } else {
-            // Fallback without GSAP
-            this.cursorInner.style.transform = `translate(${this.state.x}px, ${this.state.y}px)`;
-            this.cursorOuter.style.transform = `translate(${this.state.x}px, ${this.state.y}px)`;
         }
         
         this.state.lastX = this.state.x;
@@ -122,11 +133,6 @@ const ServicesCursor = {
                     duration: ServicesConfig.animation.duration.fast,
                     ease: ServicesConfig.animation.easing.smooth
                 });
-            } else {
-                this.cursorInner.style.transform += ' scale(1.5)';
-                this.cursorOuter.style.transform += ' scale(1.2)';
-                this.cursorInner.style.transition = 'transform 0.3s ease';
-                this.cursorOuter.style.transition = 'transform 0.3s ease';
             }
         }
     },
@@ -148,9 +154,6 @@ const ServicesCursor = {
                     duration: ServicesConfig.animation.duration.fast,
                     ease: ServicesConfig.animation.easing.smooth
                 });
-            } else {
-                this.cursorInner.style.transform = this.cursorInner.style.transform.replace(' scale(1.5)', '');
-                this.cursorOuter.style.transform = this.cursorOuter.style.transform.replace(' scale(1.2)', '');
             }
         }
     },
@@ -167,9 +170,6 @@ const ServicesCursor = {
                     scale: 0.8,
                     duration: ServicesConfig.animation.duration.fast
                 });
-            } else {
-                this.cursorInner.style.transform += ' scale(1.3)';
-                this.cursorOuter.style.transform += ' scale(0.8)';
             }
         }
     },
@@ -186,9 +186,6 @@ const ServicesCursor = {
                     scale: 1,
                     duration: ServicesConfig.animation.duration.fast
                 });
-            } else {
-                this.cursorInner.style.transform = this.cursorInner.style.transform.replace(' scale(1.3)', '');
-                this.cursorOuter.style.transform = this.cursorOuter.style.transform.replace(' scale(0.8)', '');
             }
         }
     }
@@ -201,7 +198,9 @@ const ServicesPageLoader = {
     init() {
         console.log('Services page loader initializing...');
         
-        // Restore language from localStorage
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+        
         this.restoreLanguage();
         
         const loadingScreen = document.querySelector('.loading-screen');
@@ -234,27 +233,12 @@ const ServicesPageLoader = {
             return;
         }
         
-        // Detect language for preloader messages
-        const currentLang = localStorage.getItem('preferredLanguage') || 'en';
-        let messages;
-        
-        if (currentLang === 'ar') {
-            // Arabic messages with Eastern Arabic numerals
-            messages = [
-                "جارٍ تحميل الأصول الفاخرة",
-                "جارٍ تهيئة الإبداع الفني",
-                "جارٍ إعداد التجربة",
-                "جاهز تقريبًا"
-            ];
-        } else {
-            // English messages (default)
-            messages = [
-                "Loading Luxury Assets",
-                "Initializing Artistry",
-                "Preparing Experience",
-                "Almost Ready"
-            ];
-        }
+        const messages = [
+            "جاري تحميل الأصول الفاخرة",
+            "جاري تهيئة الفن",
+            "جاري إعداد التجربة",
+            "جاهز تقريبًا"
+        ];
         
         let progress = 0;
         const interval = setInterval(() => {
@@ -262,12 +246,7 @@ const ServicesPageLoader = {
             
             if (progressFill) progressFill.style.width = `${progress}%`;
             if (percentage) {
-                // Use Eastern Arabic numerals for Arabic version
-                if (currentLang === 'ar') {
-                    percentage.textContent = this.convertToArabicNumerals(progress) + '%';
-                } else {
-                    percentage.textContent = `${progress}%`;
-                }
+                percentage.textContent = ServicesUtils.convertToArabicNumerals(progress) + '%';
             }
             
             if (loadingMessage) {
@@ -291,12 +270,6 @@ const ServicesPageLoader = {
         }, 5000);
     },
     
-    // Convert Western Arabic numerals to Eastern Arabic numerals
-    convertToArabicNumerals(number) {
-        const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-        return number.toString().split('').map(digit => arabicNumerals[parseInt(digit)]).join('');
-    },
-    
     completeLoading() {
         const loadingScreen = document.querySelector('.loading-screen');
         if (!loadingScreen) {
@@ -313,6 +286,7 @@ const ServicesPageLoader = {
                     loadingScreen.style.visibility = 'hidden';
                     document.body.classList.add('loaded');
                     this.initializeApp();
+                    this.convertPageNumbers();
                 }
             });
         } else {
@@ -321,20 +295,37 @@ const ServicesPageLoader = {
                 loadingScreen.style.visibility = 'hidden';
                 document.body.classList.add('loaded');
                 this.initializeApp();
+                this.convertPageNumbers();
             }, 1000);
         }
+    },
+    
+    convertPageNumbers() {
+        const elementsToConvert = document.querySelectorAll(
+            '.link-number, .section-number, .service-number, .step-number, .percentage'
+        );
+        
+        elementsToConvert.forEach(element => {
+            const originalText = element.textContent;
+            const convertedText = ServicesUtils.convertToArabicNumerals(originalText);
+            if (convertedText !== originalText) {
+                element.textContent = convertedText;
+            }
+        });
     },
     
     initializeApp() {
         console.log('Initializing services page...');
         
         try {
-            // Initialize cursor first
             ServicesCursor.init();
             ServicesPage.init();
             ServicesNavigation.init();
             ServicesLanguage.init();
+            
             console.log('Services page fully loaded! ✨');
+            
+            setTimeout(() => this.convertPageNumbers(), 500);
         } catch (error) {
             console.error('Error initializing services page:', error);
         }
@@ -425,93 +416,70 @@ const ServicesNavigation = {
     },
     
     generateMobileMenuContent() {
-        const activeLang = document.querySelector('.lang-code')?.textContent || 'EN';
+        const activeLang = document.querySelector('.lang-code')?.textContent || 'AR';
         const currentPage = window.location.pathname.split('/').pop();
-        
-        // Detect language for mobile menu content
-        const currentLang = localStorage.getItem('preferredLanguage') || 'en';
-        
-        // Menu items based on language
-        let menuItems = [];
-        if (currentLang === 'ar') {
-            menuItems = [
-                { number: '٠١', text: 'الرئيسية', href: '../makeup-artist-website-amira/ar/index_ar.html', active: currentPage === 'index_ar.html' },
-                { number: '٠٢', text: 'الفلسفة', href: '../makeup-artist-website-amira/ar/index_ar.html#philosophy', active: false },
-                { number: '٠٣', text: 'الخدمات', href: '../makeup-artist-website-amira/ar/services_ar.html', active: currentPage === 'services_ar.html' },
-                { number: '٠٤', text: 'المحفظة', href: '../makeup-artist-website-amira/ar/index_ar.html#portfolio', active: false },
-                { number: '٠٥', text: 'اتصل بنا', href: '../makeup-artist-website-amira/ar/index_ar.html#contact', active: false }
-            ];
-        } else if (currentLang === 'sv') {
-            menuItems = [
-                { number: '01', text: 'Hem', href: '../sv/index_sv.html', active: currentPage === 'index_sv.html' },
-                { number: '02', text: 'Filosofi', href: '../sv/index_sv.html#philosophy', active: false },
-                { number: '03', text: 'Tjänster', href: '../sv/services_sv.html', active: currentPage === 'services_sv.html' },
-                { number: '04', text: 'Portfolio', href: '../sv/index_sv.html#portfolio', active: false },
-                { number: '05', text: 'Kontakt', href: '../sv/index_sv.html#contact', active: false }
-            ];
-        } else {
-            // English (default)
-            menuItems = [
-                { number: '01', text: 'Home', href: '../makeup-artist-website-amira/en/index.html', active: currentPage === 'index.html' || currentPage === '' },
-                { number: '02', text: 'Philosophy', href: '../makeup-artist-website-amira/en/index.html#philosophy', active: false },
-                { number: '03', text: 'Services', href: '../makeup-artist-website-amira/en/services.html', active: currentPage === 'services.html' },
-                { number: '04', text: 'Portfolio', href: '../makeup-artist-website-amira/en/index.html#portfolio', active: false },
-                { number: '05', text: 'Contact', href: '../makeup-artist-website-amira/en/index.html#contact', active: false }
-            ];
-        }
-        
-        // Language buttons
-        const languageButtons = [
-            { code: 'EN', text: 'English', lang: 'en', active: activeLang === 'EN' },
-            { code: 'SV', text: 'Svenska', lang: 'sv', active: activeLang === 'SV' },
-            { code: 'AR', text: 'العربية', lang: 'ar', active: activeLang === 'AR' }
-        ];
-        
-        // CTA button text
-        let ctaText = "Book a Consultation";
-        if (currentLang === 'ar') ctaText = "احجز استشارة";
-        else if (currentLang === 'sv') ctaText = "Boka en Konsultation";
-        
-        // Language label
-        let languageLabel = "Select Language";
-        if (currentLang === 'ar') languageLabel = "اختر اللغة";
-        else if (currentLang === 'sv') languageLabel = "Välj Språk";
         
         return `
             <div class="mobile-menu-container">
-                <button class="mobile-close-btn" aria-label="Close menu">
+                <button class="mobile-close-btn" aria-label="إغلاق القائمة">
                     <span class="close-icon"></span>
                 </button>
                 
                 <div class="mobile-menu-logo">
-                    <div class="symbol">A</div>
-                    <div class="brand">AMIRA STUDIO</div>
+                    <div class="symbol">أ</div>
+                    <div class="brand">أميرة ستوديو</div>
                 </div>
                 
                 <nav class="mobile-menu-nav">
-                    ${menuItems.map(item => `
-                        <a href="${item.href}" class="mobile-nav-link ${item.active ? 'active' : ''}">
-                            <span class="link-number">${item.number}</span>
-                            <span class="link-text">${item.text}</span>
-                        </a>
-                    `).join('')}
+                    <a href="../ar/index_ar.html" class="mobile-nav-link ${currentPage === 'index_ar.html' || currentPage === '' ? 'active' : ''}">
+                        <span class="link-number">٠١</span>
+                        <span class="link-text">الرئيسية</span>
+                    </a>
+                    
+                    <a href="../ar/index_ar.html#about" class="mobile-nav-link">
+                        <span class="link-number">٠٢</span>
+                        <span class="link-text">فلسفتي</span>
+                    </a>
+                    
+                    <a href="../ar/services_ar.html" class="mobile-nav-link ${currentPage === 'services_ar.html' ? 'active' : ''}">
+                        <span class="link-number">٠٣</span>
+                        <span class="link-text">الخدمات</span>
+                    </a>
+                    
+                    <a href="../ar/index_ar.html#portfolio" class="mobile-nav-link">
+                        <span class="link-number">٠٤</span>
+                        <span class="link-text">الأعمال</span>
+                    </a>
+                    
+                    <a href="../ar/index_ar.html#contact" class="mobile-nav-link">
+                        <span class="link-number">٠٥</span>
+                        <span class="link-text">اتصل بي</span>
+                    </a>
                 </nav>
                 
                 <div class="mobile-language-section">
-                    <div class="language-label">${languageLabel}</div>
+                    <div class="language-label">اختر اللغة</div>
                     <div class="language-buttons">
-                        ${languageButtons.map(btn => `
-                            <button class="language-btn ${btn.active ? 'active' : ''}" data-lang="${btn.lang}">
-                                <span class="lang-text">${btn.text}</span>
-                                <span class="lang-code">${btn.code}</span>
-                            </button>
-                        `).join('')}
+                        <button class="language-btn ${activeLang === 'AR' ? 'active' : ''}" data-lang="ar">
+                            <span class="lang-text">العربية</span>
+                            <span class="lang-code">AR</span>
+                        </button>
+                        
+                        <button class="language-btn ${activeLang === 'EN' ? 'active' : ''}" data-lang="en">
+                            <span class="lang-text">English</span>
+                            <span class="lang-code">EN</span>
+                        </button>
+                        
+                        <button class="language-btn ${activeLang === 'SV' ? 'active' : ''}" data-lang="sv">
+                            <span class="lang-text">Svenska</span>
+                            <span class="lang-code">SV</span>
+                        </button>
                     </div>
                 </div>
                 
-                <a href="../${currentLang}/${currentLang === 'en' ? 'index.html' : currentLang === 'sv' ? 'index_sv.html' : 'index_ar.html'}#contact" class="mobile-cta-btn">
-                    <span>${ctaText}</span>
-                    <i class="fas fa-arrow-right"></i>
+                <a href="../ar/index_ar.html#contact" class="mobile-cta-btn">
+                    <span>احجز استشارة</span>
+                    <i class="fas fa-arrow-left"></i>
                 </a>
             </div>
             
@@ -575,16 +543,16 @@ const ServicesNavigation = {
         
         switch(lang) {
             case 'en':
-                targetUrl = '../makeup-artist-website-amira/en/services.html';
+                targetUrl = '../en/services.html';
                 break;
             case 'sv':
                 targetUrl = '../sv/services_sv.html';
                 break;
             case 'ar':
-                targetUrl = '../makeup-artist-website-amira/ar/services_ar.html';
+                targetUrl = '../ar/services_ar.html';
                 break;
             default:
-                targetUrl = '../makeup-artist-website-amira/en/services.html';
+                targetUrl = '../ar/services_ar.html';
         }
         
         console.log(`Switching language to: ${langCode}, redirecting to: ${targetUrl}`);
@@ -648,7 +616,7 @@ const ServicesNavigation = {
             if (href.includes('.html')) {
                 window.location.href = href;
             } else if (href.startsWith('#')) {
-                if (href === '#hero' && window.location.pathname.includes('services.html')) {
+                if (href === '#hero') {
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
@@ -780,16 +748,16 @@ const ServicesLanguage = {
         
         switch(lang) {
             case 'en':
-                targetUrl = '../makeup-artist-website-amira/en/services.html';
+                targetUrl = '../en/services.html';
                 break;
             case 'sv':
                 targetUrl = '../sv/services_sv.html';
                 break;
             case 'ar':
-                targetUrl = '../makeup-artist-website-amira/ar/services_ar.html';
+                targetUrl = '../ar/services_ar.html';
                 break;
             default:
-                targetUrl = '../makeup-artist-website-amira/en/services.html';
+                targetUrl = '../ar/services_ar.html';
         }
         
         window.location.href = targetUrl;
@@ -877,7 +845,7 @@ const ServicesPage = {
         
         console.log('Navigation link clicked:', href);
         
-        if (href.includes('.html') && !href.includes('index.html#')) {
+        if (href.includes('.html') && !href.includes('index_ar.html#')) {
             window.location.href = href;
             return;
         }
@@ -888,7 +856,7 @@ const ServicesPage = {
             return;
         }
         
-        if (href.includes('index.html#')) {
+        if (href.includes('index_ar.html#')) {
             window.location.href = href;
         }
     },
@@ -906,8 +874,8 @@ const ServicesPage = {
             const page = parts[0];
             const section = parts[1] ? '#' + parts[1] : '';
             
-            if (page === 'index.html' || page === './index.html') {
-                if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+            if (page === 'index_ar.html' || page === './index_ar.html') {
+                if (window.location.pathname.includes('index_ar.html') || window.location.pathname === '/') {
                     if (section) {
                         this.scrollToSection(section);
                     }
@@ -976,8 +944,8 @@ const ServicesPage = {
             const linkHref = link.getAttribute('href');
             
             if (linkHref === currentPage || 
-                (currentPage === '' && linkHref === 'index.html') ||
-                (currentPage === 'services.html' && linkHref === 'services.html')) {
+                (currentPage === '' && linkHref === 'index_ar.html') ||
+                (currentPage === 'services_ar.html' && linkHref === 'services_ar.html')) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');
@@ -1108,17 +1076,6 @@ const ServicesPage = {
                             });
                         }
                     });
-                } else {
-                    mainImage.style.opacity = '0';
-                    setTimeout(() => {
-                        mainImage.style.backgroundImage = bgImage;
-                        mainImage.style.opacity = '1';
-                        mainImage.style.transform = 'scale(1.05)';
-                        setTimeout(() => {
-                            mainImage.style.transform = 'scale(1)';
-                            mainImage.style.transition = 'transform 0.5s ease';
-                        }, 50);
-                    }, 300);
                 }
                 
                 const galleryThumbs = gallery.querySelectorAll('.vertical-thumb');
@@ -1197,14 +1154,6 @@ const ServicesPage = {
                 duration: 0.8,
                 ease: 'power2.out'
             });
-        } else {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(50px)';
-            setTimeout(() => {
-                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }, 100);
         }
     },
     
@@ -1212,7 +1161,7 @@ const ServicesPage = {
         const bookButtons = document.querySelectorAll('.service-book-btn');
         bookButtons.forEach(button => {
             button.addEventListener('click', (e) => {
-                if (button.getAttribute('href') === '../makeup-artist-website-amira/en/index.html#contact') {
+                if (button.getAttribute('href') === '../ar/index_ar.html#contact') {
                     e.preventDefault();
                     
                     const serviceDetail = button.closest('.service-detail');
@@ -1220,7 +1169,7 @@ const ServicesPage = {
                     
                     localStorage.setItem('selectedService', serviceTitle);
                     
-                    window.location.href = '../makeup-artist-website-amira/en/index.html#contact';
+                    window.location.href = '../ar/index_ar.html#contact';
                 }
             });
         });
@@ -1234,9 +1183,6 @@ const ServicesPage = {
                         duration: 0.3,
                         ease: 'back.out(1.7)'
                     });
-                } else {
-                    price.style.transform = 'scale(1.1)';
-                    price.style.transition = 'transform 0.3s ease';
                 }
             });
             
@@ -1247,16 +1193,14 @@ const ServicesPage = {
                         duration: 0.3,
                         ease: 'power2.out'
                     });
-                } else {
-                    price.style.transform = 'scale(1)';
                 }
             });
         });
         
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            if (e.key === 'ArrowLeft') {
                 this.navigateServices(1);
-            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            } else if (e.key === 'ArrowRight') {
                 this.navigateServices(-1);
             }
         });
@@ -1314,22 +1258,20 @@ if (document.readyState === 'loading') {
     ServicesPageLoader.init();
 }
 
-// Export modules for global access
 window.ServicesPage = ServicesPage;
 window.ServicesNavigation = ServicesNavigation;
 window.ServicesLanguage = ServicesLanguage;
 window.ServicesCursor = ServicesCursor;
 
-// Handle selected service when navigating to contact page
 document.addEventListener('DOMContentLoaded', () => {
     const selectedService = localStorage.getItem('selectedService');
     if (selectedService && window.location.hash === '#contact') {
         const serviceMap = {
-            'Bridal Couture': 'bridal',
-            'Editorial Artistry': 'editorial',
-            'Special Events': 'events',
-            'Master Classes': 'masterclass',
-            'Personal Consultation': 'consultation'
+            'كوتور العروس': 'bridal',
+            'فن التحرير': 'editorial',
+            'مناسبات خاصة': 'events',
+            'دروس رئيسية': 'masterclass',
+            'استشارة شخصية': 'consultation'
         };
         
         const serviceValue = serviceMap[selectedService];
@@ -1338,14 +1280,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const serviceSelect = document.getElementById('service');
             if (serviceSelect && serviceValue) {
                 serviceSelect.value = serviceValue;
-                
                 localStorage.removeItem('selectedService');
             }
         }, 1000);
     }
 });
 
-// Handle navigation link clicks
 window.addEventListener('click', function(e) {
     const navLink = e.target.closest('.nav-link');
     if (navLink) {
@@ -1357,7 +1297,6 @@ window.addEventListener('click', function(e) {
     }
 });
 
-// Handle Escape key for closing mobile menu
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const mobileOverlay = document.querySelector('.mobile-menu-overlay');
