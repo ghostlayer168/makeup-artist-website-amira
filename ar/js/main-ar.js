@@ -317,12 +317,12 @@ const Navigation = {
                         </button>
                         
                         <button class="language-btn" data-lang="en">
-                            <span class="lang-text">English/span>
+                            <span class="lang-text">English</span>
                             <span class="lang-code">EN</span>
                         </button>
                         
                         <button class="language-btn" data-lang="sv">
-                            <span class="lang-text">Svenska/span>
+                            <span class="lang-text">Svenska</span>
                             <span class="lang-code">SV</span>
                         </button>
                     </div>
