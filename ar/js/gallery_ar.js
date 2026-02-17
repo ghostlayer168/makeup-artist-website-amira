@@ -436,27 +436,27 @@ const GalleryNavigation = {
                 </div>
                 
                 <nav class="mobile-menu-nav">
-                    <a href="../../ar/index_ar.html" class="mobile-nav-link ${currentPage === 'index_ar.html' || currentPage === '' ? 'active' : ''}">
+                    <a href="../../makeup-artist-website-amira/ar/index_ar.html" class="mobile-nav-link ${currentPage === 'index_ar.html' || currentPage === '' ? 'active' : ''}">
                         <span class="link-number">٠١</span>
                         <span class="link-text">الرئيسية</span>
                     </a>
                     
-                    <a href="../../ar/index_ar.html#philosophy" class="mobile-nav-link">
+                    <a href="../../makeup-artist-website-amira/ar/index_ar.html#philosophy" class="mobile-nav-link">
                         <span class="link-number">٠٢</span>
                         <span class="link-text">الفلسفة</span>
                     </a>
                     
-                    <a href="../../ar/services_ar.html" class="mobile-nav-link">
+                    <a href="../../makeup-artist-website-amira/ar/services_ar.html" class="mobile-nav-link">
                         <span class="link-number">٠٣</span>
                         <span class="link-text">الخدمات</span>
                     </a>
                     
-                    <a href="../../ar/gallery_ar.html" class="mobile-nav-link ${currentPage === 'gallery_ar.html' ? 'active' : ''}">
+                    <a href="../../makeup-artist-website-amira/ar/gallery_ar.html" class="mobile-nav-link ${currentPage === 'gallery_ar.html' ? 'active' : ''}">
                         <span class="link-number">٠٤</span>
                         <span class="link-text">المعرض</span>
                     </a>
                     
-                    <a href="../../ar/index_ar.html#contact" class="mobile-nav-link">
+                    <a href="../../makeup-artist-website-amira/ar/index_ar.html#contact" class="mobile-nav-link">
                         <span class="link-number">٠٥</span>
                         <span class="link-text">اتصل بنا</span>
                     </a>
@@ -482,7 +482,7 @@ const GalleryNavigation = {
                     </div>
                 </div>
                 
-                <a href="../../ar/index_ar.html#contact" class="mobile-cta-btn">
+                <a href="../../makeup-artist-website-amira/ar/index_ar.html#contact" class="mobile-cta-btn">
                     <span>حجز استشارة</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -548,16 +548,16 @@ const GalleryNavigation = {
         
         switch(lang) {
             case 'ar':
-                targetUrl = '../../ar/gallery_ar.html';
+                targetUrl = '../../makeup-artist-website-amira/ar/gallery_ar.html';
                 break;
             case 'en':
-                targetUrl = '/makeup-artist-website-amira/en/gallery.html';
+                targetUrl = '/makeup-artist-website-amira/makeup-artist-website-amira/en/gallery.html';
                 break;
             case 'sv':
                 targetUrl = '../../sv/gallery_sv.html';
                 break;
             default:
-                targetUrl = '../../ar/gallery_ar.html';
+                targetUrl = '../../makeup-artist-website-amira/ar/gallery_ar.html';
         }
         
         console.log(`Switching language to: ${langCode}, redirecting to: ${targetUrl}`);
@@ -838,16 +838,16 @@ const GalleryLanguage = {
         
         switch(lang) {
             case 'ar':
-                targetUrl = '../../ar/gallery_ar.html';
+                targetUrl = '../../makeup-artist-website-amira/ar/gallery_ar.html';
                 break;
             case 'en':
-                targetUrl = '/makeup-artist-website-amira/en/gallery.html';
+                targetUrl = '/makeup-artist-website-amira/makeup-artist-website-amira/en/gallery.html';
                 break;
             case 'sv':
                 targetUrl = '../../sv/gallery_sv.html';
                 break;
             default:
-                targetUrl = '../../ar/gallery_ar.html';
+                targetUrl = '../../makeup-artist-website-amira/ar/gallery_ar.html';
         }
         
         console.log(`Redirecting to: ${targetUrl}`);

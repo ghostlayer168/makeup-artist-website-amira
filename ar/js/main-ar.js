@@ -403,16 +403,16 @@ const Navigation = {
         
         switch(lang) {
             case 'en':
-                targetUrl = '../en/index.html';
+                targetUrl = '../makeup-artist-website-amira/en/index.html';
                 break;
             case 'sv':
                 targetUrl = '../sv/index_sv.html';
                 break;
             case 'ar':
-                targetUrl = '../ar/index_ar.html';
+                targetUrl = '../makeup-artist-website-amira/ar/index_ar.html';
                 break;
             default:
-                targetUrl = '../en/index.html';
+                targetUrl = '../makeup-artist-website-amira/en/index.html';
         }
         
         console.log(`Switching language to: ${langCode}, redirecting to: ${targetUrl}`);
@@ -604,16 +604,16 @@ const Language = {
         
         switch(lang) {
             case 'en':
-                targetUrl = '../en/index.html';
+                targetUrl = '../makeup-artist-website-amira/en/index.html';
                 break;
             case 'sv':
                 targetUrl = '../sv/index_sv.html';
                 break;
             case 'ar':
-                targetUrl = '../ar/index_ar.html';
+                targetUrl = '../makeup-artist-website-amira/ar/index_ar.html';
                 break;
             default:
-                targetUrl = '../en/index.html';
+                targetUrl = '../makeup-artist-website-amira/en/index.html';
         }
         
         // Redirect to another page

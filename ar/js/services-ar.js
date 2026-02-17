@@ -435,11 +435,11 @@ const ServicesNavigation = {
         let menuItems = [];
         if (currentLang === 'ar') {
             menuItems = [
-                { number: '٠١', text: 'الرئيسية', href: '../ar/index_ar.html', active: currentPage === 'index_ar.html' },
-                { number: '٠٢', text: 'الفلسفة', href: '../ar/index_ar.html#philosophy', active: false },
-                { number: '٠٣', text: 'الخدمات', href: '../ar/services_ar.html', active: currentPage === 'services_ar.html' },
-                { number: '٠٤', text: 'المحفظة', href: '../ar/index_ar.html#portfolio', active: false },
-                { number: '٠٥', text: 'اتصل بنا', href: '../ar/index_ar.html#contact', active: false }
+                { number: '٠١', text: 'الرئيسية', href: '../makeup-artist-website-amira/ar/index_ar.html', active: currentPage === 'index_ar.html' },
+                { number: '٠٢', text: 'الفلسفة', href: '../makeup-artist-website-amira/ar/index_ar.html#philosophy', active: false },
+                { number: '٠٣', text: 'الخدمات', href: '../makeup-artist-website-amira/ar/services_ar.html', active: currentPage === 'services_ar.html' },
+                { number: '٠٤', text: 'المحفظة', href: '../makeup-artist-website-amira/ar/index_ar.html#portfolio', active: false },
+                { number: '٠٥', text: 'اتصل بنا', href: '../makeup-artist-website-amira/ar/index_ar.html#contact', active: false }
             ];
         } else if (currentLang === 'sv') {
             menuItems = [
@@ -452,11 +452,11 @@ const ServicesNavigation = {
         } else {
             // English (default)
             menuItems = [
-                { number: '01', text: 'Home', href: '../en/index.html', active: currentPage === 'index.html' || currentPage === '' },
-                { number: '02', text: 'Philosophy', href: '../en/index.html#philosophy', active: false },
-                { number: '03', text: 'Services', href: '../en/services.html', active: currentPage === 'services.html' },
-                { number: '04', text: 'Portfolio', href: '../en/index.html#portfolio', active: false },
-                { number: '05', text: 'Contact', href: '../en/index.html#contact', active: false }
+                { number: '01', text: 'Home', href: '../makeup-artist-website-amira/en/index.html', active: currentPage === 'index.html' || currentPage === '' },
+                { number: '02', text: 'Philosophy', href: '../makeup-artist-website-amira/en/index.html#philosophy', active: false },
+                { number: '03', text: 'Services', href: '../makeup-artist-website-amira/en/services.html', active: currentPage === 'services.html' },
+                { number: '04', text: 'Portfolio', href: '../makeup-artist-website-amira/en/index.html#portfolio', active: false },
+                { number: '05', text: 'Contact', href: '../makeup-artist-website-amira/en/index.html#contact', active: false }
             ];
         }
         
@@ -575,16 +575,16 @@ const ServicesNavigation = {
         
         switch(lang) {
             case 'en':
-                targetUrl = '../en/services.html';
+                targetUrl = '../makeup-artist-website-amira/en/services.html';
                 break;
             case 'sv':
                 targetUrl = '../sv/services_sv.html';
                 break;
             case 'ar':
-                targetUrl = '../ar/services_ar.html';
+                targetUrl = '../makeup-artist-website-amira/ar/services_ar.html';
                 break;
             default:
-                targetUrl = '../en/services.html';
+                targetUrl = '../makeup-artist-website-amira/en/services.html';
         }
         
         console.log(`Switching language to: ${langCode}, redirecting to: ${targetUrl}`);
@@ -780,16 +780,16 @@ const ServicesLanguage = {
         
         switch(lang) {
             case 'en':
-                targetUrl = '../en/services.html';
+                targetUrl = '../makeup-artist-website-amira/en/services.html';
                 break;
             case 'sv':
                 targetUrl = '../sv/services_sv.html';
                 break;
             case 'ar':
-                targetUrl = '../ar/services_ar.html';
+                targetUrl = '../makeup-artist-website-amira/ar/services_ar.html';
                 break;
             default:
-                targetUrl = '../en/services.html';
+                targetUrl = '../makeup-artist-website-amira/en/services.html';
         }
         
         window.location.href = targetUrl;
@@ -1212,7 +1212,7 @@ const ServicesPage = {
         const bookButtons = document.querySelectorAll('.service-book-btn');
         bookButtons.forEach(button => {
             button.addEventListener('click', (e) => {
-                if (button.getAttribute('href') === '../en/index.html#contact') {
+                if (button.getAttribute('href') === '../makeup-artist-website-amira/en/index.html#contact') {
                     e.preventDefault();
                     
                     const serviceDetail = button.closest('.service-detail');
@@ -1220,7 +1220,7 @@ const ServicesPage = {
                     
                     localStorage.setItem('selectedService', serviceTitle);
                     
-                    window.location.href = '../en/index.html#contact';
+                    window.location.href = '../makeup-artist-website-amira/en/index.html#contact';
                 }
             });
         });
